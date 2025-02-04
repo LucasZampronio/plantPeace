@@ -22,9 +22,9 @@ export const Header = () => {
           </div>
           <nav>
             <ul className="flex justify-between gap-4 p-4 font-light text-slate-500">
-                <li><a href="#" >Home</a></li>
-                <li className={hidden}><a href="#">Products</a></li>
-                <li className={hidden}><a href="#">About me</a></li>
+                <li className=" hover:text-emerald-700 hover:font-normal transition"><a href="#" >Home</a></li>
+                <li className={`${hidden} hover:text-emerald-700 hover:font-normal transition`}><a href="#">Products</a></li>
+                <li className={`${hidden} hover:text-emerald-700 hover:font-normal transition`}><a href="#">About me</a></li>
             </ul>
           </nav>
           <div className="flex gap-10 font-semibold">
