@@ -1,2 +1,1 @@
-# ARD24_D02_GRUPO6
-Desafio 02 do PB da COMPASS UOL
+# React + TypeScript + Vite + TailwindCSS
