@@ -3,15 +3,18 @@ import logo from "../images/logoicon.svg"
 
 export const Header = () => {
     const [hidden , setHidden] = useState ("hidden")
+    const [register , setRegister] = useState ("")
     const [name, setName] = useState ("Login")
 
     function handleClick () {
         if (hidden === "") {
             setHidden ("hidden");
-            setName ("Log out");
+            setName ("Login");
+            setRegister ("")
         } else {
             setHidden ("")
-            setName ("Login")
+            setName ("Log out")
+            setRegister ("hidden")
         };
     }
 
@@ -28,7 +31,7 @@ export const Header = () => {
             </ul>
           </nav>
           <div className="flex gap-10 font-semibold">
-            <button className={`text-slate-900 ${hidden}  cursor-pointer hover:underline hover:text-slate-600 transition`}>Register</button>
+            <button className={`text-slate-900 ${register} cursor-pointer hover:underline hover:text-slate-600 transition`}>Register</button>
             <button onClick={handleClick} className={`text-white bg-emerald-900 px-10 py-3 rounded-xl  cursor-pointer hover:bg-emerald-700 transition`}>{name}</button>
           </div>
       </section>
