@@ -25,7 +25,7 @@ const SearchBar: React.FC<{ onSearch: (query: string) => boolean }> = ({ onSearc
       />
       <button
         onClick={handleSearchSubmit}
-        className="absolute top-[123px] left-[1204px] px-8 py-2 ml-[-1px] bg-[#064E3B] text-[#FCFCFC] rounded-tr-lg rounded-br-lg"
+        className="absolute top-[123px] left-[1204px] px-8 py-2 ml-[-1px] bg-[#064E3B] text-[#FCFCFC] rounded-tr-lg rounded-br-lg rounded-tl-lg rounded-bl-lg"
         style={{ fontFamily: 'Inter', fontSize: '16px', fontWeight: 600, lineHeight: '24.72px' }}
       >
         Add Plant
