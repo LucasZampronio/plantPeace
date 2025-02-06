@@ -1,0 +1,19 @@
+{
+    "plants": [
+      {
+        "id": 1,
+        "name": "Verde",
+        "category": "Indoor",
+        "price": 19.99,
+        "image": "https://i.pinimg.com/736x/19/c6/f0/19c6f0f051d339b225c52f27b90031b1.jpg"
+      },
+      {
+        "id": 2,
+        "name": "Girassol",
+        "category": "Outdoor",
+        "price": 29.99,
+        "image": "https://www.tgservices.com.br/wp-content/uploads/2021/11/11-11-2021-2-768x480.jpg"
+      }
+    ]
+  }
+  
