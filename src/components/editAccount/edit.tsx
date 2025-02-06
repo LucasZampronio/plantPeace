@@ -1,31 +1,33 @@
 import './edit.css'
 import { useState } from 'react';
+
 const edit = () => {
+/*VOU TENTAR REFAZER DEPOIS, NÃO ENTENDI MUITO BEM O JSONSERVER E COMO VOU FAZER PARA ALTERAR OS DADOS*/
+  const [name,setName] = useState<string>('');
+  const [email,setEmail] = useState<string>('');
+  const [password,setPassword] = useState<string>('');
 
-  const [name,setName] = useState('');
-  const [email,setEmail] = useState('');
-  const [password,setPassword] = useState('');
 
-  const handleSubmit  = (event) => {
-    event.preventDefault();
-
-    alert('enviando os dados' + name +  email + password)
-
+  const handleSubmit  = (e:React.FormEvent) => {
+    e.preventDefault();
+    
+    alert(' Nome: ' + name + ' Email: ' + email +' Senha: ' + password);
   };
+
 
 
   return (
     
       <section className="bg-white flex h-screen">  
       {/*DIV ESQUERDA FORMULARIO*/} 
-        <div className='<div className="flex flex-1 flex-col pt-6 items-start w-full border-2 border-red-500 p-4">'>
+        <div className='<div className="flex flex-1 flex-col pt-6 items-start w-full  ">'>
           {/*TITULO FORMULARIO*/}
           <div className='border-green-500 w-[70%] pl-15 pr-10 pb-10'>
             <h1 className="text-5xl mb-3 text-[#064E3B]">User config</h1>
             <p className='text-[#64748B]'>Lorem ipsum dolor sit amet consectetur. Turpis vitae at et massa neque.</p>
           </div>
         {/*FORMULARIO*/}
-          <form onSubmit={handleSubmit} className="flex flex-col gap-2 rounded-2xl bg-white mt-10x   w-full border-2 border-blue-500 pl-15 pr-10" >
+          <form onSubmit={handleSubmit} className="flex flex-col gap-2 rounded-2xl bg-white mt-10x   w-full  pl-15 pr-10" >
             {/*CAMPO DE NOME*/}
             <p>Name</p>
             <input type="name" placeholder="Echinocereus Cactus" onChange={(e) => setName(e.target.value)}className="mt- py-2 px-6 bg-[#F1F5F9] text-[#334155] border-[#E2E8F0] border-2 placeholder-[#64748B] rounded-lg"/>
