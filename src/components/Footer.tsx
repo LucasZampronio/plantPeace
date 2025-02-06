@@ -20,16 +20,16 @@ export const Footer = () => {
                 <nav>
                     <ul  className="flex flex-col gap-4">
                         <li className="font-bold text-2xl pb-4">Community</li>
-                        <li className="hover:underline transition"><a href="https://www.linkedin.com/" target="_blank">LinkedIn</a></li>
-                        <li className="hover:underline transition"><a href="https://www.instagram.com/" target="_blank">Instagram</a></li>
-                        <li className="hover:underline transition"><a href="https://www.facebook.com/" target="_blank">Facebook</a></li>
+                        <li><a  className="hover:underline transition" href="https://www.linkedin.com/" target="_blank">LinkedIn</a></li>
+                        <li><a  className="hover:underline transition" href="https://www.instagram.com/" target="_blank">Instagram</a></li>
+                        <li><a  className="hover:underline transition" href="https://www.facebook.com/" target="_blank">Facebook</a></li>
                     </ul>
                 </nav>
             </div>
         </div>
         <div className="flex place-content-between items-center pt-7 border-t border-emerald-950">
             <a href="#"><img src={logo} alt="white logo with a jar and 3 leafs"/></a>
-            <p>Compassinhos®. All rights reserved.</p>
+            <a href="#"><p className="hover:underline transition">Compassinhos®. All rights reserved.</p></a>
         </div>
     </section>
   )
