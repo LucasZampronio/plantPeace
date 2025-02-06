@@ -5,7 +5,6 @@ import { InputField } from "./InputField";
 import Button from "./Button";
 import CheckboxField from "./CheckboxField";
 
-
 interface PlantFormProps {
   mode: "register" | "edit";
   initialData?: Partial<PlantFormData>;
@@ -17,11 +16,18 @@ const PlantForm = ({
   initialData,
   onSubmit,
 }: PlantFormProps) => {
-  const { formData, errors, isSubmitting, handleSubmit, handleCheckboxChange, handleChange } =
-    usePlantForm({
-      initialData,
-      onSubmit,
-    });
+  const {
+    formData,
+    errors,
+    isSubmitting,
+    handleSubmit,
+    handleCheckboxChange,
+    handleChange,
+    successMessage,
+  } = usePlantForm({
+    initialData,
+    onSubmit,
+  });
 
   const formConfig = {
     title: mode === "edit" ? "Edit Plant" : "Register Plant",
@@ -122,7 +128,7 @@ const PlantForm = ({
 
   return (
     <div className="flex w-full relative h-auto py-30 md:py-0 lg:py-0">
-      {/* div esquerda (form) */}
+      {/* Imagem de fundo */}
       <img
         src={nature}
         alt=""
@@ -133,26 +139,23 @@ const PlantForm = ({
           onSubmit={handleSubmit}
           className="flex flex-col justify-center items-center gap-2 rounded-2xl bg-white"
         >
-          {/* cabeçalho */}
+          {/* Cabeçalho */}
           <div className="flex flex-col items-start gap-1 sm:pr-0 pl-10 w-full max-w-lg">
             <h2 className="text-2xl font-extrabold bg-gradient-to-r from-emerald-800 to-emerald-700 bg-clip-text text-transparent">
               {formConfig.title}
             </h2>
             <p className="text-left text-gray-500 w-[400px] text-sm ">
               {formConfig.description}
-              {/* Fill out the form below to register your plant in our database. */}
             </p>
           </div>
-          {/* campos do form */}
+
+          {/* Campos do formulário */}
           <div className="flex flex-col sm:pl-10 sm:pr-10 w-full max-w-lg h-full">
-            {" "}
-            {/* percorrendo os inputs */}
             {inputFields.slice(0, 3).map((field) => (
               <div className="relative w-full mt-2" key={field.id}>
                 <InputField {...field} />
               </div>
             ))}
-            {/* colocando os campos input Preço e Desconto lado a lado, acessando o indice */}
             <div className="flex gap-4 w-full mt-4">
               <div className="relative w-1/2">
                 <InputField {...inputFields[3]} className="w-full" />
@@ -161,13 +164,11 @@ const PlantForm = ({
                 <InputField {...inputFields[4]} className="w-full" />
               </div>
             </div>
-            {/* outros campos */}
             {inputFields.slice(5).map((field) => (
               <div className="relative w-full mt-4" key={field.id}>
                 <InputField {...field} />
               </div>
             ))}
-            {/* checkbox */}
             <div className="relative w-full mt-4 mb-2">
               <CheckboxField
                 id="highlightItem"
@@ -176,7 +177,8 @@ const PlantForm = ({
               />
             </div>
           </div>
-          {/* erros gerais */}
+
+          {/* Erros gerais */}
           {errors.general && (
             <div className="mt-2 p-3 bg-red-100 text-red-700 rounded-lg flex items-center gap-2">
               <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
@@ -189,7 +191,8 @@ const PlantForm = ({
               <span className="text-sm">{errors.general}</span>
             </div>
           )}
-          {/* botao de submit do registro */}
+
+          {/* Botão de submit */}
           <Button
             type="submit"
             disabled={isSubmitting}
@@ -223,10 +226,23 @@ const PlantForm = ({
               formConfig.buttonText
             )}
           </Button>
+          {/* Mensagem de sucesso */}
+          {successMessage && (
+            <div className="mt-2 p-3 bg-green-100 text-green-700 rounded-lg flex items-center gap-2">
+              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                <path
+                  fillRule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zM9 7a1 1 0 112 0v4a1 1 0 11-2 0V7zm1 7a1 1 0 100 2 1 1 0 000-2z"
+                  clipRule="evenodd"
+                />
+              </svg>
+              <span className="text-sm">{successMessage}</span>
+            </div>
+          )}
         </form>
       </div>
 
-      {/* div direita (imagem) */}
+      {/* Imagem da direita */}
       <img
         src={loginBackground}
         alt=""

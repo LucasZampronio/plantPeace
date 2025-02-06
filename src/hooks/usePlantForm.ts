@@ -45,10 +45,11 @@ export function usePlantForm({ initialData, onSubmit }: UsePlantFormProps) {
   } & { general?: string }>({});
 
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [successMessage, setSuccessMessage] = useState<string | null>(null);
 
   const sanitizeInput = (value: string) => {
-    return value.trim().replace(/<[^>]*>?/gm, "");
-  };
+  return value.replace(/<[^>]*>?/gm, ""); 
+};
 
   const validateField = (name: string, value: string) => {
     const sanitizedValue = sanitizeInput(value);
@@ -119,8 +120,26 @@ export function usePlantForm({ initialData, onSubmit }: UsePlantFormProps) {
     if (isSubmitting || !validateForm()) return;
 
     setIsSubmitting(true);
-    try {
+    try { 
       await onSubmit(formData);
+
+      // Resetar os campos após envio bem-sucedido
+      setFormData({
+        name: "",
+        subtitle: "",
+        category: "",
+        price: "",
+        discountPorcentage: "",
+        description: "",
+        imageUrl: "",
+        highlightItem: false,
+      });
+
+      // Exibir mensagem de sucesso
+      setSuccessMessage("Formulário enviado com sucesso!");
+
+      // Remover mensagem após 3 segundos
+      setTimeout(() => setSuccessMessage(null), 3000);
     } catch (error) {
       setErrors({
         general: error instanceof Error ? error.message : ERROR_MESSAGES.GENERAL_ERROR,
@@ -138,5 +157,6 @@ export function usePlantForm({ initialData, onSubmit }: UsePlantFormProps) {
     handleSubmit,
     handleCheckboxChange,
     setFormData,
+    successMessage
   };
 }

@@ -5,30 +5,35 @@ import {
   useAuth,
 } from "@clerk/clerk-react";
 import PlantForm from "../components/PlantsForm";
-import { createPlant, Plant } from "../api/plantsApi";
+import { PlantFormData } from "../hooks/usePlantForm";
 
 export default function PlantsRegisterPage() {
-  //usando o hook useAuth do clerk para obter o token JWT
-  const { getToken } = useAuth();
+  const { userId } = useAuth(); // Obtém o ID do usuário logado
 
-  const handleSubmit = async (data: Plant) => {
+  // Função que será chamada quando o formulário for enviado
+  const handleSubmit = async (plantData: PlantFormData) => {
     try {
-      const plantData: Plant = {
-        ...data,
-        createdAt: new Date().toISOString(),
-      };
+      const response = await fetch("http://localhost:3001/plants", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          ...plantData, // Espalha os dados da planta
+          ownerId: userId, // Adiciona o ID do usuário logado aos dados da planta
+        }),
+      });
 
-      const token = await getToken();
-      if (!token) {
-        throw new Error("Token is null");
+      if (!response.ok) {
+        throw new Error("Erro ao registrar a planta");
       }
-      await createPlant(plantData, token);
 
-      console.log("Planta cadastrada com sucesso!");
-      alert("Planta registrada com sucesso!");
+      const data = await response.json();
+      console.log("Planta registrada com sucesso:", data);
+      // aqui da pra redirecionar o usuário ou mostrar uma mensagem de sucesso
     } catch (error) {
-      console.error("Erro ao cadastrar planta:", error);
-      alert("Erro ao cadastrar planta. Verifique os dados e tente novamente.");
+      console.error("Erro:", error);
+      // Aqui da pra mostrar uma mensagem de erro para o usuário
     }
   };
 
