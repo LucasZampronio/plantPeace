@@ -1,7 +1,7 @@
 import './App.css'
 import PlantsEditPage from './pages/PlantsEditPage';
 import PlantsRegisterPage from './pages/PlantsRegisterPage'
-// import Fourth from './components/HomePage/FourthSection'
+import Fourth from './components/HomePage/FourthSection'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import { SignedIn, SignedOut, RedirectToSignIn } from "@clerk/clerk-react";
 import { TempLoginPage } from './pages/TempLoginPage';
@@ -17,6 +17,12 @@ function App() {
         <Route path="/sign-in" element={<TempLoginPage />} />
         {/* Rota temporária de home */}
         <Route path="/" element={<TempHomePage />} />
+
+        <Route path="/carroussel" element={<Fourth />} />
+
+
+
+
         {/* ROTAS PROTEGIDAS */}
 
         {/* rota de registro de planta */}
@@ -40,6 +46,8 @@ function App() {
             </SignedIn>
           }
         />
+
+        
 
         {/* Nova rota de erro para usuários autenticados */}
         <Route

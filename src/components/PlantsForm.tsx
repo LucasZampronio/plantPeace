@@ -31,6 +31,7 @@ const PlantForm = ({
         : "Fill out the form below to register your plant in our database.",
   };
 
+  //criando um objeto com os campos do formulário pra facilitar a manipulação
   const inputFields = [
     {
       label: "Plant Name",
@@ -117,7 +118,7 @@ const PlantForm = ({
       <div className="flex flex-1 flex-col justify-center items-center w-full">
         <form
           onSubmit={handleSubmit}
-          className="flex flex-col justify-center items-center gap-2 rounded-2xl bg-white mt-3 mb-10"
+          className="flex flex-col justify-center items-center gap-2 rounded-2xl bg-white mt-0"
         >
           <img
             src={nature}
@@ -219,11 +220,11 @@ const PlantForm = ({
       </div>
 
       {/* div direita (imagem) */}
-      <div className="flex-1 hidden md:flex justify-center items-center w-full h-[calc(110vh-var(--header-height))]">
+      <div className="flex-1 hidden md:flex justify-center items-center w-full">
         <img
           src={loginBackgroung}
           alt=""
-          className="object-cover w-full h-full sticky object-[center_70%]"
+          className="object-cover w-full h-screen sticky object-[center_70%]"
         />
       </div>
     </div>

@@ -1,14 +1,5 @@
-@import "tailwindcss";
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
-
-@keyframes glitch {
-  0% { transform: translate(0); }
-  20% { transform: translate(-2px, 2px); }
-  40% { transform: translate(-2px, -2px); }
-  60% { transform: translate(2px, 2px); }
-  80% { transform: translate(2px, -2px); }
-  100% { transform: translate(0); }
-}
+@import "tailwindcss";
 
 @keyframes glitch2 {
   0% { transform: translate(0); }
@@ -19,26 +10,4 @@
   100% { transform: translate(0); }
 }
 
-@keyframes float {
-  0% { transform: translateY(0); opacity: 0.6; }
-  50% { transform: translateY(-10px); opacity: 0.8; }
-  100% { transform: translateY(0); opacity: 0.6; }
-}
-
-@keyframes wiggle {
-  0%, 100% { transform: rotate(0deg); }
-  25% { transform: rotate(2deg); }
-  50% { transform: rotate(-2deg); }
-  75% { transform: rotate(2deg); }
-}
-
-@keyframes shine {
-  from { opacity: 0.1; }
-  to { opacity: 0.4; }
-}
-
-.animate-glitch { animation: glitch 0.5s infinite; }
 .animate-glitch2 { animation: glitch2 0.5s infinite; }
-.animate-float { animation: float 3s infinite ease-in-out; }
-.animate-wiggle { animation: wiggle 0.4s infinite ease-in-out; }
-.animate-shine { animation: shine 1.5s infinite alternate; }
