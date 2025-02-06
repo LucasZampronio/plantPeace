@@ -13,15 +13,13 @@ function App() {
     <Router>
       <Routes>
         {/* rotas publicas */}
+
         {/* Rota temporária de login */}
         <Route path="/sign-in" element={<TempLoginPage />} />
         {/* Rota temporária de home */}
         <Route path="/" element={<TempHomePage />} />
 
         <Route path="/carroussel" element={<Fourth />} />
-
-
-
 
         {/* ROTAS PROTEGIDAS */}
 

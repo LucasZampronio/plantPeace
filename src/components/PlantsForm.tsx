@@ -1,9 +1,10 @@
 import { PlantFormData, usePlantForm } from "../hooks/usePlantForm";
-import loginBackgroung from "../images/defautplant.png";
+import loginBackground from "../images/defautplant.png";
 import nature from "../images/nature.png";
 import { InputField } from "./InputField";
 import Button from "./Button";
 import CheckboxField from "./CheckboxField";
+
 
 interface PlantFormProps {
   mode: "register" | "edit";
@@ -16,7 +17,7 @@ const PlantForm = ({
   initialData,
   onSubmit,
 }: PlantFormProps) => {
-  const { formData, errors, isSubmitting, handleSubmit, handleCheckboxChange } =
+  const { formData, errors, isSubmitting, handleSubmit, handleCheckboxChange, handleChange } =
     usePlantForm({
       initialData,
       onSubmit,
@@ -43,6 +44,7 @@ const PlantForm = ({
       name: "name",
       autoComplete: "name",
       value: formData.name,
+      onChange: handleChange,
     },
     {
       label: "Plant Subtitle",
@@ -54,6 +56,7 @@ const PlantForm = ({
       name: "subtitle",
       autoComplete: "subtitle",
       value: formData.subtitle,
+      onChange: handleChange,
     },
     {
       label: "Category",
@@ -65,6 +68,7 @@ const PlantForm = ({
       name: "category",
       autoComplete: "category",
       value: formData.category,
+      onChange: handleChange,
     },
     {
       label: "Price",
@@ -76,6 +80,7 @@ const PlantForm = ({
       name: "price",
       autoComplete: "price",
       value: formData.price,
+      onChange: handleChange,
     },
     {
       label: "Discount Percentage",
@@ -87,6 +92,7 @@ const PlantForm = ({
       name: "discountPorcentage",
       autoComplete: "discountPorcentage",
       value: formData.discountPorcentage,
+      onChange: handleChange,
     },
     {
       label: "Description",
@@ -98,6 +104,7 @@ const PlantForm = ({
       name: "description",
       autoComplete: "description",
       value: formData.description,
+      onChange: handleChange,
     },
     {
       label: "Image URL",
@@ -109,22 +116,23 @@ const PlantForm = ({
       name: "imageUrl",
       autoComplete: "imageUrl",
       value: formData.imageUrl,
+      onChange: handleChange,
     },
   ];
 
   return (
-    <div className="main-content flex w-full">
+    <div className="main-content flex w-full relative h-auto">
       {/* Div esquerda (Formulário) */}
-      <div className="flex flex-1 flex-col justify-center items-center w-full">
+      <img
+        src={nature}
+        alt=""
+        className="absolute top-0 left-0 w-full h-full object-cover opacity-50 z-0"
+      />
+      <div className="flex flex-1 flex-col justify-center items-center">
         <form
           onSubmit={handleSubmit}
-          className="flex flex-col justify-center items-center gap-2 rounded-2xl bg-white mt-0"
+          className="flex flex-col justify-center items-center gap-2 rounded-2xl bg-white"
         >
-          <img
-            src={nature}
-            alt=""
-            className="absolute top-0 left-0 w-full h-full object-cover opacity-50 z-0"
-          />
           {/* cabeçalho */}
           <div className="flex flex-col items-start gap-1 sm:pr-0 pl-10 w-full max-w-lg">
             <h2 className="text-2xl font-extrabold bg-gradient-to-r from-emerald-800 to-emerald-700 bg-clip-text text-transparent">
@@ -220,13 +228,18 @@ const PlantForm = ({
       </div>
 
       {/* div direita (imagem) */}
-      <div className="flex-1 hidden md:flex justify-center items-center w-full">
+      <img
+        src={loginBackground}
+        alt=""
+        className="flex-1 hidden md:flex object-cover w-full h-full max-h-[800px] object-[center_80%] z-1"
+      />
+      {/* <div className="flex-1 hidden md:flex h-full">
         <img
-          src={loginBackgroung}
+          src={loginBackground}
           alt=""
-          className="object-cover w-full h-screen sticky object-[center_70%]"
+          className="object-cover w-full h-screen object-[center_100%] z-1"
         />
-      </div>
+      </div> */}
     </div>
   );
 };

@@ -10,12 +10,12 @@ export const ErrorPage = () => {
   });
 
   return (
-    <div className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-green-900 via-green-800 to-green-900 text-white overflow-hidden">
+    <div className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-emerald-900 via-emerald-800 to-emerald-900 text-white overflow-hidden">
       {/* Partículas de poeira/flor voando */}
       {[...Array(15)].map((_, i) => (
         <div
           key={i}
-          className="absolute w-1 h-1 bg-green-200 opacity-60 rounded-full blur-[2px] animate-float"
+          className="absolute w-1 h-1 bg-emerald-200 opacity-60 rounded-full blur-[2px] animate-float"
           style={{
             ...getRandomPosition(),
             animationDelay: `${i * 0.3}s`,
@@ -23,8 +23,8 @@ export const ErrorPage = () => {
         />
       ))}
 
-      {/* Container principal com efeito vidro */}
-      <div className="relative bg-green-800/40 border border-green-500/30 rounded-xl shadow-xl backdrop-blur-md p-8 text-center w-[60%] max-w-2xl">
+      {/* container principal com efeito vidro */}
+      <div className="relative bg-emerald-800/40 border border-emerald-500/30 rounded-xl shadow-xl backdrop-blur-md p-8 text-center w-[60%] max-w-2xl">
         {/* Planta com brilho de erro */}
         <div className="relative w-120 h-80 mx-auto mb-2">
           <img

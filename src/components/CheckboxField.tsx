@@ -17,7 +17,7 @@ const CheckboxField: React.FC<CheckboxFieldProps> = ({
         type="checkbox"
         id={id}
         className="form-checkbox"
-        onChange={(e) => onChange(e.target.checked, id)} // Captura o estado do checkbox
+        onChange={(e) => onChange(e.target.checked, id)} 
       />
       <label htmlFor={id} className="text-sm">
         {label}
