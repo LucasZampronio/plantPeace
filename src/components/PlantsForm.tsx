@@ -121,8 +121,8 @@ const PlantForm = ({
   ];
 
   return (
-    <div className="main-content flex w-full relative h-auto">
-      {/* Div esquerda (Formulário) */}
+    <div className="flex w-full relative h-auto py-30 md:py-0 lg:py-0">
+      {/* div esquerda (form) */}
       <img
         src={nature}
         alt=""
@@ -142,7 +142,6 @@ const PlantForm = ({
               {formConfig.description}
               {/* Fill out the form below to register your plant in our database. */}
             </p>
-            <div className=" w-44 h-1 bg-gradient-to-r from-emerald-500 to-black rounded-full opacity-80" />
           </div>
           {/* campos do form */}
           <div className="flex flex-col sm:pl-10 sm:pr-10 w-full max-w-lg h-full">
@@ -194,7 +193,7 @@ const PlantForm = ({
           <Button
             type="submit"
             disabled={isSubmitting}
-            className="w-110 flex justify-center bg-gradient-to-r from-emerald-700 to-emerald-800 text-white p-1 rounded-xl font-bold shadow-lg hover:shadow-emerald-500/30 hover:scale-[1.02] transition-transform duration-200 disabled:opacity-75 disabled:cursor-not-allowed z-1"
+            className="w-110 sm:w-110 md:w-90 lg:w-110 flex justify-center bg-gradient-to-r from-emerald-700 to-emerald-800 text-white p-1 rounded-xl font-bold shadow-lg hover:shadow-emerald-500/30 hover:scale-[1.02] transition-transform duration-200 disabled:opacity-75 disabled:cursor-not-allowed z-1"
           >
             {isSubmitting ? (
               <span className="flex items-center gap-2">
@@ -231,15 +230,8 @@ const PlantForm = ({
       <img
         src={loginBackground}
         alt=""
-        className="flex-1 hidden md:flex object-cover w-full h-full max-h-[800px] object-[center_80%] z-1"
+        className="flex-1 hidden md:flex object-cover w-full h-full max-h-[850px] object-[center_80%] z-1"
       />
-      {/* <div className="flex-1 hidden md:flex h-full">
-        <img
-          src={loginBackground}
-          alt=""
-          className="object-cover w-full h-screen object-[center_100%] z-1"
-        />
-      </div> */}
     </div>
   );
 };

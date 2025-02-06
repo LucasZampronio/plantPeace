@@ -1,74 +1,73 @@
-import './App.css'
-import PlantsEditPage from './pages/PlantsEditPage';
-import PlantsRegisterPage from './pages/PlantsRegisterPage'
-import Fourth from './components/HomePage/FourthSection'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import "./App.css";
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import { SignedIn, SignedOut, RedirectToSignIn } from "@clerk/clerk-react";
-import { TempLoginPage } from './pages/TempLoginPage';
-import { TempHomePage } from './pages/TempHomePage';
-import ErrorPage from './pages/ErrorPage';
+import Layout from "./components/Layout";
+import HomePage from "./pages/HomePage";
+import PlantsRegisterPage from "./pages/PlantsRegisterPage";
+import PlantsEditPage from "./pages/PlantsEditPage";
+import ErrorPage from "./pages/ErrorPage";
+// import SignInPage from "./pages/SignInPage";
+// import SignUpPage from "./pages/SignUpPage";
+
+// componente para rotas protegidas
+const ProtectedRoute = ({ children }: { children: React.ReactNode }) => {
+  return (
+    <>
+      <SignedIn>{children}</SignedIn>
+      <SignedOut>
+        <RedirectToSignIn />
+      </SignedOut>
+    </>
+  );
+};
+
+// configurando roteador (aqui define as rotas da aplicacao)
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Layout />,
+    children: [
+      // rota pública
+      { index: true, element: <HomePage /> },
+
+      // rotas protegidas
+      {
+        path: "/plants/register",
+        element: (
+          <ProtectedRoute>
+            <PlantsRegisterPage />
+          </ProtectedRoute>
+        ),
+      },
+      {
+        path: "/plants/:id",
+        element: (
+          <ProtectedRoute>
+            <PlantsEditPage />
+          </ProtectedRoute>
+        ),
+      },
+
+      // rota de erro
+      {
+        path: "*",
+        element: <ErrorPage />,
+      },
+    ],
+  },
+  // rotas de autenticação fora do Layout
+  {
+    path: "/sign-in",
+    element: <ErrorPage />,
+  },
+  {
+    path: "/sign-up",
+    element: <ErrorPage />,
+  },
+]);
 
 function App() {
-  return (
-    <Router>
-      <Routes>
-        {/* rotas publicas */}
-
-        {/* Rota temporária de login */}
-        <Route path="/sign-in" element={<TempLoginPage />} />
-        {/* Rota temporária de home */}
-        <Route path="/" element={<TempHomePage />} />
-
-        <Route path="/carroussel" element={<Fourth />} />
-
-        {/* ROTAS PROTEGIDAS */}
-
-        {/* rota de registro de planta */}
-        {/* http://localhost:5173/plants/register */}
-        <Route
-          path="/plants/register"
-          element={
-            <SignedIn>
-              <PlantsRegisterPage />
-            </SignedIn>
-          }
-        />
-
-        {/* rota de edição de planta */}
-        {/* http://localhost:5173/plants/edit */}
-        <Route
-          path="/plants/:id"
-          element={
-            <SignedIn>
-              <PlantsEditPage />
-            </SignedIn>
-          }
-        />
-
-        
-
-        {/* Nova rota de erro para usuários autenticados */}
-        <Route
-          path="*"
-          element={
-            <SignedIn>
-              <ErrorPage /> {/* Página de erro personalizada */}
-            </SignedIn>
-          }
-        />
-
-        {/* Redirecionamento para não autenticados */}
-        <Route
-          path="*"
-          element={
-            <SignedOut>
-              <RedirectToSignIn />
-            </SignedOut>
-          }
-        />
-      </Routes>
-    </Router>
-  );
+  return <RouterProvider router={router} />;
 }
 
-export default App
+export default App;
