@@ -5,8 +5,10 @@ import { RegisterForm } from "../components/Login/register";
 
 // Definindo o tipo para os dados do usuário
 interface UserData {
+  name:string;
   email: string;
   clerkUserId: string;
+  stayConnected?: boolean;
 }
 
 const RegisterPage = () => {
@@ -37,10 +39,11 @@ const RegisterPage = () => {
   };
 
   const handleRegister = async (data: {
-    email: string;
-    password: string;
-    stayConnected?: boolean;
-  }) => {
+      name: string;
+      email: string;
+      password: string;
+      stayConnected?: boolean;
+    }) => {
     try {
       if (!signUp) {
         setError(
@@ -53,6 +56,7 @@ const RegisterPage = () => {
       const signUpResponse = await signUp.create({
         emailAddress: data.email,
         password: data.password,
+        firstName: data.name
       });
 
       const userId = signUpResponse.createdUserId; // obtendo o ID do user criado
@@ -61,6 +65,7 @@ const RegisterPage = () => {
 
       // dados do user para salvar no db.json
       const userData: UserData = {
+        name: data.name,
         email: data.email,
         clerkUserId: userId ?? "", 
       };
@@ -69,7 +74,8 @@ const RegisterPage = () => {
       await saveUserToDB(userData);
 
       // redirecionando para a página de login após o cadastro
-      navigate("/sign-in");
+      navigate("/");
+      navigate(0);
     } catch (error) {
       console.error("Erro:", error);
       setError("Erro ao registrar usuário. Tente novamente.");

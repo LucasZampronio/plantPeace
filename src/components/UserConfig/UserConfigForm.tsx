@@ -70,7 +70,7 @@ const UserConfigForm: React.FC<UserConfigFormProps> = ({
           <input
             type="text"
             value={nome}
-            placeholder="Echinocereus Cactus"
+            placeholder="Name"
             onChange={handleNomeChange}
             className="mt- py-2 px-6 bg-[#F1F5F9] text-[#334155] border-[#E2E8F0] border-2 placeholder-[#64748B] rounded-lg"
           />
@@ -79,7 +79,7 @@ const UserConfigForm: React.FC<UserConfigFormProps> = ({
           <input
             type="email"
             value={email}
-            placeholder="A majestic addition to your plant collection"
+            placeholder="Email"
             onChange={handleEmailChange}
             className="mt- py-2 px-6 bg-[#F1F5F9] text-[#334155] border-[#E2E8F0] border-2 placeholder-[#64748B] rounded-lg"
           />
