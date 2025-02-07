@@ -9,6 +9,7 @@ import ErrorPage from "./pages/ErrorPage";
 import RegisterPage from "./pages/RegisterPage";
 import LoginPage from "./pages/LoginPage";
 import PlantListPage from "./pages/PlantsListPage";
+import UserConfigPage from "./pages/UserConfigPage";
 
 // componente para rotas protegidas
 const ProtectedRoute = ({ children }: { children: React.ReactNode }) => {
@@ -35,6 +36,15 @@ const router = createBrowserRouter([
         element: (
           <ProtectedRoute>
             <PlantListPage />
+          </ProtectedRoute>
+        ),
+      },
+
+      {
+        path: "/user/config/:userId",
+        element: (
+          <ProtectedRoute>
+            <UserConfigPage />
           </ProtectedRoute>
         ),
       },
