@@ -82,6 +82,7 @@ export default function PlantsEditPage() {
             initialData={initialData}
             onSubmit={handleSubmit}
             successMessage={successMessage}
+            onCancel={() => navigate(`/plants/detail/${id}`)}
           />
         ) : (
           <p>Carregando...</p>
