@@ -6,7 +6,10 @@ module.exports = {
     ],
     theme: {
       extend: {
-        inter: ['Inter', 'sans-serif']
+        inter: ['Inter', 'sans-serif'],
+        colors: {
+          grape:'#f1f5f9',
+        }
       },
     }, 
     plugins: [],

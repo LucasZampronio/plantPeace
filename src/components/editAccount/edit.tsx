@@ -1,33 +1,49 @@
 import './edit.css'      
 {/*Vou usar inline mesmo*/} 
-import { useState } from 'react';
+import { useEffect,useState } from 'react';
 
-const edit: React.FC = () => {
-  {/*Ao inves de criar, buscar por id e renomear os dados*/}
+const edit: React.FC<{usuarioid:number}> = ({usuarioid}) => {
+  /*Ao inves de criar, buscar por id e renomear os dados*/
   const [nome, setNome] = useState<string>('');
   const [email, setEmail] = useState<string>('');
   const [senha, setSenha] = useState<string>('');
 
+  useEffect(() =>{
+    const fetchusuarioData = async () => {
+      const respons = await fetch(`http://localhost:3001/usuarios/${usuarioid}}`)
+      if (respons.ok){
+        const data = await respons.json()
+        setNome(data.nome)
+        setEmail(data.email)
+        setSenha(data.senha)
+      } else{
+        alert('Não buscou o id do clerk')
+      }
+    }
+    fetchusuarioData();
+
+  },[usuarioid]);
  
-  const handleNomeChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setNome(e.target.value);
+  const handleNomeChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setNome(event.target.value);
   };
-  const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setEmail(e.target.value);
-  };
-
-
-  const handleSenhaChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setSenha(e.target.value);
+  const handleEmailChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setEmail(event.target.value);
   };
 
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
+  const handleSenhaChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setSenha(event.target.value);
+  };
+
+
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
     const usuario = { nome, email, senha }; 
       {/*API*/} 
-    const response = await fetch('http://localhost:3001/usuarios', {
-      method: 'POST',
+    const response = await fetch('http://localhost:3001/usuarios{$userid}', {
+      //Mudar a requisição depois
+      method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
       },
@@ -37,10 +53,10 @@ const edit: React.FC = () => {
   
     if (response.ok) {
       const data = await response.json(); 
-      alert(`Usuário criado com sucesso: ${data.nome} Email:${data.email} Senha:${data.senha}`); 
+      alert(`Usuário atualizado: ${data.nome} Email:${data.email} Senha:${data.senha}`); 
     } else {
      
-      alert('Erro ao criar usuário'); 
+      alert('Erro ao atualizar'); 
     }
   };
 
@@ -68,7 +84,7 @@ const edit: React.FC = () => {
             <p>Password</p>
             <input type="password" value={senha} placeholder="***********" onChange={handleSenhaChange} className="mt- py-2 px-6 bg-[#F1F5F9] text-[#334155] border-[#E2E8F0] border-2 placeholder-[#64748B] rounded-lg"/>
             {/*BOTÃO DE ENVIAR*/}
-            <button className="mt-4 py-2 px-6 bg-[#064E3B] text-white rounded-lg hover:bg-[#267355] transition-colors"> Edit account</button>
+            <button type='submit' className="mt-4 py-2 px-6 bg-[#064E3B] text-white rounded-lg hover:bg-[#267355] transition-colors"> Edit account</button>
           </form>
         </div>
         {/*IMAGEM DA DIREITA*/}
