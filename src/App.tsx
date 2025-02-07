@@ -1,7 +1,8 @@
 import './App.css'
+import { AboutUs } from './components/AboutUs'
 import { Footer } from './components/Footer'
 import { Header } from './components/Header'
-import { Home } from './components/Home'
+// import { Home } from './components/Home'
 
 function App() {
 
@@ -9,7 +10,7 @@ function App() {
     <>
     <Header />
     <div className='h-[89px]'></div>
-    <Home />
+    <AboutUs />
     <Footer />
     </>
   )
