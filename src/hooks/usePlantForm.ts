@@ -123,7 +123,7 @@ export function usePlantForm({ initialData, onSubmit }: UsePlantFormProps) {
     try { 
       await onSubmit(formData);
 
-      // Resetar os campos após envio bem-sucedido
+      // reseta os campos após envio bem-sucedido
       setFormData({
         name: "",
         subtitle: "",
@@ -135,10 +135,10 @@ export function usePlantForm({ initialData, onSubmit }: UsePlantFormProps) {
         highlightItem: false,
       });
 
-      // Exibir mensagem de sucesso
+      // exibe mensagem de sucesso
       setSuccessMessage("Formulário enviado com sucesso!");
 
-      // Remover mensagem após 3 segundos
+      // remove mensagem após 3 segundos
       setTimeout(() => setSuccessMessage(null), 3000);
     } catch (error) {
       setErrors({

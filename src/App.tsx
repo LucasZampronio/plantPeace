@@ -6,8 +6,8 @@ import HomePage from "./pages/HomePage";
 import PlantsRegisterPage from "./pages/PlantsRegisterPage";
 import PlantsEditPage from "./pages/PlantsEditPage";
 import ErrorPage from "./pages/ErrorPage";
-// import SignInPage from "./pages/SignInPage";
-// import SignUpPage from "./pages/SignUpPage";
+import RegisterPage from "./pages/RegisterPage";
+import LoginPage from "./pages/LoginPage";
 
 // componente para rotas protegidas
 const ProtectedRoute = ({ children }: { children: React.ReactNode }) => {
@@ -55,14 +55,14 @@ const router = createBrowserRouter([
       },
     ],
   },
-  // rotas de autenticação fora do Layout
+  // rotas de autenticação fora do layout (que nao tem a header e o footer, ou seja, page de login e cadastro)
   {
     path: "/sign-in",
-    element: <ErrorPage />,
+    element: <LoginPage />,
   },
   {
     path: "/sign-up",
-    element: <ErrorPage />,
+    element: <RegisterPage />,
   },
 ]);
 

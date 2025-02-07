@@ -19,8 +19,8 @@ export default function PlantsRegisterPage() {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          ...plantData, // Espalha os dados da planta
-          ownerId: userId, // Adiciona o ID do usuário logado aos dados da planta
+          ...plantData, 
+          ownerId: userId, 
         }),
       });
 
@@ -33,7 +33,7 @@ export default function PlantsRegisterPage() {
       // aqui da pra redirecionar o usuário ou mostrar uma mensagem de sucesso
     } catch (error) {
       console.error("Erro:", error);
-      // Aqui da pra mostrar uma mensagem de erro para o usuário
+      // aqui da pra mostrar uma mensagem de erro para o usuário
     }
   };
 

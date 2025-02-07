@@ -2,51 +2,27 @@
   "plants": [
     {
       "name": "teste",
-      "subtitle": "testando",
-      "category": "cacto",
-      "price": "230",
-      "discountPorcentage": "20",
-      "description": "ssssf",
-      "imageUrl": "https://blog.emania.com.br/wp-content/uploads/2016/02/direitos-autorais-e-de-imagem.jpg",
-      "highlightItem": false,
+      "subtitle": "teste",
+      "category": "teste",
+      "price": "1",
+      "discountPorcentage": "1",
+      "description": "teste",
+      "imageUrl": "https://teste",
+      "highlightItem": true,
       "ownerId": "user_2sdljtcmTPLemdloL3NgAEJpP1m",
+      "id": 1
+    }
+  ],
+  "users": [
+    {
+      "email": "admin@gmail.com",
+      "clerkUserId": "sess_2shK0MuaPEBfgDcnA3xMFkMKYLX",
       "id": 1
     },
     {
-      "name": "testando 2",
-      "subtitle": "com espaco",
-      "category": "aalalalal",
-      "price": "100",
-      "discountPorcentage": "10",
-      "description": "alalalala",
-      "imageUrl": "https://blog.emania.com.br/wp-content/uploads/2016/02/direitos-autorais-e-de-imagem.jpg",
-      "highlightItem": false,
-      "ownerId": "user_2sdljtcmTPLemdloL3NgAEJpP1m",
+      "email": "manurodrig@gmail.com",
+      "clerkUserId": "",
       "id": 2
-    },
-    {
-      "name": "testando oficialmente",
-      "subtitle": "testando oficialmente",
-      "category": "testando",
-      "price": "100",
-      "discountPorcentage": "10",
-      "description": "descricao aleatoria",
-      "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCJsLKLfoI-V1WAbdYAJf7NNrO2ei208WOfw&s",
-      "highlightItem": true,
-      "ownerId": "user_2sdljtcmTPLemdloL3NgAEJpP1m",
-      "id": 3
-    },
-    {
-      "name": "testando novamente",
-      "subtitle": "lalala",
-      "category": "lalal",
-      "price": "1",
-      "discountPorcentage": "22",
-      "description": "lalala",
-      "imageUrl": "https://proex.ufpa.br/images/galeria_em_artigos/image03_grd.png",
-      "highlightItem": true,
-      "ownerId": "user_2sdljtcmTPLemdloL3NgAEJpP1m",
-      "id": 4
     }
   ]
 }
