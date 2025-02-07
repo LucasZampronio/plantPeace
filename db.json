@@ -1,7 +1,7 @@
 {
   "plants": [
     {
-      "name": "plantas",
+      "name": "oi",
       "subtitle": "teste",
       "category": "teste",
       "price": "1",
@@ -9,11 +9,11 @@
       "description": "teste",
       "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTk4EQlVGe_0ZELKyUdvE3ca97PpQcyhOTanw&s",
       "highlightItem": true,
-      "ownerId": "user_2sdljtcmTPLemdloL3NgAEJpP1m",
+      "ownerId": "user_2siszFZLiwwhNAqLBmpI6AqRm9a",
       "id": 1
     },
     {
-      "name": "Planta Carnívora",
+      "name": "Planta Carnívoras",
       "subtitle": "A majestic plant",
       "category": "Carnívora",
       "price": "100",
@@ -21,8 +21,20 @@
       "description": "plana carnivora",
       "imageUrl": "https://images.tcdn.com.br/img/img_prod/1162228/planta_carnivora_p9_189_1_0075cc5c135c646db16c801db04ce8c0.jpg",
       "highlightItem": false,
-      "ownerId": "user_2sdljtcmTPLemdloL3NgAEJpP1m",
+      "ownerId": "user_2sh76VG2W5Mx211U2FWG1dOlsh6",
       "id": 2
+    },
+    {
+      "name": "planta marcus",
+      "subtitle": "marcus",
+      "category": "marcus",
+      "price": "222",
+      "discountPorcentage": "22",
+      "description": "aaaaaaaa",
+      "imageUrl": "https://images.ecycle.com.br/wp-content/uploads/2022/09/27153826/hassan-pasha-jxf1k1TS07s-unsplash-1.jpg.webp",
+      "highlightItem": false,
+      "ownerId": "user_2siszFZLiwwhNAqLBmpI6AqRm9a",
+      "id": 3
     }
   ],
   "users": [
@@ -42,14 +54,45 @@
       "id": 3
     },
     {
+      "nome": "manu",
       "email": "manuella.rodrigues.dev@gmail.com",
-      "clerkUserId": "user_2sid8tWNCxAV2TmmkMDyNozQWQj",
+      "senha": "j5#n}B6@Hx6]",
       "id": 4
     },
     {
       "email": "manuella.rodrigues.dev@gmail.com",
       "clerkUserId": "sess_2sidIBJmpEym1WNkaUNH9IZPRNR",
       "id": 5
+    },
+    {
+      "email": "manuella.rodrigues.dev@gmail.com",
+      "clerkUserId": "sess_2sigj2vDyHPWQ0quxLT724TrORY",
+      "id": 6
+    },
+    {
+      "email": "admin@gmail.com",
+      "clerkUserId": "sess_2sij7TeTq0MyCiYFYCuvulDJZoF",
+      "id": 7
+    },
+    {
+      "email": "admin@gmail.com",
+      "clerkUserId": "sess_2simFn6gGCuEB2g1zrDzReH9IBi",
+      "id": 8
+    },
+    {
+      "email": "manuella.rodrigues.dev@gmail.com",
+      "clerkUserId": "sess_2sinpmaGZiWwOfpF8GsIuazFQvT",
+      "id": 9
+    },
+    {
+      "email": "marcus@gmail.com",
+      "clerkUserId": "user_2siszFZLiwwhNAqLBmpI6AqRm9a",
+      "id": 10
+    },
+    {
+      "email": "marcus@gmail.com",
+      "clerkUserId": "sess_2sit5nhZJ59dcweLOJiSBVmYyJO",
+      "id": 11
     }
   ],
   "carouselItems": [

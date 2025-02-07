@@ -1,47 +1,51 @@
 import { useState, useEffect } from "react";
-import { useAuth } from "@clerk/clerk-react"; // Importando o hook useAuth
-import { useParams, useNavigate } from "react-router-dom";
+import { useAuth, useUser } from "@clerk/clerk-react";
+import { useNavigate } from "react-router-dom"; // Remova useParams
 import UserConfigForm from "../components/UserConfig/UserConfigForm";
 
 const UserConfigPage = () => {
-  const { userId } = useParams<{ userId: string }>(); // Pega o ID do usuário da URL
-  console.log("userId:", userId);
-  const { getToken } = useAuth(); // Obtém a função getToken
+  const navigate = useNavigate();
+  const { getToken } = useAuth();
+  const { user } = useUser();
 
   interface UserData {
     nome: string;
     email: string;
     senha: string;
-    username?: string; // Adicionando a propriedade para username
+    username?: string;
+    id: string;
   }
 
   const [userData, setUserData] = useState<UserData | null>(null);
   const [successMessage, setSuccessMessage] = useState<string | null>(null);
-  const navigate = useNavigate();
 
   useEffect(() => {
+    // Verifica se o usuário está autenticado
+    if (!user) {
+      navigate("/sign-in"); // Redireciona se não estiver logado
+      return;
+    }
+
     const fetchUserData = async () => {
       try {
-        // Obtendo o token do Clerk
         const token = await getToken();
-
-        // A URL do endpoint de usuários deve corresponder à sua estrutura de dados no servidor
-        const response = await fetch(`http://localhost:3001/users/${userId}`, {
-          method: "GET",
-          headers: {
-            Authorization: `Bearer ${token}`, // Passando o token no cabeçalho da requisição
-          },
-        });
+        
+        // Usa o ID do Clerk diretamente
+        const response = await fetch(
+          `http://localhost:3001/users?clerkUserId=${user.id}`,
+          {
+            method: "GET",
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          }
+        );
 
         if (response.ok) {
           const data = await response.json();
-          console.log("Dados do usuário retornados pela API:", data);
-
-          // Atualizando o estado com os dados do usuário
           setUserData(data);
         } else {
           setSuccessMessage("Usuário não encontrado ou não autorizado.");
-          navigate("/"); // Redireciona caso o usuário não seja encontrado ou não seja o usuário correto
         }
       } catch (error) {
         console.error("Erro:", error);
@@ -50,7 +54,7 @@ const UserConfigPage = () => {
     };
 
     fetchUserData();
-  }, [userId, navigate, getToken]);
+  }, [navigate, getToken, user]); // Remova userId das dependências
 
   const handleSubmit = async (usuario: {
     nome: string;
@@ -58,16 +62,21 @@ const UserConfigPage = () => {
     senha: string;
   }) => {
     try {
-      const token = await getToken(); // Obtendo o token para a requisição
+      if (!user) return;
 
-      const response = await fetch(`http://localhost:3001/usuarios/${userId}`, {
-        method: "PUT", // Método PUT para editar usuário
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${token}`, // Passando o token no cabeçalho da requisição
-        },
-        body: JSON.stringify(usuario),
-      });
+      const token = await getToken();
+      // Usa o ID do Clerk diretamente
+      const response = await fetch(
+        `http://localhost:3001/users/${userData?.id}`,
+        {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+          body: JSON.stringify(usuario),
+        }
+      );
 
       if (response.ok) {
         const data = await response.json();
@@ -83,13 +92,11 @@ const UserConfigPage = () => {
     }
   };
 
-  // Aqui você pode mostrar os dados do usuário, incluindo o username
   return (
     <div>
       {userData ? (
         <div>
-          <p>Username: {userData.username || "Não disponível"}</p>{" "}
-          {/* Exibindo o username */}
+          <p>Username: {userData.username || "Não disponível"}</p>
           <UserConfigForm onSubmit={handleSubmit} user={userData} />
         </div>
       ) : (

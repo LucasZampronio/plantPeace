@@ -40,6 +40,7 @@ const UserConfigForm: React.FC<UserConfigFormProps> = ({
 
   // UseEffect para garantir que os campos sejam atualizados quando `initialData` mudar
   useEffect(() => {
+    console.log("Dados recebidos no formulário:", user);
     if (user) {
       setNome(user.nome);
       setEmail(user.email);
