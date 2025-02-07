@@ -7,10 +7,22 @@
       "price": "1",
       "discountPorcentage": "1",
       "description": "teste",
-      "imageUrl": "https://teste",
+      "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTk4EQlVGe_0ZELKyUdvE3ca97PpQcyhOTanw&s",
       "highlightItem": true,
       "ownerId": "user_2sdljtcmTPLemdloL3NgAEJpP1m",
       "id": 1
+    },
+    {
+      "name": "Planta Carnívora",
+      "subtitle": "A majestic plant",
+      "category": "Carnívora",
+      "price": "100",
+      "discountPorcentage": "10",
+      "description": "plana carnivora",
+      "imageUrl": "https://images.tcdn.com.br/img/img_prod/1162228/planta_carnivora_p9_189_1_0075cc5c135c646db16c801db04ce8c0.jpg",
+      "highlightItem": false,
+      "ownerId": "user_2sdljtcmTPLemdloL3NgAEJpP1m",
+      "id": 2
     }
   ],
   "users": [
@@ -36,28 +48,40 @@
       "title": "Echinocereus Cactus",
       "price": "$49.99",
       "image": "https://static.wixstatic.com/media/1da931_870e8d00b691472bbd2e3c2792d722b6~mv2.jpg/v1/fill/w_288,h_288,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/1da931_870e8d00b691472bbd2e3c2792d722b6~mv2.jpg",
-      "tags": ["Indoor", "Cactus"]
+      "tags": [
+        "Indoor",
+        "Cactus"
+      ]
     },
     {
       "id": 2,
       "title": "Echinocereus Cactus",
       "price": "$69.99",
       "image": "https://blog.polipet.com.br/wp-content/uploads/2023/01/AdobeStock_436215405-445x445.jpeg",
-      "tags": ["Indoor", "Cactus"]
+      "tags": [
+        "Indoor",
+        "Cactus"
+      ]
     },
     {
       "id": 3,
       "title": "Echinocereus Cactus",
       "price": "$39.99",
       "image": "https://static.itdg.com.br/images/622-auto/4eb9fbe4784c9c80c2aeab06e8096ab6/cacto-2-.jpg",
-      "tags": ["Indoor", "Cactus"]
+      "tags": [
+        "Indoor",
+        "Cactus"
+      ]
     },
     {
       "id": 4,
       "title": "Epipremnum aureum",
       "price": "$29.99",
       "image": "https://images.tcdn.com.br/img/img_prod/422498/cactos_flor_estrela_do_mar_estapelia_gigante_stapelia_hirsuta_huernia_belli_plantas_1191_1_a654856c1b04565029170eb73fe1e09d.jpg",
-      "tags": ["Indoor", "Cactus"]
+      "tags": [
+        "Indoor",
+        "Cactus"
+      ]
     }
   ]
 }

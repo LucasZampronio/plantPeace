@@ -8,6 +8,7 @@ import PlantsEditPage from "./pages/PlantsEditPage";
 import ErrorPage from "./pages/ErrorPage";
 import RegisterPage from "./pages/RegisterPage";
 import LoginPage from "./pages/LoginPage";
+import PlantListPage from "./pages/PlantsListPage";
 
 // componente para rotas protegidas
 const ProtectedRoute = ({ children }: { children: React.ReactNode }) => {
@@ -29,6 +30,14 @@ const router = createBrowserRouter([
     children: [
       // rota pública
       { index: true, element: <HomePage /> },
+      {
+        path: "/plants/list",
+        element: (
+          <ProtectedRoute>
+            <PlantListPage />
+          </ProtectedRoute>
+        ),
+      },
 
       // rotas protegidas
       {
