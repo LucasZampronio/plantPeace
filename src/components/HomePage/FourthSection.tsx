@@ -5,47 +5,52 @@ import ArrowButton from "../ArrowButton";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
-// interface para tipar os itens do carrossel
 interface CarouselItem {
   id: number;
-  title: string;
+  name: string;
   price: string;
-  image: string;
-  tags: string[];
+  imageUrl: string;
+  highlightItem: boolean;
 }
 
 const Fourth = () => {
   const [items, setItems] = useState<CarouselItem[]>([]);
   const navigate = useNavigate();
 
-  // Fazendo a requisição GET para pegar os itens do carrossel
   useEffect(() => {
-    fetch("http://localhost:3001/carouselItems")
+    fetch("http://localhost:3001/plants")
       .then((response) => response.json())
-      .then((data) => setItems(data))
-      .catch((error) => console.error("Erro ao buscar itens:", error));
+      .then((data) =>
+        setItems(data.filter((plant: CarouselItem) => plant.highlightItem))
+      )
+      .catch((error) => console.error("Erro ao buscar plantas:", error));
   }, []);
 
-  // configurações do carrossel
   const settings = {
-    dots: true,
-    infinite: true,
+    dots: items.length > 1,
+    infinite: items.length > 1, 
     speed: 500,
-    slidesToShow: 3,
+    slidesToShow: Math.min(items.length, 3),
     slidesToScroll: 1,
-    prevArrow: <ArrowButton direction="left" onClick={() => {}} />,
+    centerMode: items.length === 1,
+    centerPadding: "0",
+    prevArrow: <ArrowButton direction="left" onClick={() => {}} />, 
     nextArrow: <ArrowButton direction="right" onClick={() => {}} />,
     responsive: [
       {
         breakpoint: 1024,
         settings: {
-          slidesToShow: 2,
+          slidesToShow: Math.min(items.length, 2),
+          infinite: items.length > 1,
+          dots: items.length > 1,
         },
       },
       {
         breakpoint: 768,
         settings: {
-          slidesToShow: 1,
+          slidesToShow: Math.min(items.length, 1),
+          infinite: items.length > 1,
+          dots: items.length > 1,
         },
       },
     ],
@@ -69,28 +74,50 @@ const Fourth = () => {
         </p>
       </div>
 
-      <div className="w-full relative">
+      <div
+        className={`w-full relative mx-auto ${
+          items.length === 1
+            ? "max-w-md"
+            : items.length === 2
+            ? "max-w-4xl"
+            : "max-w-6xl"
+        }`}
+      >
         <Slider {...settings}>
           {items.map((item) => (
-            <div key={item.id} className="px-5 outline-none group">
+            <div key={item.id} className="outline-none group px-2">
               <a
                 href={`/products/${item.id}`}
                 onClick={handleCardClick(item)}
-                className="bg-gray-100 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 p-6 block cursor-pointer focus:outline-none focus:ring-2 focus:ring-green-500"
-                aria-label={`View details about ${item.title}`}
+                className={`bg-gray-100 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 p-4 block cursor-pointer focus:outline-none focus:ring-2 focus:ring-green-500 ${
+                  items.length === 1
+                    ? "max-w-xs mx-auto"
+                    : items.length === 2
+                    ? "max-w-sm"
+                    : "max-w-sm"
+                }`}
+                aria-label={`View details about ${item.name}`}
               >
-                <div className="h-64 bg-gray-100 rounded-lg mb-5 overflow-hidden relative">
+                <div
+                  className={`${
+                    items.length === 1
+                      ? "h-48"
+                      : items.length === 2
+                      ? "h-56"
+                      : "h-64"
+                  } bg-gray-100 rounded-lg mb-5 overflow-hidden relative`}
+                >
                   <img
-                    src={item.image}
-                    alt={item.title}
+                    src={item.imageUrl}
+                    alt={item.name}
                     className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                   />
                 </div>
-                <h3 className="text-xl text-green-800 font-semibold mb-2">
-                  {item.title}
+                <h3 className="text-xl text-black font-semibold mb-2">
+                  {item.name}
                 </h3>
                 <p className="text-green-900 text-lg font-medium mb-4">
-                  {item.price}
+                  ${item.price}
                 </p>
               </a>
             </div>

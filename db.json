@@ -9,7 +9,7 @@
       "description": "teste",
       "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTk4EQlVGe_0ZELKyUdvE3ca97PpQcyhOTanw&s",
       "highlightItem": true,
-      "ownerId": "user_2siszFZLiwwhNAqLBmpI6AqRm9a",
+      "ownerId": "user_2sj7dnfNtQlub42bluUCjFT2ZQo",
       "id": 1
     },
     {
@@ -21,7 +21,7 @@
       "description": "planta carnivora",
       "imageUrl": "https://images.tcdn.com.br/img/img_prod/1162228/planta_carnivora_p9_189_1_0075cc5c135c646db16c801db04ce8c0.jpg",
       "highlightItem": false,
-      "ownerId": "user_2sh76VG2W5Mx211U2FWG1dOlsh6",
+      "ownerId": "user_2sj7dnfNtQlub42bluUCjFT2ZQo",
       "id": 2
     },
     {
@@ -33,8 +33,20 @@
       "description": "aaaaaaaa",
       "imageUrl": "https://images.ecycle.com.br/wp-content/uploads/2022/09/27153826/hassan-pasha-jxf1k1TS07s-unsplash-1.jpg.webp",
       "highlightItem": false,
-      "ownerId": "user_2siszFZLiwwhNAqLBmpI6AqRm9a",
+      "ownerId": "user_2sj7dnfNtQlub42bluUCjFT2ZQo",
       "id": 3
+    },
+    {
+      "name": "nova planta",
+      "subtitle": "teste",
+      "category": "cacto",
+      "price": "222",
+      "discountPorcentage": "22",
+      "description": "akdmekmdek",
+      "imageUrl": "https://cdn.awsli.com.br/300x300/2733/2733498/produto/282761501/whatsapp-image-2024-07-10-at-16-20-31-lrwr9w7j24.jpeg",
+      "highlightItem": true,
+      "ownerId": "user_2sj7dnfNtQlub42bluUCjFT2ZQo",
+      "id": 4
     }
   ],
   "users": [
@@ -143,48 +155,6 @@
       "email": "babi@gmail.com",
       "clerkUserId": "sess_2sjCbdgSOE2S6j2Zz33GM70YCpA",
       "id": 20
-    }
-  ],
-  "carouselItems": [
-    {
-      "id": 1,
-      "title": "Echinocereus Cactus",
-      "price": "$49.99",
-      "image": "https://static.wixstatic.com/media/1da931_870e8d00b691472bbd2e3c2792d722b6~mv2.jpg/v1/fill/w_288,h_288,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/1da931_870e8d00b691472bbd2e3c2792d722b6~mv2.jpg",
-      "tags": [
-        "Indoor",
-        "Cactus"
-      ]
-    },
-    {
-      "id": 2,
-      "title": "Echinocereus Cactus",
-      "price": "$69.99",
-      "image": "https://blog.polipet.com.br/wp-content/uploads/2023/01/AdobeStock_436215405-445x445.jpeg",
-      "tags": [
-        "Indoor",
-        "Cactus"
-      ]
-    },
-    {
-      "id": 3,
-      "title": "Echinocereus Cactus",
-      "price": "$39.99",
-      "image": "https://static.itdg.com.br/images/622-auto/4eb9fbe4784c9c80c2aeab06e8096ab6/cacto-2-.jpg",
-      "tags": [
-        "Indoor",
-        "Cactus"
-      ]
-    },
-    {
-      "id": 4,
-      "title": "Epipremnum aureum",
-      "price": "$29.99",
-      "image": "https://images.tcdn.com.br/img/img_prod/422498/cactos_flor_estrela_do_mar_estapelia_gigante_stapelia_hirsuta_huernia_belli_plantas_1191_1_a654856c1b04565029170eb73fe1e09d.jpg",
-      "tags": [
-        "Indoor",
-        "Cactus"
-      ]
     }
   ]
 }

@@ -23,3 +23,20 @@
 }
 
 .animate-glitch2 { animation: glitch2 0.5s infinite; }
+
+/* No seu arquivo CSS global */
+/* No arquivo global */
+.slick-prev,
+.slick-next {
+  z-index: 1;
+  width: 40px;
+  height: 40px;
+}
+
+.slick-prev { left: -45px; }
+.slick-next { right: -45px; }
+
+@media (max-width: 768px) {
+  .slick-prev { left: -25px; }
+  .slick-next { right: -25px; }
+}
