@@ -9,6 +9,7 @@ interface PlantFormProps {
   mode: "register" | "edit";
   initialData?: Partial<PlantFormData>;
   onSubmit: (data: PlantFormData) => Promise<void>;
+  successMessage?: string | null;
 }
 
 const PlantForm = ({
