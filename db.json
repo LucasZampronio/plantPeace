@@ -3,12 +3,26 @@
     {
       "name": "João",
       "email": "joao@gmail.com",
-      "password": "senha123"
+      "password": "senha123",
+      "id": "efd1"
     },
     {
       "name": "Maria",
       "email": "maria@gmail.com",
-      "password": "senha456"
+      "password": "senha456",
+      "id": "76c4"
+    },
+    {
+      "id": "e411",
+      "nome": "lucas",
+      "email": "lucas10609@gmail.com",
+      "senha": "123456"
+    },
+    {
+      "id": "6b10",
+      "nome": "lucas",
+      "email": "lucas10609@gmail.com",
+      "senha": "123456"
     }
   ]
 }

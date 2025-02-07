@@ -5,8 +5,11 @@ module.exports = {
       './src/**/*.{js,ts,jsx,tsx}', 
     ],
     theme: {
-      extend: {},
-    },
+      extend: {
+        inter: ['Inter', 'sans-serif']
+      },
+    }, 
     plugins: [],
   };
+
   
