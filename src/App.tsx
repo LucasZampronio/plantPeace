@@ -39,17 +39,17 @@ const App: React.FC = () => {
       <header className="h-[89px]"></header>
       <Sidebar />
       <SearchBar onSearch={handleSearch} />
-      <div className=" top-[194px] left-[268px] gap-10 w-[1119px] h-auto flex flex-col">
-        <div className="flex justify-between">
+      <div className=" absolute top-[194px] left-[268px] w-[1119px] h-[388.73px] flex ">
+        <div className="flex gap-[82.5px]">
           {plants.filter(plant => !searchResult || plant.name.toLowerCase().includes(searchResult?.toLowerCase())).map(plant => (
-            <div key={plant.id} className="w-[318px] h-[387.73px] flex flex-col">
+            <div key={plant.id} className=" relative w-[318px] h-[387.73px] flex flex-col">
               <img
                 src={plant.image}
                 alt={plant.name}
                 className="w-[318px] h-[317.18px] opacity-0.9"
               />
               <div
-                className="w-auto h-[38.85px] p-[6.48px_12.95px] gap-[8.09px] rounded-tl-[19.43px] border-[1.62px] border-solid border-[#ECFDF5] bg-[#D1FAE5]"
+                className=" absolute top-[6.48px] left-[227.1px] w-auto h-[38.85px] p-[6.48px_12.95px_6.48px_12.95px] gap-[8.09px] rounded-tl-[19.43px] rounded-bl-[19.43px] rounded-tr-[19.43px] rounded-br-[19.43px] border-[1.62px] border-solid border-[#ECFDF5] bg-[#D1FAE5] text-emerald-900"
                 style={{ fontFamily: 'Inter', fontSize: '16px', fontWeight: 400, lineHeight: '19.2px', color: '#064E3B' }}
               >
                 {plant.category}

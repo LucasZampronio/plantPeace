@@ -2,8 +2,8 @@ import React from 'react';
 
 const Sidebar: React.FC = () => {
   return (
-    <div className="w-[243px] h-[1195px] absolute top-[87px] left-[-2px] gap-0 border-r border-gray-300 flex flex-col">
-      <div className="w-[38px] h-[19px] absolute top-[107px] left-[40px] text-[16px] font-inter font-normal leading-[19.2px] text-left text-[#475569] underline decoration-skip-ink">
+    <div className="w-[243px] h-[1195px]  top-[87px] left-[-2px] gap-0 border-r border-gray-300 flex flex-col">
+      <div className="w-[38px] h-[19px] absolute top-[107px] left-[40px] text-[16px] font-inter font-normal leading-[19.2px] text-left text-[#475569]">
         Filter
       </div>
       <hr className="w-[243px] h-[1px] absolute top-[146px] left-[-2px] gap-0 bg-[#E2E8F0]" />
