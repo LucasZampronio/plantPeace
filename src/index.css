@@ -12,3 +12,14 @@
     font-weight: 400 700;
     font-style: normal;
 }
+
+@keyframes glitch2 {
+  0% { transform: translate(0); }
+  20% { transform: translate(2px, -2px); }
+  40% { transform: translate(2px, 2px); }
+  60% { transform: translate(-2px, -2px); }
+  80% { transform: translate(-2px, 2px); }
+  100% { transform: translate(0); }
+}
+
+.animate-glitch2 { animation: glitch2 0.5s infinite; }

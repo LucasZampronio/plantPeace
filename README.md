@@ -1,6 +1,24 @@
-# React + TypeScript + Vite + TailwindCSS
+### GreenWork's - E-comerce de Plantas em geral
 
-Com o vite instalado, execute os comandos abaixo para executar o projeto.
+o GreenWork é um E-comerce voltado totalmente para a venda de plantas como cactos rosas e suculentas
+Criado com React, Tailwind e TypeScript, o projeto busca proporcionar uma ótima experiência pra quem busca ter um Jardim mais verde.
 
-1- npm intall
-2- npm run dev
+### Funcionalidades 
+
+- 🛒 Adicionar/Editar itens na Loja  
+- 🌍 HomePage com itens destacados
+- 🔎 Busca e filtros de plantas  
+- 📝 Cadastro/Login de usuários  
+- 🌱 Página de detalhes da planta  
+
+### Tecnologias Utilizadas
+- **Frontend**: React, Tailwind, TypeScript  
+- **Backend**: json-server
+- **Autenticação**: Clerk
+  
+### Como rodar o projeto
+
+1. Clone o repositório: git clone git@github.com:LucasZampronio/ARD24_D02_GRUPO1.git
+2. Acesse a Pasta do Projeto.
+3. Instale as dependências: npm install
+4. Inicie o servidor: npm run dev
