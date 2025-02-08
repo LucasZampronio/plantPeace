@@ -11,6 +11,7 @@ interface CarouselItem {
   price: string;
   imageUrl: string;
   highlightItem: boolean;
+  category: string;
 }
 
 const Fourth = () => {
@@ -107,6 +108,11 @@ const Fourth = () => {
                       : "h-64"
                   } bg-gray-100 rounded-lg mb-5 overflow-hidden relative`}
                 >
+                  {/* Balãozinho da categoria */}
+                  <span className="absolute top-2 right-2 bg-green-600 text-white text-xs font-semibold px-3 py-1 rounded-full shadow-md z-1">
+                    {item.category}
+                  </span>
+
                   <img
                     src={item.imageUrl}
                     alt={item.name}

@@ -47,6 +47,18 @@
       "highlightItem": true,
       "ownerId": "user_2sj7dnfNtQlub42bluUCjFT2ZQo",
       "id": 4
+    },
+    {
+      "name": "teste category",
+      "subtitle": "test subtitle",
+      "category": "Terracy e Balcony",
+      "price": "220",
+      "discountPorcentage": "20",
+      "description": "testing",
+      "imageUrl": "https://plus.unsplash.com/premium_photo-1675864663002-c330710c6ba0?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cGxhbnRhfGVufDB8fDB8fHww",
+      "highlightItem": true,
+      "ownerId": "user_2sj7dnfNtQlub42bluUCjFT2ZQo",
+      "id": 5
     }
   ],
   "users": [

@@ -1,15 +1,19 @@
 import { ReactNode } from "react";
 
 interface InputFieldProps
-  extends Omit<React.InputHTMLAttributes<HTMLInputElement>, "name"> {
+  extends Omit<
+    React.InputHTMLAttributes<HTMLInputElement | HTMLSelectElement>,
+    "name"
+  > {
   name: string;
   autoComplete?: string;
   label?: string;
   icon?: ReactNode;
   className?: string;
-  error?: string; 
-  errorId?: string; 
+  error?: string;
+  errorId?: string;
   showRequiredIndicator?: boolean;
+  options?: string[]; // Nova prop para opções do select
 }
 
 export const InputField = ({
@@ -19,9 +23,11 @@ export const InputField = ({
   error,
   errorId,
   showRequiredIndicator,
+  options,
+  type,
   ...props
 }: InputFieldProps): JSX.Element => {
-  // determinando as cores da borda com base no erro
+  // Determina as cores da borda com base no erro
   const borderColorClass = error
     ? "border-red-500 focus:border-red-700 focus:ring-red-200"
     : "border-gray-300 focus:border-blue-500 focus:ring-blue-200";
@@ -38,23 +44,45 @@ export const InputField = ({
       )}
 
       <div className="relative w-full">
-        {/* Ícone fixo dentro do input */}
+        {/* Ícone fixo dentro do input/select */}
         {icon && (
           <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
             {icon}
           </div>
         )}
 
-        {/* Campo de entrada */}
-        <input
-          {...props}
-          aria-invalid={!!error} // garantindo acessibilidade
-          aria-describedby={errorId} // relacionando o erro com o input
-          className={`w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 transition-all
-            ${icon ? "pl-10" : ""} 
-            ${borderColorClass}
-            ${className}`}
-        />
+        {/* Renderização condicional do input ou select */}
+        {type === "select" ? (
+          <select
+            {...props}
+            aria-invalid={!!error}
+            aria-describedby={errorId}
+            className={`w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 transition-all
+              ${icon ? "pl-10" : ""} 
+              ${borderColorClass}
+              ${className}`}
+          >
+            <option value="" disabled hidden>
+              {props.placeholder || "Selecione uma opção"}
+            </option>
+            {options?.map((option) => (
+              <option key={option} value={option}>
+                {option}
+              </option>
+            ))}
+          </select>
+        ) : (
+          <input
+            type={type}
+            {...props}
+            aria-invalid={!!error}
+            aria-describedby={errorId}
+            className={`w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 transition-all
+              ${icon ? "pl-10" : ""} 
+              ${borderColorClass}
+              ${className}`}
+          />
+        )}
       </div>
 
       {/* Exibição do erro abaixo do campo */}

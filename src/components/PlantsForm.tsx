@@ -69,15 +69,16 @@ const PlantForm = ({
     },
     {
       label: "Category",
-      placeholder: "Cactus",
+      placeholder: "Select a category",
       error: errors.category,
       errorId: "category-error",
-      type: "text",
+      type: "select",
       id: "category",
       name: "category",
       autoComplete: "category",
       value: formData.category,
       onChange: handleChange,
+      options: ["Indor", "Outdoor", "Terracy e Balcony", "Office Desk"],
     },
     {
       label: "Price",
