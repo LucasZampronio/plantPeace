@@ -5,12 +5,14 @@ const SearchBar: React.FC<{ onSearch: (query: string) => boolean }> = ({
 }) => {
   const [query, setQuery] = useState("");
   const [borderColor, setBorderColor] = useState("border-gray-300");
+  const [hasSearched, setHasSearched] = useState(false);
 
   const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
     setQuery(e.target.value);
   };
 
   const handleSearchSubmit = () => {
+    setHasSearched(true);
     const found = onSearch(query);
     setBorderColor(found ? "border-green-400" : "border-red-400");
   };
@@ -36,13 +38,13 @@ const SearchBar: React.FC<{ onSearch: (query: string) => boolean }> = ({
             lineHeight: "24.72px",
           }}
         >
-          Add Plant
+          Search Plant
         </button>
       </div>
 
       {/* Mensagem de erro */}
-      {query && !borderColor.includes("green") && (
-        <div className="mt-4 w-full md:w-[500px] p-4 bg-white rounded-lg border border-gray-200 text-center">
+      {hasSearched && !borderColor.includes("green") && (
+        <div className="mt-4 w-full p-4 bg-white rounded-lg border border-gray-200 text-center">
           Desculpe, não encontramos o item pesquisado, tente novamente, estamos
           felizes em te ajudar com sua busca.
         </div>

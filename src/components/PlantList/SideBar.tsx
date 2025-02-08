@@ -1,28 +1,31 @@
 // components/Sidebar.tsx
-import React from "react";
+interface SidebarProps {
+  selectedCategories: string[];
+  onCategoryChange: (category: string, isChecked: boolean) => void;
+}
 
-const Sidebar: React.FC = () => {
+const SideBar: React.FC<SidebarProps> = ({
+  selectedCategories,
+  onCategoryChange,
+}) => {
   return (
-    <div className="w-62 h-screen border-r border-gray-300 flex flex-col py-2">
+    <div className="w-62 gap-2 px-4 h-screen border-r border-gray-300 flex flex-col py-4">
+      {["Indor", "Outdoor", "Terracy e Balcony", "Office Desk"].map(
+        (category) => (
+          <label key={category} className="flex items-center space-x-2">
+            <input
+              type="checkbox"
+              className="form-checkbox"
+              checked={selectedCategories.includes(category)}
+              onChange={(e) => onCategoryChange(category, e.target.checked)}
+            />
+            <span className="text-[#475569]">{category}</span>
+          </label>
+        )
+      )}
 
-      <div className="text-lg font-medium text-[#475569] border-b-2 border-gray-200 pb-2 px-5">Filter</div>
-
-      <div className="flex flex-col space-y-4 pl-5">
-        <div className="text-base font-semibold text-[#475569] pt-6">Categories</div>
-
-        <div className="flex flex-col space-y-4">
-          {["Indoor", "Outdoor", "Terrace & Balcony", "Office Desk"].map(
-            (category) => (
-              <label key={category} className="flex items-center space-x-2">
-                <input type="checkbox" className="form-checkbox" />
-                <span className="text-[#475569]">{category}</span>
-              </label>
-            )
-          )}
-        </div>
-      </div>
     </div>
   );
 };
 
-export default Sidebar;
+export default SideBar;

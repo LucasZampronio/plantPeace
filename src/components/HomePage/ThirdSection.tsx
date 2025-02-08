@@ -1,6 +1,7 @@
 import image1 from "../../images/dualimagemain01.png"
 import image2 from "../../images/dualimagemain02.png"
 import imageField from "../../images/fieldphotomain.png"
+import { Link } from "react-router-dom";
 
 const ThirdSection = () => {
   return (
@@ -37,11 +38,13 @@ const ThirdSection = () => {
           Get ready to explore our virtual garden and discover the joys of
           gardening with us!
         </p>
-        <button
+        <Link
+          to={`/plants/list`}
+          onClick={() => window.scrollTo(0, 0)}
           className={`text-white font-semibold bg-emerald-900 px-10 py-3 rounded-xl  cursor-pointer hover:bg-emerald-700 transition`}
         >
           See more photos
-        </button>
+        </Link>
       </div>
     </section>
   );

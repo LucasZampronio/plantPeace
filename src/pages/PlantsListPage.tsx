@@ -15,6 +15,7 @@ interface Plant {
 const PlantListPage: React.FC = () => {
   const [plants, setPlants] = useState<Plant[]>([]);
   const [searchResult, setSearchResult] = useState<string | null>(null);
+  const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
 
   // Busca as plantas do json-server
   useEffect(() => {
@@ -33,6 +34,22 @@ const PlantListPage: React.FC = () => {
     fetchPlants();
   }, []);
 
+  const handleCategoryChange = (category: string, isChecked: boolean) => {
+    setSelectedCategories((prev) =>
+      isChecked ? [...prev, category] : prev.filter((c) => c !== category)
+    );
+  };
+
+  const filteredPlants = plants.filter((plant) => {
+    const matchesSearch =
+      !searchResult ||
+      plant.name.toLowerCase().includes(searchResult.toLowerCase());
+    const matchesCategory =
+      selectedCategories.length === 0 ||
+      selectedCategories.includes(plant.category);
+    return matchesSearch && matchesCategory;
+  });
+
   // Função de busca
   const handleSearch = (query: string): boolean => {
     const found = plants.some((plant) =>
@@ -44,10 +61,15 @@ const PlantListPage: React.FC = () => {
 
   return (
     <div className="flex py-22">
-      <Sidebar /> {/* Adicionando a Sidebar aqui */}
+      <Sidebar 
+      selectedCategories={selectedCategories}
+      onCategoryChange={handleCategoryChange}
+      /> {/* Adicionando a Sidebar aqui */}
       <div className="flex flex-col">
         <SearchBar onSearch={handleSearch} />
-        <Catalog plants={plants} searchResult={searchResult} />
+        <Catalog 
+        plants={filteredPlants} 
+        searchResult={searchResult} />
       </div>
       <footer className="h-[422px] mt-[52.32px]"></footer>
     </div>

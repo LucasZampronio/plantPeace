@@ -1,4 +1,6 @@
 import imageHero from "../../images/defautplant.png";
+import { Link } from "react-router-dom";
+
 
 const FirstSection = () => {
   return (
@@ -13,11 +15,12 @@ const FirstSection = () => {
           flowers to lush indoor foliage, allowing you to create your very own
           green oasis.
         </p>
-        <button
-          className={`text-white font-semibold bg-emerald-900 px-10 py-3 rounded-xl  cursor-pointer hover:bg-emerald-700 transition`}
+        <Link
+          to="/plants/list"
+          className="text-white font-semibold bg-emerald-900 px-10 py-3 rounded-xl cursor-pointer hover:bg-emerald-700 transition"
         >
           Shop now
-        </button>
+        </Link>
       </div>
       <img
         className="flex-1 object-cover h-full w-full max-h-[635px]"
