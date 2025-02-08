@@ -45,7 +45,7 @@ const SearchBar: React.FC<{ onSearch: (query: string) => boolean }> = ({
       {/* Mensagem de erro */}
       {hasSearched && !borderColor.includes("green") && (
         <div className="mt-4 w-full p-4 bg-white rounded-lg border border-gray-200 text-center">
-          Desculpe, não encontramos o item pesquisado, tente novamente, estamos
+          Desculpe, não encontramos o item pesquisado! Tente novamente, estamos
           felizes em te ajudar com sua busca.
         </div>
       )}
