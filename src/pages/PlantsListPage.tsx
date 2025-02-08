@@ -64,7 +64,7 @@ const PlantListPage: React.FC = () => {
       <Sidebar 
       selectedCategories={selectedCategories}
       onCategoryChange={handleCategoryChange}
-      /> {/* Adicionando a Sidebar aqui */}
+      /> 
       <div className="flex flex-col">
         <SearchBar onSearch={handleSearch} />
         <Catalog 

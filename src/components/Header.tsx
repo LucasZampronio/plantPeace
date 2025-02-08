@@ -21,13 +21,16 @@ export const Header = () => {
   };
 
   return (
-    <section className=' bg-white h-[89px] flex justify-between px-10 py-4 items-center font-[Inter] fixed w-full border-b border-slate-200 z-[100]`}'>
+    <section className=" bg-white h-[89px] flex justify-between px-10 py-4 items-center font-[Inter] fixed w-full border-b border-slate-200 z-100">
       <div>
         <Link to="/">
           <img src={logo} alt="green logo with a jar and 3 leafs" />
-          
         </Link>
       </div>
+
+      {/*BOTÃO DO DARK MODE
+       <button onClick={toggleDarkMode}>{darkMode ? 'Light' : 'Dark'}</button>
+       */}
       {/* Links de navegação */}
       <nav>
         <ul className="flex gap-4 p-4 font-light text-slate-500">
@@ -76,4 +79,4 @@ export const Header = () => {
     </section>
   );
 };
-export default Header;
+

@@ -170,7 +170,7 @@
       "id": 18
     },
     {
-      "name": "babi",
+      "name": "babis",
       "email": "babizkks@gmail.com",
       "clerkUserId": "user_2sj7dnfNtQlub42bluUCjFT2ZQo",
       "id": 19
@@ -189,6 +189,11 @@
       "email": "babi@gmail.com",
       "clerkUserId": "sess_2skHo47Gdxx8t7j5gTHs3lnY9GV",
       "id": 22
+    },
+    {
+      "email": "babi@gmail.com",
+      "clerkUserId": "sess_2slaPx4JeljpJXBw8vlE6eLbdFF",
+      "id": 23
     }
   ]
 }
