@@ -204,6 +204,7 @@ const PlantForm = ({
               <CheckboxField
                 id="highlightItem"
                 label="Highlight this item"
+                checked={formData.highlightItem}
                 onChange={(checked) => handleCheckboxChange(checked)}
               />
             </div>
