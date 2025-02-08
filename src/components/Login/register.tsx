@@ -1,6 +1,6 @@
 import PlantImage from "../../images/defautplant.png";
 import { useForm } from "../../hooks/useForm";
-
+import LogoImage from'../../images/logoicon.svg'
 interface RegisterFormProps {
   onSubmit?: (data: {
     name: string;
@@ -38,6 +38,11 @@ export const RegisterForm: React.FC<RegisterFormProps> = ({
     <div className="min-h-screen bg-[#f8fafc] flex">
       {/* div da esquerda */}
       <div className="flex-1 flex flex-col items-center justify-center relative">
+      <div className="absolute top-0 bottom-4 left-0 p-10">
+          <a href="/">
+            <img src={LogoImage} alt="Logo" className="w-12 h-12" />
+          </a>
+        </div>
         {/* form */}
         <div className="w-full max-w-[424px] flex flex-col gap-8 p-3">
           <div className="flex flex-col">
