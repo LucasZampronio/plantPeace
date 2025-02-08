@@ -1,6 +1,5 @@
 import React from "react";
 import PlantImage from "../../images/defautplant.png";
-import LogoImage from "../../images/green-logo.png";
 import { useForm } from "../../hooks/useForm"; // Importe o hook
 
 interface LoginFormData {
@@ -27,13 +26,13 @@ const LoginForm: React.FC<LoginFormProps> = ({ onSubmit = () => {} }) => {
         const errors: Record<string, string> = {};
 
         if (!data.email) {
-          errors.email = "Email é obrigatório";
+          errors.email = "Email is required";
         } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)) {
           errors.email = "Email inválido";
         }
 
         if (!data.password) {
-          errors.password = "Senha é obrigatória";
+          errors.password = "Senha is required";
         }
 
         return errors;
@@ -43,22 +42,15 @@ const LoginForm: React.FC<LoginFormProps> = ({ onSubmit = () => {} }) => {
   return (
     <div className="flex w-full h-screen bg-gray-100">
       <div className="flex-1 flex flex-col justify-center items-center">
-        {/* Logo no canto superior esquerdo */}
-        <div className="absolute top-0 left-0 p-10">
-          <a href="/">
-            <img src={LogoImage} alt="Logo" className="w-12 h-12" />
-          </a>
-        </div>
-
         {/* Formulário */}
         <div className="flex flex-col gap-12">
           <div className="flex flex-col gap-8">
             <div>
-              <h1 className="text-4xl text-green-900 mb-2 font-bold">
-                Login
+              <h1 className="text-4xl text-green-900 mb-2 font-[Playfair_Display] font-bold">
+                Sign up
               </h1>
-              <p className="text-gray-500 text-sm">
-                São mais de 300 plantas para você.
+              <p className="text-gray-500 text-sm font-[Inter]">
+                 Lorem ipsum dolor sit amet consectetur.
               </p>
             </div>
 
@@ -68,7 +60,7 @@ const LoginForm: React.FC<LoginFormProps> = ({ onSubmit = () => {} }) => {
             >
               {/* Campo de email */}
               <div className="flex flex-col gap-2">
-                <label htmlFor="email" className="text-sm text-gray-500">
+                <label htmlFor="email" className="text-sm text-[#334155] font-[Inter]">
                   E-mail
                 </label>
                 <input
@@ -78,7 +70,7 @@ const LoginForm: React.FC<LoginFormProps> = ({ onSubmit = () => {} }) => {
                   value={formData.email}
                   onChange={handleChange}
                   placeholder="email@example.com"
-                  className="p-3 border border-gray-300 rounded-md text-lg"
+                  className="w-full p-2 bg-[#ebf0f5] border border-[#e2e8f0] rounded-lg text-[#64748b]"
                 />
                 {errors.email && (
                   <p className="text-red-500 text-sm">{errors.email}</p>
@@ -87,8 +79,8 @@ const LoginForm: React.FC<LoginFormProps> = ({ onSubmit = () => {} }) => {
 
               {/* Campo de senha */}
               <div className="flex flex-col gap-2">
-                <label htmlFor="password" className="text-sm text-gray-500">
-                  Senha
+                <label htmlFor="password" className="text-sm text-[#334155] font-[Inter]">
+                  Password
                 </label>
                 <input
                   id="password"
@@ -97,7 +89,7 @@ const LoginForm: React.FC<LoginFormProps> = ({ onSubmit = () => {} }) => {
                   value={formData.password}
                   onChange={handleChange}
                   placeholder="••••••••"
-                  className="p-3 border border-gray-300 rounded-md text-lg"
+                  className="w-full p-2 bg-[#ebf0f5] border border-[#e2e8f0] rounded-lg text-[#64748b]"
                 />
                 {errors.password && (
                   <p className="text-red-500 text-sm">{errors.password}</p>
@@ -116,16 +108,16 @@ const LoginForm: React.FC<LoginFormProps> = ({ onSubmit = () => {} }) => {
                 />
                 <label
                   htmlFor="stay-connected"
-                  className="text-sm text-gray-500"
+                  className="text-sm text-gray-500 font-[Inter]"
                 >
-                  Ficar Conectado
+                  stay connected
                 </label>
               </div>
 
               {/* Botão de submit */}
               <button
                 type="submit"
-                className="bg-green-900 text-white p-3 rounded-md text-lg cursor-pointer transition hover:bg-green-700"
+                className="w-full bg-[#064e3b] text-[#fcfcfc] py-3 px-10 rounded-lg font-semibold hover:bg-[#053e2f] transition-colors"
               >
                 Login
               </button>

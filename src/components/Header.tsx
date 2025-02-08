@@ -1,8 +1,23 @@
-import { useAuth, useUser } from "@clerk/clerk-react";
+import { useAuth, useUser } from "@clerk/clerk-react"
 import { Link, useNavigate } from "react-router-dom";
 import logo from "../images/logoicon.svg";
+//import { useState } from "react";
+
 
 export const Header = () => {
+
+  {/* MODO DARK MODE, APENAS ALTERA O ESTADO DA CLASSE DARK DO TAILWIND.CONFIG.TS
+    const [darkMode,setDarkMode] = useState(false);
+
+  const toggleDarkMode = () => {
+    setDarkMode(!darkMode)
+  };
+
+
+  Colocar essa chave dentro da class name para ativar com o usestate
+  {`${darkMode && 'dark'}
+  */}
+
   const { isSignedIn, signOut } = useAuth();
   const { user } = useUser();
   const navigate = useNavigate();
@@ -17,16 +32,20 @@ export const Header = () => {
   };
 
   return (
-    <section className="bg-white h-[89px] flex justify-between px-10 py-4 items-center font-[Inter] fixed w-full border-b border-slate-200 z-100">
+    <section className='dark:bg-neutral-800(aqui altera para a cor escura com a class) bg-white h-[89px] flex justify-between px-10 py-4 items-center font-[Inter] fixed w-full border-b border-slate-200 z-[100]`}'>
       <div>
         <Link to="/">
           <img src={logo} alt="green logo with a jar and 3 leafs" />
+          
         </Link>
       </div>
 
+       {/*BOTÃO DO DARK MODE
+       <button onClick={toggleDarkMode}>{darkMode ? 'Light' : 'Dark'}</button>
+       */}
       {/* Links de navegação */}
       <nav>
-        <ul className="flex justify-between gap-4 p-4 font-light text-slate-500">
+        <ul className="flex gap-4 p-4 font-light text-slate-500">
           <li className="hover:text-emerald-700 hover:font-normal transition">
             <Link to="/">Home</Link>
           </li>
@@ -72,3 +91,4 @@ export const Header = () => {
     </section>
   );
 };
+export default Header;
