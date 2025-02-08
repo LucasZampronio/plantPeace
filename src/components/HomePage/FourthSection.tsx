@@ -86,7 +86,7 @@ const Fourth = () => {
       >
         <Slider {...settings}>
           {items.map((item) => (
-            <div key={item.id} className="outline-none group px-2">
+            <div key={item.id} className="outline-none group px-7">
               <a
                 href={`/products/${item.id}`}
                 onClick={handleCardClick(item)}

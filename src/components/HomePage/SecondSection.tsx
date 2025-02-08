@@ -1,6 +1,7 @@
-import waterIcon from "../../images/watericonmain.svg";
-import sunlightIcon from "../../images/suniconmain.svg"
-import shopIcon from "../../images/shopiconmain.svg";
+import { Sun } from "lucide-react";
+import { ShoppingBagIcon } from "lucide-react";
+import { Droplet } from "lucide-react";
+
 
 const SecondSection = () => {
   return (
@@ -16,10 +17,14 @@ const SecondSection = () => {
         </p>
       </div>
       <div className="flex flex-col items-center gap-6">
-        <img
-          className="bg-emerald-900 rounded-full"
+        {/* <img
+          className="bg-emerald-900 rounded-full hover:bg-blue-400 transition-all duration-300 transform hover:scale-110"
           src={waterIcon}
           alt="water drop icon"
+        /> */}
+        <Droplet
+          size={70}
+          className="bg-emerald-900 text-white rounded-full p-4 hover:text-blue-400"
         />
         <h3 className="text-slate-950 font-bold text-2xl py-6">Watering</h3>
         <p className="text-slate-500 pb-14">
@@ -28,11 +33,11 @@ const SecondSection = () => {
         </p>
       </div>
       <div className="flex flex-col items-center gap-6">
-        <img
-          className="bg-emerald-900 rounded-full"
-          src={sunlightIcon}
-          alt="sunlight icon"
+        <Sun
+          size={70}
+          className="bg-emerald-900 text-white rounded-full p-4 hover:text-yellow-400"
         />
+
         <h3 className="text-slate-950 font-bold text-2xl py-6">Sunlight</h3>
         <p className="text-slate-500 pb-14">
           Most plants need adequate sunlight to thrive. Place your plants in
@@ -41,10 +46,9 @@ const SecondSection = () => {
         </p>
       </div>
       <div className="flex flex-col items-center gap-6">
-        <img
-          className="bg-emerald-900 rounded-full"
-          src={shopIcon}
-          alt="shop icon"
+        <ShoppingBagIcon
+          size={70}
+          className="bg-emerald-900 text-white rounded-full p-4 hover:text-green-400"
         />
         <h3 className="text-slate-950 font-bold text-2xl py-6">
           Nutrients and Fertilizing
