@@ -30,7 +30,7 @@ const SearchBar: React.FC<{ onSearch: (query: string) => boolean }> = ({
         />
         <button
           onClick={handleSearchSubmit}
-          className="px-8 py-2 bg-[#064E3B] text-[#FCFCFC] rounded-lg"
+          className="px-8 py-2 bg-[#064E3B] text-[#FCFCFC] rounded-lg hover:bg-[#3f875e]"
           style={{
             fontFamily: "Inter",
             fontSize: "16px",

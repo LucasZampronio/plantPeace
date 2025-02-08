@@ -1,7 +1,7 @@
 {
   "plants": [
     {
-      "name": "oi",
+      "name": "Planta 1",
       "subtitle": "teste",
       "category": "Outdoor",
       "price": "1",
@@ -13,7 +13,7 @@
       "id": 1
     },
     {
-      "name": "Planta Carnívoras",
+      "name": "Planta 2",
       "subtitle": "A majestic plant",
       "category": "Indor",
       "price": "100",
@@ -25,7 +25,7 @@
       "id": 2
     },
     {
-      "name": "planta marcus",
+      "name": "Planta 3",
       "subtitle": "marcus",
       "category": "Office Desk",
       "price": "222",
@@ -37,7 +37,7 @@
       "id": 3
     },
     {
-      "name": "nova planta",
+      "name": "Planta 4",
       "subtitle": "teste",
       "category": "Outdoor",
       "price": "222",
@@ -49,7 +49,7 @@
       "id": 4
     },
     {
-      "name": "teste category",
+      "name": "Planta 5",
       "subtitle": "test subtitle",
       "category": "Terracy e Balcony",
       "price": "220",
@@ -57,11 +57,11 @@
       "description": "testing",
       "imageUrl": "https://plus.unsplash.com/premium_photo-1675864663002-c330710c6ba0?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cGxhbnRhfGVufDB8fDB8fHww",
       "highlightItem": true,
-      "ownerId": "user_2sj7dnfNtQlub42bluUCjFT2ZQo",
+      "ownerId": "user_2sdljtcmTPLemdloL3NgAEJpP1m",
       "id": 5
     },
     {
-      "name": "new plant",
+      "name": "Planta 6",
       "subtitle": "subtitle",
       "category": "Indor",
       "price": "234",

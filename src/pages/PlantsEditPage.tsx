@@ -20,6 +20,7 @@ export default function PlantsEditPage() {
 
   useEffect(() => {
     if (!id) {
+      navigate("/");
       console.error("Erro: plantId não foi encontrado na URL.");
       return;
     }
@@ -31,14 +32,20 @@ export default function PlantsEditPage() {
           throw new Error("Erro ao carregar os dados da planta");
         }
         const data = await response.json();
+        if (!data) {
+          console.error("Planta não encontrada.");
+          navigate("/*");
+          return;
+        }
         setInitialData(data);
       } catch (error) {
         console.error("Erro:", error);
+        navigate("/*");
       }
     };
 
     loadPlantData();
-  }, [id]);
+  }, [id, navigate]);
 
   const handleSubmit = async (plantData: PlantFormData) => {
     try {
