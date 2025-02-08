@@ -70,8 +70,7 @@ const Fourth = () => {
           This week's Most Popular and Best Selling
         </h1>
         <p className="text-gray-500 font-[Inter] text-lg w-120">
-          Discover our carefully curated selection of premium plants and
-          gardening essentials.
+          Discover our carefully curated selection of premium plants and gardening essentials.
         </p>
       </div>
 
