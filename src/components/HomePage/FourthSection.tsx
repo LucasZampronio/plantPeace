@@ -60,7 +60,7 @@ const Fourth = () => {
   const handleCardClick =
     (item: CarouselItem) => (e: React.MouseEvent<HTMLAnchorElement>) => {
       e.preventDefault();
-      navigate(`/products/${item.id}`);
+      navigate(`/plants/${item.id}`);
     };
 
   return (
@@ -88,7 +88,7 @@ const Fourth = () => {
           {items.map((item) => (
             <div key={item.id} className="outline-none group px-7">
               <a
-                href={`/products/${item.id}`}
+                href={`/plants/${item.id}`}
                 onClick={handleCardClick(item)}
                 className={`bg-gray-100 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 p-4 block cursor-pointer focus:outline-none focus:ring-2 focus:ring-green-500 ${
                   items.length === 1

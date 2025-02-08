@@ -38,7 +38,7 @@ export const Header = () => {
                 <Link to="/plants/list">Products</Link>
               </li>
               <li className="hover:text-emerald-700 hover:font-normal transition">
-                <Link to="/about">About me</Link>
+                <Link to="/user/config">About me</Link>
               </li>
             </>
           )}
