@@ -116,10 +116,11 @@ const PlantDetail: React.FC<PlantDetailProps> = () => {
         </div>
         <button
           onClick={() => navigate(`/plants/${plant.id}`)}
-          className="w-150 py-1 mt-2 bg-teal-800 rounded-4xl text-white font-inter text-lg font-semibold cursor-pointer transition-colors duration-200 hover:bg-teal-700"
+          className="w-full sm:w-[600px] py-1 mt-2 bg-teal-800 rounded-4xl text-white font-inter text-lg font-semibold cursor-pointer transition-colors duration-200 hover:bg-teal-700"
         >
           Edit Plant
         </button>
+
       </div>
 
       {/* Seção de imagem de fundo (visível apenas no desktop) */}
