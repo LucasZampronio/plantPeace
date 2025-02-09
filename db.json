@@ -1,7 +1,7 @@
 {
   "plants": [
     {
-      "name": "Planta 1",
+      "name": "Planta lucas",
       "subtitle": "teste",
       "category": "Outdoor",
       "price": "1",
@@ -9,11 +9,11 @@
       "description": "teste",
       "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTk4EQlVGe_0ZELKyUdvE3ca97PpQcyhOTanw&s",
       "highlightItem": false,
-      "ownerId": "user_2sdljtcmTPLemdloL3NgAEJpP1m",
+      "ownerId": "user_2sj3X5WCyzvvABWlYLP2ey7sDsN",
       "id": 1
     },
     {
-      "name": "Planta 2",
+      "name": "Planta 1",
       "subtitle": "A majestic plant",
       "category": "Indor",
       "price": "100",
@@ -21,7 +21,7 @@
       "description": "planta carnivora",
       "imageUrl": "https://images.tcdn.com.br/img/img_prod/1162228/planta_carnivora_p9_189_1_0075cc5c135c646db16c801db04ce8c0.jpg",
       "highlightItem": true,
-      "ownerId": "user_2sdljtcmTPLemdloL3NgAEJpP1m",
+      "ownerId": "user_2sj3X5WCyzvvABWlYLP2ey7sDsN",
       "id": 2
     },
     {
