@@ -22,7 +22,6 @@ interface Plant {
 const PlantDetail: React.FC<PlantDetailProps> = () => {
   const navigate = useNavigate();
   const [plant, setPlant] = useState<Plant | null>(null);
-
   const { id } = useParams<{ id: string }>();
 
   useEffect(() => {
@@ -43,91 +42,68 @@ const PlantDetail: React.FC<PlantDetailProps> = () => {
   }, [id]);
 
   if (!plant) {
-    return <div>Carregando...</div>; // to vendo uns videos de como fazer uma animação daora de loading
+    return <div className="text-center text-lg">Carregando...</div>;
   }
 
   return (
-    <div className="flex flex-col lg:flex-row bg-gray-50 min-h-screen">
+    <div className="flex flex-col lg:flex-row bg-gray-50 min-h-screen p-4 md:p-8">
       {/* Seção de detalhes da planta */}
-      <div className="flex-1 flex flex-col py-5 justify-center items-center mt-25 w-full h-auto">
-        <div className="mb-5 pl-25 self-start">
+      <div className="flex-1 flex flex-col items-center lg:items-start py-5 w-full">
+        <div className="mb-5 w-full text-center lg:text-left">
           <h1 className="font-playfair text-3xl font-bold text-teal-800 mb-1 leading-tight">
             {plant.name}
           </h1>
-          <p className="font-inter text-lg text-gray-500 m-0">
-            {plant.subtitle}
-          </p>
+          <p className="font-inter text-lg text-gray-500">{plant.subtitle}</p>
         </div>
 
         <img
           src={plant.imageUrl}
           alt="Plant"
-          className="w-140 h-96 object-cover mb-6 rounded-sm shadow-lg"
+          className="w-full max-w-md h-80 object-cover mb-6 rounded-sm shadow-lg"
         />
 
-        <div className="mb-2 pr-45">
-          <div className="flex gap-6 w-full">
-            <div className="mb-4">
-              <p className="font-inter text-md font-medium text-gray-800 mb-2">
-                Price
-              </p>
+        <div className="w-full max-w-md">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-4">
+            <div>
+              <p className="font-inter text-md font-medium text-gray-800 mb-2">Preço</p>
               <p className="font-inter text-md text-gray-500">${plant.price}</p>
             </div>
             <div>
-              <p className="font-inter text-md font-medium text-gray-800 mb-2">
-                Discount Porcentage
-              </p>
-              <p className="font-inter text-md text-gray-500">
-                {plant.discountPorcentage}%
-              </p>
+              <p className="font-inter text-md font-medium text-gray-800 mb-2">Desconto</p>
+              <p className="font-inter text-md text-gray-500">{plant.discountPorcentage}%</p>
             </div>
             <div>
-              <p className="font-inter text-md font-medium text-gray-800 mb-2">
-                Highlight Product
-              </p>
+              <p className="font-inter text-md font-medium text-gray-800 mb-2">Destaque</p>
               <p className="font-inter text-md text-gray-500">
                 {plant.highlightItem ? "Sim" : "Não"}
               </p>
             </div>
-          </div>
-
-          {/* Segunda linha: Description e Category */}
-          <div className="flex flex-col gap-4">
             <div>
-              <p className="font-inter text-md font-medium text-gray-800 mb-2">
-                Description
-              </p>
-              <p className="font-inter text-md text-gray-500">
-                {plant.description}
-              </p>
-            </div>
-            <div>
-              <p className="font-inter text-md font-medium text-gray-800 mb-2">
-                Category
-              </p>
-              <p className="font-inter px-2 py-2 w-fit text-md text-gray-500 bg-teal-100 rounded-full">
+              <p className="font-inter text-md font-medium text-gray-800 mb-2">Categoria</p>
+              <p className="font-inter px-2 py-1 w-fit text-md text-gray-500 bg-teal-100 rounded-full">
                 {plant.category}
               </p>
             </div>
           </div>
+
+          <div className="mb-4">
+            <p className="font-inter text-md font-medium text-gray-800 mb-2">Descrição</p>
+            <p className="font-inter text-md text-gray-500">{plant.description}</p>
+          </div>
         </div>
+
         <button
-          onClick={() => navigate(`/plants/${plant.id}`)} // Ou o caminho correto da sua rota
-          className="w-150 py-1 mt-2 bg-teal-800 rounded-4xl text-white font-inter text-lg font-semibold cursor-pointer transition-colors duration-200 hover:bg-teal-700"
+          onClick={() => navigate(`/plants/${plant.id}`)}
+          className="w-full max-w-xs py-2 mt-4 bg-teal-800 rounded-lg text-white font-inter text-lg font-semibold cursor-pointer transition-colors duration-200 hover:bg-teal-700"
         >
-          Edit Plant
+          Editar Planta
         </button>
       </div>
 
       {/* Seção de imagem de fundo */}
       <div
-        className="flex-1"
-        style={{
-          backgroundImage: `url(${planta})`,
-          minHeight: "400px",
-          flex: "1",
-          backgroundSize: "cover",
-        }}
+        className="hidden lg:block flex-1 bg-cover bg-center min-h-[400px]"
+        style={{ backgroundImage: `url(${planta})` }}
       />
     </div>
   );
