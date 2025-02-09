@@ -20,9 +20,9 @@ const DarkMode = () => {
   return (
     <button
       onClick={toggleDarkMode}
-      className="px-4 py-2 text-white bg-emerald-900 rounded-lg dark:bg-gray-800 dark:text-gray-100"
+      className=" text-white bg-emerald-900 px-5 py-3 rounded-xl cursor-pointer hover:bg-emerald-700 transition  dark:bg-emerald-900 dark:text-gray-100"
     >
-      {isDarkMode ? 'Modo Claro' : 'Modo Escuro'}
+      {isDarkMode ? 'LightMode' : 'DarkMode'}
     </button>
   );
 };

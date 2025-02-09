@@ -26,7 +26,7 @@ const SecondSection = () => {
           size={70}
           className="bg-emerald-900 text-white rounded-full p-4 hover:text-blue-400"
         />
-        <h3 className="text-slate-950 font-bold text-2xl py-6">Watering</h3>
+        <h3 className="text-slate-950 font-bold text-2xl py-6 dark:text-emerald-900">Watering</h3>
         <p className="text-slate-500 pb-14">
           water your plants when the top inch of soil feels dry to the touch.
           Avoid overwatering, as it can lead to root dehydration.
@@ -38,7 +38,7 @@ const SecondSection = () => {
           className="bg-emerald-900 text-white rounded-full p-4 hover:text-yellow-400"
         />
 
-        <h3 className="text-slate-950 font-bold text-2xl py-6">Sunlight</h3>
+        <h3 className="text-slate-950 font-bold text-2xl py-6 dark:text-emerald-900">Sunlight</h3>
         <p className="text-slate-500 pb-14">
           Most plants need adequate sunlight to thrive. Place your plants in
           areas that receive the appropriate amount of light for their specific
@@ -50,7 +50,7 @@ const SecondSection = () => {
           size={70}
           className="bg-emerald-900 text-white rounded-full p-4 hover:text-green-400"
         />
-        <h3 className="text-slate-950 font-bold text-2xl py-6">
+        <h3 className="text-slate-950 font-bold text-2xl py-6 dark:text-emerald-900">
           Nutrients and Fertilizing
         </h3>
         <p className="text-slate-500 pb-14">

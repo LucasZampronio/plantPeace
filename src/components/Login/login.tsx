@@ -1,7 +1,10 @@
 import React from "react";
 import PlantImage from "../../images/defautplant.png";
 import { useForm } from "../../hooks/useForm"; // Importe o hook
-import LogoImage from '../../images/logoicon.svg';  
+import LogoImage from '../../images/logoicon.svg';
+import DarkMode from '../DarkMode';
+
+
 interface LoginFormData {
   email: string;
   password: string;
@@ -40,12 +43,13 @@ const LoginForm: React.FC<LoginFormProps> = ({ onSubmit = () => {} }) => {
     });
 
   return (
-    <div className="flex w-full h-screen bg-gray-100">
+    <div className="flex w-full h-screen  bg-white">
       <div className="flex-1 flex flex-col justify-center items-center">
       <div className="absolute top-0 bottom-4 left-0 p-10">
-          <a href="/">
+          <a href="/" className="flex gap-25">
             <img src={LogoImage} alt="Logo" className="w-12 h-12" />
           </a>
+
         </div>
         {/* Formulário */}
         <div className="flex flex-col gap-12">

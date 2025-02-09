@@ -29,17 +29,17 @@ export const Header = () => {
       {/* Links de navegação */}
       <nav>
         <ul className="flex gap-4 p-4 font-light text-slate-500">
-          <li className="hover:text-emerald-700 hover:font-normal transition">
-            <Link to="/">Home</Link>
+          <li className="hover:text-emerald-800 text-emerald-900  font-normal hover:font-bold transition duration-300">
+            <Link to="/">Home</Link>  
           </li>
 
           {/* Mostrar apenas quando logado */}
           {isSignedIn && (
             <>
-              <li className="hover:text-emerald-700 hover:font-normal transition">
+              <li className="hover:text-emerald-800 text-emerald-900 font-normal hover:font-bold transition">
                 <Link to="/plants/list">Products</Link>
               </li>
-              <li className="hover:text-emerald-700 hover:font-normal transition">
+              <li className="hover:text-emerald-800 text-emerald-900  font-normal hover:font-bold transition">
                 <Link to="/user/config">About me</Link>
               </li>
             </>
@@ -52,7 +52,7 @@ export const Header = () => {
         {!isSignedIn && (
           <Link
             to="/sign-up"
-            className="text-slate-900 cursor-pointer hover:underline hover:text-slate-600 transition"
+            className="text-slate-900 cursor-pointer hover:underline hover:text-slate-600 transition dark:text-slate-500 dark:hover:text-emerald-700 dark:"
           >
             Register
           </Link>
