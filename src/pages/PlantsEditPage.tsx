@@ -12,9 +12,7 @@ import { PlantFormData } from "../hooks/usePlantForm";
 export default function PlantsEditPage() {
   const { userId } = useAuth();
   const { id } = useParams();
-  const [initialData, setInitialData] = useState<Partial<PlantFormData> | null>(
-    null
-  );
+  const [initialData, setInitialData] = useState<Partial<PlantFormData> | null>(null);
   const [successMessage, setSuccessMessage] = useState<string | null>(null);
   const navigate = useNavigate();
 
@@ -70,7 +68,7 @@ export default function PlantsEditPage() {
       // Exibe a mensagem de sucesso
       setSuccessMessage("Planta editada com sucesso!");
 
-      // Esconde a mensagem após 3 segundos
+      // Esconde a mensagem após 1 segundo e recarrega a página
       setTimeout(() => {
         setSuccessMessage(null);
         navigate(0);
@@ -80,7 +78,8 @@ export default function PlantsEditPage() {
     }
   };
 
-  return (
+  // Conteúdo original, sem alterações (para desktop)
+  const content = (
     <>
       <SignedIn>
         {initialData ? (
@@ -99,5 +98,22 @@ export default function PlantsEditPage() {
         <RedirectToSignIn />
       </SignedOut>
     </>
+  );
+
+  return (
+    <div className="min-h-screen bg-gray-50">
+      {/* Versão Mobile: Container com padding e largura limitada */}
+      <div className="block lg:hidden">
+        <div className="flex items-center justify-center p-0">
+          <div className="w-full max-w-xl">
+            {content}
+          </div>
+        </div>
+      </div>
+      {/* Versão Desktop: Sem alterações */}
+      <div className="hidden lg:block">
+        {content}
+      </div>
+    </div>
   );
 }
