@@ -23,7 +23,7 @@ const FirstSection = () => {
         </Link>
       </div>
       <img
-        className="flex-1 object-cover h-full w-full max-h-[635px]"
+        className="flex-1 object-cover h-full w-full max-h-[635px] opacity-100 dark:opacity-70"
         src={imageHero}
         alt="A beautifull green plant whit no flowers and a blank wall"
       />

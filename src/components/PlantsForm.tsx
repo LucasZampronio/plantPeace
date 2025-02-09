@@ -158,12 +158,12 @@ const PlantForm = ({
   };
 
   return (
-    <div className="flex w-full relative h-auto py-30 md:py-0 lg:py-0">
+    <div className="flex w-full relative h-auto py-30 md:py-0 lg:py-0 bg-white dark:bg-neutral-900">
       {/* Imagem de fundo */}
       <img
         src={nature}
         alt=""
-        className="absolute top-0 left-0 w-full h-full object-cover opacity-50 z-0"
+        className="absolute top-0 left-0 w-full h-full object-cover opacity-50 z-0 dark:opacity-70"
       />
       <div className="flex flex-1 flex-col justify-center items-center">
         <form

@@ -8,19 +8,19 @@ const ThirdSection = () => {
     <section className=" dark:bg-neutral-900 bg-white px-[5%] pt-14 pb-20 grid grid-cols-2 justify-items-start">
       <div className="grid grid-cols-2">
         <img
-          className="object-cover h-full max-h-[697px]"
+          className="object-cover h-full max-h-[697px] opacity-100 dark:opacity-70"
           src={image1}
           alt=""
         />
         <img
-          className="object-cover h-full max-h-[697px]"
+          className="object-cover h-full max-h-[697px] opacity-100 dark:opacity-70"
           src={image2}
           alt=""
         />
       </div>
       <div className="flex flex-col w-[555px] gap-8 items-baseline">
         <img
-          className="object-cover w-full max-w-[555px]"
+          className="object-cover w-full max-w-[555px] opacity-100 dark:opacity-70"
           src={imageField}
           alt=""
         />
