@@ -1,0 +1,161 @@
+import { useAuth, useUser } from "@clerk/clerk-react";
+import { Link, useNavigate } from "react-router-dom";
+import { useState } from "react";
+import logo from "../images/logoicon.svg";
+
+export const Header = () => {
+  const { isSignedIn, signOut } = useAuth();
+  const { user } = useUser();
+  const navigate = useNavigate();
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const handleAuthAction = async () => {
+    if (isSignedIn) {
+      await signOut();
+      navigate("/");
+    } else {
+      navigate("/sign-in");
+    }
+  };
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+  return (
+    <header className="bg-white h-[89px] flex justify-between items-center px-10 py-4 font-[Inter] fixed w-full border-b border-slate-200 z-50">
+      {/* Logo */}
+      <div>
+        <Link to="/">
+          <img src={logo} alt="green logo with a jar and 3 leafs" />
+        </Link>
+      </div>
+
+      {/* Menu de navegação para desktop */}
+      <nav className="hidden lg:flex">
+        <ul className="flex gap-4 p-4 font-light text-slate-500">
+          <li className="hover:text-emerald-700 hover:font-normal transition">
+            <Link to="/">Home</Link>
+          </li>
+          {isSignedIn && (
+            <>
+              <li className="hover:text-emerald-700 hover:font-normal transition">
+                <Link to="/plants/list">Products</Link>
+              </li>
+              <li className="hover:text-emerald-700 hover:font-normal transition">
+                <Link to="/user/config">About me</Link>
+              </li>
+            </>
+          )}
+        </ul>
+      </nav>
+
+      {/* Seção de autenticação para desktop */}
+      <div className="hidden lg:flex gap-10 font-semibold items-center">
+        {!isSignedIn && (
+          <Link
+            to="/sign-up"
+            className="text-slate-900 cursor-pointer hover:underline hover:text-slate-600 transition"
+          >
+            Register
+          </Link>
+        )}
+        {isSignedIn && (
+          <div className="flex items-center gap-4">
+            <span className="text-emerald-900">Hi, {user?.firstName}</span>
+          </div>
+        )}
+        <button
+          onClick={handleAuthAction}
+          className="text-white bg-emerald-900 px-10 py-3 rounded-xl cursor-pointer hover:bg-emerald-700 transition"
+        >
+          {isSignedIn ? "Log out" : "Login"}
+        </button>
+      </div>
+
+      {/* Botão de menu hambúrguer para mobile */}
+      <div className="lg:hidden">
+        <button onClick={toggleMobileMenu} aria-label="Toggle mobile menu">
+          {isMobileMenuOpen ? (
+            // Ícone X para fechar
+            <svg
+              className="w-8 h-8 text-slate-700"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
+          ) : (
+            // Ícone hambúrguer
+            <svg
+              className="w-8 h-8 text-slate-700"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+          )}
+        </button>
+      </div>
+
+      {/* Menu mobile overlay */}
+      {isMobileMenuOpen && (
+        <div className="lg:hidden absolute top-[89px] inset-x-0 bg-white shadow-md z-40 transition-all duration-300">
+          <ul className="flex flex-col gap-4 p-4 font-light text-slate-500">
+            <li className="hover:text-emerald-700 hover:font-normal transition">
+              <Link to="/" onClick={() => setIsMobileMenuOpen(false)}>
+                Home
+              </Link>
+            </li>
+            {isSignedIn && (
+              <>
+                <li className="hover:text-emerald-700 hover:font-normal transition">
+                  <Link to="/plants/list" onClick={() => setIsMobileMenuOpen(false)}>
+                    Products
+                  </Link>
+                </li>
+                <li className="hover:text-emerald-700 hover:font-normal transition">
+                  <Link to="/user/config" onClick={() => setIsMobileMenuOpen(false)}>
+                    About me
+                  </Link>
+                </li>
+              </>
+            )}
+            <li className="pt-4 border-t border-slate-200">
+              {!isSignedIn && (
+                <Link
+                  to="/sign-up"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="block text-slate-900 cursor-pointer hover:underline hover:text-slate-600 transition"
+                >
+                  Register
+                </Link>
+              )}
+              <button
+                onClick={() => {
+                  handleAuthAction();
+                  setIsMobileMenuOpen(false);
+                }}
+                className="w-full text-left mt-2 text-white bg-emerald-900 px-4 py-2 rounded-xl cursor-pointer hover:bg-emerald-700 transition"
+              >
+                {isSignedIn ? "Log out" : "Login"}
+              </button>
+            </li>
+          </ul>
+        </div>
+      )}
+    </header>
+  );
+};
