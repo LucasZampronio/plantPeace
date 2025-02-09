@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const FirstSection = () => {
   return (
-    <section className="h-[636px] grid grid-cols-2">
+    <section className=" dark:bg-neutral-900 bg-white h-[636px] grid grid-cols-2">
       <div className="gap-6 content-around px-[10%] flex flex-col justify-center items-start flex-1">
         <h1 className="font-[Playfair_Display] text-[64px] font-bold text-emerald-900 w-140">
           Discover your green side

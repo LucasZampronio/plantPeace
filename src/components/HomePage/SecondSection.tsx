@@ -5,7 +5,7 @@ import { Droplet } from "lucide-react";
 
 const SecondSection = () => {
   return (
-    <section className="px-[5%] pt-36 pb-14 text-center grid grid-cols-3 gap-y-20 gap-x-12">
+    <section className="dark:bg-neutral-900 bg-white px-[5%] pt-36 pb-14 text-center grid grid-cols-3 gap-y-20 gap-x-12">
       <div className="flex flex-col gap-4 col-span-3">
         <h2 className="font-[Playfair_Display] text-[40px] font-bold text-emerald-900">
           Steps to take care of your plants

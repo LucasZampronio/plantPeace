@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 const ThirdSection = () => {
   return (
-    <section className="px-[5%] pt-14 pb-20 grid grid-cols-2 justify-items-start">
+    <section className=" dark:bg-neutral-900 bg-white px-[5%] pt-14 pb-20 grid grid-cols-2 justify-items-start">
       <div className="grid grid-cols-2">
         <img
           className="object-cover h-full max-h-[697px]"
