@@ -9,7 +9,7 @@ const SideBar: React.FC<SidebarProps> = ({
   onCategoryChange,
 }) => {
   return (
-    <div className="w-62 gap-2 px-4 h-screen border-r border-gray-300 flex flex-col py-4">
+    <div className="w-62 gap-2 px-4 h-120vh border-r border-gray-300 flex flex-col py-4 bg-white dark:bg-neutral-900">
       {["Indor", "Outdoor", "Terracy e Balcony", "Office Desk"].map(
         (category) => (
           <label key={category} className="flex items-center space-x-2">

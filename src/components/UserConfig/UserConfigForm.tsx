@@ -52,7 +52,7 @@ const UserConfigForm: React.FC<UserConfigFormProps> = ({ user, onSubmit }) => {
   };
 
   return (
-    <section className="bg-white flex h-screen">
+    <section className="bg-white dark:bg-neutral-900 flex h-screen">
       <div className="flex flex-1 flex-col pt-30 items-left justify-start w-full">
         <div className="border-green-500 w-[70%] pl-15 pr-10 pb-10">
           <h1 className="font-[Playfair_Display] text-4xl font-bold mb-3 text-[#064E3B]">

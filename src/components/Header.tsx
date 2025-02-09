@@ -28,7 +28,7 @@ export const Header = () => {
       <DarkMode/>
       {/* Links de navegação */}
       <nav>
-        <ul className="flex gap-4 p-4 font-light text-slate-500">
+        <ul className="flex gap-4 p-4 font-light text-slate-500 ">
           <li className="hover:text-emerald-800 text-emerald-900  font-normal hover:font-bold transition duration-300">
             <Link to="/">Home</Link>  
           </li>
