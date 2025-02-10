@@ -18,7 +18,7 @@ const SearchBar: React.FC<{ onSearch: (query: string) => boolean }> = ({
   };
 
   return (
-    <div className="w-full p-4 flex flex-col">
+    <div className="w-full p-4 flex flex-col bg-white dark:bg-neutral-900">
       {/* Barra de pesquisa */}
       <div className="flex items-center gap-4">
         <input

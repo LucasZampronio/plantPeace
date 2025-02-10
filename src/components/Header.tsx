@@ -2,8 +2,10 @@ import { useAuth, useUser } from "@clerk/clerk-react";
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import logo from "../images/logoicon.svg";
+import DarkMode from '../components/DarkMode';
 
 export const Header = () => {
+
   const { isSignedIn, signOut } = useAuth();
   const { user } = useUser();
   const navigate = useNavigate();
@@ -23,26 +25,27 @@ export const Header = () => {
   };
 
   return (
-    <header className="bg-white h-[89px] flex justify-between items-center px-10 py-4 font-[Inter] fixed w-full border-b border-slate-200 z-50">
+    <header className="bg-white dark:bg-neutral-900 h-[89px] flex justify-between items-center px-10 py-4 font-[Inter] fixed w-full border-b border-slate-200 dark:border-gray-500 z-50" data-theme='dark'>
+      
       {/* Logo */}
       <div>
         <Link to="/">
           <img src={logo} alt="green logo with a jar and 3 leafs" />
         </Link>
       </div>
-
-      {/* Menu de navegação para desktop */}
+      <DarkMode />
+      {/* Desktop navigation menu */}
       <nav className="hidden lg:flex">
-        <ul className="flex gap-4 p-4 font-light text-slate-500">
-          <li className="hover:text-emerald-700 hover:font-normal transition">
+        <ul className="flex gap-4 p-4 font-light text-slate-500 dark:text-slate-400">
+          <li className="text-emerald-900 font-normal hover:text-emerald-800 hover:font-bold transition duration-300 dark:text-emerald-700 dark:hover:text-emerald-600">
             <Link to="/">Home</Link>
           </li>
           {isSignedIn && (
             <>
-              <li className="hover:text-emerald-700 hover:font-normal transition">
+              <li className="hover:text-emerald-800 text-emerald-900 font-normal hover:font-bold transition">
                 <Link to="/plants/list">Products</Link>
               </li>
-              <li className="hover:text-emerald-700 hover:font-normal transition">
+              <li className="hover:text-emerald-800 text-emerald-900  font-normal hover:font-bold transition">
                 <Link to="/user/config">About me</Link>
               </li>
             </>
@@ -55,7 +58,7 @@ export const Header = () => {
         {!isSignedIn && (
           <Link
             to="/sign-up"
-            className="text-slate-900 cursor-pointer hover:underline hover:text-slate-600 transition"
+            className="text-slate-900 cursor-pointer hover:underline hover:text-slate-600 transition dark:text-slate-500 dark:hover:text-emerald-700 dark:"
           >
             Register
           </Link>

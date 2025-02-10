@@ -6,16 +6,16 @@ import { Link } from "react-router-dom";
 const ThirdSection = () => {
   return (
     // Mobile: grid de 1 coluna; Desktop: grid de 2 colunas (mantendo o layout original)
-    <section className="px-[5%] pt-14 pb-20 grid grid-cols-1 md:grid-cols-2 justify-items-start">
+    <section className="px-[5%] pt-14 pb-20 grid grid-cols-1 md:grid-cols-2 justify-items-start dark:bg-neutral-900 bg-white">
       {/* Esta div com as duas imagens é oculta no mobile e exibida apenas no md */}
       <div className="hidden md:grid grid-cols-2">
         <img
-          className="object-cover h-full max-h-[697px]"
+          className="object-cover h-full max-h-[697px] opacity-100 dark:opacity-70"
           src={image1}
           alt=""
         />
         <img
-          className="object-cover h-full max-h-[697px]"
+          className="object-cover h-full max-h-[697px] opacity-100 dark:opacity-70"
           src={image2}
           alt=""
         />

@@ -1,7 +1,9 @@
 import React from "react";
 import PlantImage from "../../images/defautplant.png";
 import { useForm } from "../../hooks/useForm"; // Importe o hook
-import LogoImage from '../../images/logoicon.svg';  
+import LogoImage from '../../images/logoicon.svg';
+import DarkMode from '../DarkMode';
+
 
 interface LoginFormData {
   email: string;
@@ -41,12 +43,13 @@ const LoginForm: React.FC<LoginFormProps> = ({ onSubmit = () => {} }) => {
     });
 
   return (
-    <div className="flex flex-col md:flex-row w-full h-screen bg-gray-100">
+    <div className="flex flex-col md:flex-row w-full h-screen bg-white">
       <div className="flex-1 flex flex-col justify-center items-center p-6 md:p-10">
         <div className="absolute top-4 left-4">
           <a href="/">
             <img src={LogoImage} alt="Logo" className="w-10 h-10" />
           </a>
+
         </div>
         
         <div className="flex flex-col gap-6 w-full max-w-md">

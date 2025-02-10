@@ -158,49 +158,49 @@ const PlantForm = ({
   };
 
   return (
-    <div className="flex w-full relative h-auto py-30 md:py-0 lg:py-0">
+    <div className="flex w-full relative h-auto py-30 md:py-0 lg:py-0 bg-white dark:bg-neutral-900">
       {/* Imagem de fundo */}
       <img
         src={nature}
         alt=""
-        className="absolute top-0 left-0 w-full h-full object-cover opacity-50 z-0"
+        className="absolute top-0 left-0 w-full h-full object-cover opacity-50 z-0 dark:opacity-70"
       />
       <div className="flex flex-1 flex-col justify-center items-center">
         <form
           onSubmit={handleSubmit}
-          className="flex flex-col justify-center items-center gap-2 rounded-2xl bg-white"
+          className="flex flex-col justify-center items-center gap-2 rounded-2xl bg-white dark:bg-neutral-900"
         >
           {/* Cabeçalho */}
-          <div className="flex flex-col items-start gap-1 sm:pr-0 pl-10 w-full max-w-lg">
-            <h2 className="text-2xl font-extrabold bg-gradient-to-r from-emerald-800 to-emerald-700 bg-clip-text text-transparent">
+          <div className="flex flex-col items-start gap-1 sm:pr-0 pl-10 w-full max-w-lg bg-white dark:bg-neutral-900">
+            <h2 className="text-2xl font-extrabold bg-gradient-to-r from-emerald-800 to-emerald-700 bg-clip-text text-transparent bg-white dark:bg-neutral-900">
               {formConfig.title}
             </h2>
-            <p className="text-left text-gray-500 w-[400px] text-sm ">
+            <p className="text-left text-gray-500 w-[400px] text-sm bg-white dark:bg-neutral-900">
               {formConfig.description}
             </p>
           </div>
 
           {/* Campos do formulário */}
-          <div className="flex flex-col sm:pl-10 sm:pr-10 w-full max-w-lg h-full">
+          <div className="flex flex-col sm:pl-10 sm:pr-10 w-full max-w-lg h-full bg-white dark:bg-neutral-900">
             {inputFields.slice(0, 3).map((field) => (
-              <div className="relative w-full mt-2" key={field.id}>
+              <div className="relative w-full mt-2 text-black dark:text-gray-200" key={field.id}>
                 <InputField {...field} />
               </div>
             ))}
             <div className="flex gap-4 w-full mt-4">
-              <div className="relative w-1/2">
+              <div className="relative w-1/2 text-black dark:text-gray-200">
                 <InputField {...inputFields[3]} className="w-full" />
               </div>
-              <div className="relative w-1/2">
+              <div className="relative w-1/2 text-black dark:text-gray-200">
                 <InputField {...inputFields[4]} className="w-full" />
               </div>
             </div>
             {inputFields.slice(5).map((field) => (
-              <div className="relative w-full mt-4" key={field.id}>
+              <div className="relative w-full mt-4 text-black dark:text-gray-200" key={field.id}>
                 <InputField {...field} />
               </div>
             ))}
-            <div className="relative w-full mt-4 mb-2">
+            <div className="relative w-full mt-4 mb-2 text-black dark:text-gray-200">
               <CheckboxField
                 id="highlightItem"
                 label="Highlight this item"

@@ -4,9 +4,10 @@ import { Droplet } from "lucide-react";
 
 const SecondSection = () => {
   return (
-    <section className="px-[5%] pt-36 pb-14 text-center grid grid-cols-1 md:grid-cols-3 gap-y-10 md:gap-y-20 gap-x-0 md:gap-x-12">
-      <div className="flex flex-col gap-4 col-span-1 md:col-span-3">
-        <h2 className="font-[Playfair_Display] text-[28px] md:text-[40px] font-bold text-emerald-900">
+      <section className="dark:bg-neutral-900 bg-white px-[5%] pt-36 pb-14 text-center grid grid-cols-1 md:grid-cols-3 gap-y-10 md:gap-y-20 gap-x-0 md:gap-x-12">
+        <div className="flex flex-col gap-4 col-span-1 md:col-span-3">
+          <h2 className="font-[Playfair_Display] text-[28px] md:text-[40px] font-bold text-emerald-900">
+
           Steps to take care of your plants
         </h2>
         <p className="text-slate-500 w-full md:w-[60%] self-center text-sm md:text-base">
@@ -20,7 +21,7 @@ const SecondSection = () => {
           size={70}
           className="bg-emerald-900 text-white rounded-full p-4 hover:text-blue-400"
         />
-        <h3 className="text-slate-950 font-bold text-xl md:text-2xl py-4 md:py-6">
+        <h3 className="text-slate-950 font-bold text-xl md:text-2xl py-4 md:py-6 dark:text-emerald-900">
           Watering
         </h3>
         <p className="text-slate-500 pb-8 md:pb-14 text-sm md:text-base">
@@ -33,7 +34,7 @@ const SecondSection = () => {
           size={70}
           className="bg-emerald-900 text-white rounded-full p-4 hover:text-yellow-400"
         />
-        <h3 className="text-slate-950 font-bold text-xl md:text-2xl py-4 md:py-6">
+        <h3 className="text-slate-950 font-bold text-xl md:text-2xl py-4 md:py-6 dark:text-emerald-900">
           Sunlight
         </h3>
         <p className="text-slate-500 pb-8 md:pb-14 text-sm md:text-base">
@@ -47,7 +48,7 @@ const SecondSection = () => {
           size={70}
           className="bg-emerald-900 text-white rounded-full p-4 hover:text-green-400"
         />
-        <h3 className="text-slate-950 font-bold text-xl md:text-2xl py-4 md:py-6">
+        <h3 className="text-slate-950 font-bold text-xl md:text-2xl py-4 md:py-6 dark:text-emerald-900">
           Nutrients and Fertilizing
         </h3>
         <p className="text-slate-500 pb-8 md:pb-14 text-sm md:text-base">

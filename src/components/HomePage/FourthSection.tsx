@@ -64,7 +64,7 @@ const Fourth = () => {
     };
 
   return (
-    <section className="flex flex-col justify-center items-center px-4 md:px-40 py-16">
+    <section className=" dark:bg-neutral-900 bg-white flex flex-col justify-center items-center px-4 md:px-40 py-16">
       <div className="flex flex-col self-start mb-12 max-w-4xl">
         {/* No mobile, usamos w-full para permitir que o texto quebre em várias linhas */}
         <h1 className="font-[Playfair_Display] text-[24px] md:text-[40px] font-bold text-emerald-900 mb-4 w-full md:w-115">

@@ -1,17 +1,3 @@
-<<<<<<< HEAD
-import './App.css';
-import {RegisterForm} from './pages/register.tsx'; 
-
-function App() {
-  const handleSignUp = (data: {
-    name: string;
-    email: string;
-    password: string;
-
-  }) => {
-    console.log("Dados do formulário:", data);
-  };
-=======
 import "./App.css";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import { SignedIn, SignedOut, RedirectToSignIn } from "@clerk/clerk-react";
@@ -25,20 +11,10 @@ import LoginPage from "./pages/LoginPage";
 import PlantListPage from "./pages/PlantsListPage";
 import UserConfigPage from "./pages/UserConfigPage";
 import PlantDetail from "./pages/PlantsDetail";
->>>>>>> fernando-responsividade
 
 // componente para rotas protegidas
 const ProtectedRoute = ({ children }: { children: React.ReactNode }) => {
   return (
-<<<<<<< HEAD
-    <div className="min-h-screen flex flex-col items-center justify-center bg-gray-100">
-      <RegisterForm onSubmit={handleSignUp} />
-    </div>
-  );
-}
-
-export default App;
-=======
     <>
       <SignedIn>{children}</SignedIn>
       <SignedOut>
@@ -125,4 +101,3 @@ function App() {
 }
 
 export default App;
->>>>>>> fernando-responsividade
