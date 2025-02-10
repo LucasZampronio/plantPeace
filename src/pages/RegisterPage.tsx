@@ -1,7 +1,9 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { useSignUp } from "@clerk/clerk-react"; // Importando o hook para registrar usuários
+import { useSignUp } from "@clerk/clerk-react";
 import { RegisterForm } from "../components/Login/register";
+import { useAuth } from "@clerk/clerk-react"; 
+
 
 // Definindo o tipo para os dados do usuário
 interface UserData {
@@ -13,7 +15,8 @@ interface UserData {
 const RegisterPage = () => {
   const navigate = useNavigate();
   const [error, setError] = useState("");
-  const { signUp } = useSignUp(); //hook do clerk
+  const { signUp } = useSignUp();
+  const { signOut } = useAuth();
 
   // funcao para salvar os dados do usuário no db.json
   const saveUserToDB = async (userData: UserData) => {
@@ -72,8 +75,10 @@ const RegisterPage = () => {
       // salvando os dados do usuário no db.json
       await saveUserToDB(userData);
 
+      await signOut(); // deslogando o usuário
+
       // redirecionando para a página de login após o cadastro
-      navigate("/");
+      navigate("/sign-in?register=success");
       window.location.reload();
 
     } catch (error) {

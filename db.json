@@ -285,6 +285,44 @@
       "email": "manuella.rodrigue.pb@compasso.com.br",
       "clerkUserId": "sess_2srBrHISoDQi1nR3UebRzjNWTh5",
       "id": 40
+    },
+    {
+      "email": "lalala@gmail.com",
+      "clerkUserId": "user_2srF9CVopJhL4FlYPSzTnYvvUHv",
+      "firstName": "lalalala",
+      "id": 41
+    },
+    {
+      "email": "babi@gmail.com",
+      "clerkUserId": "sess_2srNRsxXaqx9knHVwrsoYQsJr5R",
+      "id": 42
+    },
+    {
+      "email": "manurodrig00@gmail.com",
+      "clerkUserId": "sess_2srPJOoDTtPp0ly92pP1Fc6GnkE",
+      "id": 43
+    },
+    {
+      "email": "manurodrig00@gmail.com",
+      "clerkUserId": "sess_2srT4iP6c1MkgQK2kpum7W40pPV",
+      "id": 44
+    },
+    {
+      "email": "register@gmail.com",
+      "clerkUserId": "user_2srUGpBq82mtUZr7yfxYrWCDntY",
+      "firstName": "registrando",
+      "id": 45
+    },
+    {
+      "email": "register@gmail.com",
+      "clerkUserId": "user_2srUOvXNdrqzNiykulLN9O9njxD",
+      "firstName": "testando register",
+      "id": 46
+    },
+    {
+      "email": "register@gmail.com",
+      "clerkUserId": "sess_2srUPcc6PH3Zd4QJmRkOXYpKybK",
+      "id": 47
     }
   ]
 }

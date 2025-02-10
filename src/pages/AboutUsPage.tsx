@@ -1,4 +1,5 @@
 import photo01 from "../images/photo-dan.jpg";
+
 import { TeamCard } from "../components/TeamCard";
 
 export const AboutUsPage = () => {

@@ -23,7 +23,7 @@ const DarkMode = () => {
     <div className="flex">
       <button
         onClick={toggleDarkMode}
-        className="p-4 rounded-full transition-colors duration-300"
+        className="p-4 rounded-full transition-colors duration-300 cursor-pointer"
         aria-label={
           isDarkMode ? "Alternar para modo claro" : "Alternar para modo escuro"
         }
