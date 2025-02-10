@@ -56,15 +56,15 @@ export const Header = () => {
       {/* Desktop navigation menu */}
       <nav className="hidden lg:flex">
         <ul className="flex gap-4 p-4 font-light text-slate-500 dark:text-slate-400">
-          <li className="text-emerald-900 font-normal hover:text-emerald-800 hover:font-bold transition duration-300 dark:text-emerald-900 dark:hover:text-emerald-800">
+          <li className="text-emerald-900 font-normal hover:text-emerald-800 hover:font-medium transition duration-300 dark:text-emerald-900 dark:hover:text-emerald-800">
             <Link to="/">Home</Link>
           </li>
           {isSignedIn && (
             <>
-              <li className="hover:text-emerald-800 text-emerald-900 font-normal hover:font-bold transition">
+              <li className="hover:text-emerald-800 text-emerald-900 font-normal hover:font-medium transition">
                 <Link to="/plants/list">Products</Link>
               </li>
-              <li className="hover:text-emerald-800 text-emerald-900  font-normal hover:font-bold transition">
+              <li className="hover:text-emerald-800 text-emerald-900  font-normal hover:font-medium transition">
                 <Link to="/user/config">About me</Link>
               </li>
             </>

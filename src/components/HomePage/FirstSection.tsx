@@ -3,7 +3,8 @@ import { Link } from "react-router-dom";
 
 const FirstSection = () => {
   return (
-    <section className="pt-[var(--header-height)] dark:bg-neutral-900 bg-white flex flex-col md:grid grid-cols-2 md:grid-cols-2">
+    // Adiciona padding-top para evitar sobreposição com o header
+    <section className="pt-[var(--header-height)] md:pt-22 dark:bg-neutral-900 bg-white h-[636px] flex flex-col md:grid grid-cols-2 md:grid-cols-2">
       <div className="gap-6 content-around px-[10%] flex flex-col justify-center items-start flex-1">
         <h1 className="font-[Playfair_Display] text-[40px] md:text-[64px] font-bold text-emerald-900 w-full">
           Discover your green side

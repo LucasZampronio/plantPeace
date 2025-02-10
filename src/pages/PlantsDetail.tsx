@@ -49,8 +49,8 @@ const PlantDetail: React.FC<PlantDetailProps> = () => {
   return (
     <div className="flex flex-col lg:flex-row bg-gray-50 min-h-screen">
       {/* Seção de detalhes da planta */}
-      <div className="flex-1 flex flex-col py-5 justify-center items-center mt-25 w-full h-auto">
-        <div className="mb-5 pl-25 self-start">
+      <div className="flex-1 flex flex-col pt-[var(--header-height)] py-5 justify-center items-center w-full h-auto">
+        <div className="pb-3 pl-25 self-start">
           <h1 className="font-playfair text-3xl font-bold text-teal-800 mb-1 leading-tight">
             {plant.name}
           </h1>
@@ -112,7 +112,7 @@ const PlantDetail: React.FC<PlantDetailProps> = () => {
           </div>
         </div>
         <button
-          onClick={() => navigate(`/plants/${plant.id}`)} // Ou o caminho correto da sua rota
+          onClick={() => navigate(`/plants/${plant.id}`)}
           className="w-150 py-1 mt-2 bg-teal-800 rounded-4xl text-white font-inter text-lg font-semibold cursor-pointer transition-colors duration-200 hover:bg-teal-700"
         >
           Edit Plant

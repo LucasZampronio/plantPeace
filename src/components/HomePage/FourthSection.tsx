@@ -111,7 +111,7 @@ const Fourth = () => {
               <a
                 href={`/plants/${item.id}`}
                 onClick={handleCardClick(item)}
-                className={`bg-gray-100 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 p-4 block cursor-pointer focus:outline-none focus:ring-2 focus:ring-green-500 ${
+                className={`bg-gray-100 dark:bg-emerald-900 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 p-4 block cursor-pointer focus:outline-none focus:ring-2 focus:ring-green-500 ${
                   items.length === 1
                     ? "max-w-xs mx-auto"
                     : items.length === 2
@@ -130,7 +130,7 @@ const Fourth = () => {
                   } bg-gray-100 rounded-lg mb-5 overflow-hidden relative`}
                 >
                   {/* Balãozinho da categoria */}
-                  <span className="absolute top-2 right-2 bg-green-600 text-white text-xs font-semibold px-3 py-1 rounded-full shadow-md z-1">
+                  <span className="absolute top-2 right-2 bg-green-600 dark:bg-emerald-600 text-white dark:text-black text-xs font-semibold px-3 py-1 rounded-full shadow-md z-1">
                     {item.category}
                   </span>
 
@@ -143,7 +143,7 @@ const Fourth = () => {
                 <h3 className="text-xl text-black font-semibold mb-2">
                   {item.name}
                 </h3>
-                <p className="text-green-900 text-lg font-medium mb-4">
+                <p className="text-green-900 dark:text-gray-300 text-lg font-medium mb-4">
                   ${item.price}
                 </p>
               </a>
