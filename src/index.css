@@ -24,17 +24,31 @@
 
 .animate-glitch2 { animation: glitch2 0.5s infinite; }
 
-/* No seu arquivo CSS global */
-/* No arquivo global */
+/* Estilo global para slick-prev e slick-next */
 .slick-prev,
 .slick-next {
   z-index: 1;
   width: 40px;
   height: 40px;
+  background: none !important;  /* Remove o fundo */
+  border: none !important;      /* Remove borda */
+  font-size: 24px;              /* Ajuste o tamanho da seta */
+  cursor: pointer;             /* Aponta para a interação do mouse */
 }
 
-.slick-prev { left: -45px; }
-.slick-next { right: -45px; }
+.slick-prev::before,
+.slick-next::before {
+  color: green;                /* Cor das setas */
+  font-size: 24px;             /* Tamanho da seta */
+}
+
+.slick-prev { 
+  left: -45px; 
+}
+
+.slick-next { 
+  right: -45px; 
+}
 
 @media (max-width: 768px) {
   .slick-prev { left: -25px; }
