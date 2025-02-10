@@ -53,7 +53,7 @@ const Catalog: React.FC<CatalogProps> = ({ plants, searchResult }) => {
                   "https://img.freepik.com/fotos-gratis/monstera-deliciosa-planta-em-um-vaso_53876-133116.jpg?semt=ais_hybrid"
                 }
                 alt={plant.name}
-                className="w-64 h-64 object-cover"
+                className="w-64 h-64 object-cover border-2 border-gray-50"
                 onLoad={handleImageLoad} // Chama a função quando a imagem carregar
               />
               <div className="absolute top-2 right-2 max-w-[90%] bg-green-200 rounded-2xl p-1 border-2 border-green-100 text-sm sm:text-base text-center">

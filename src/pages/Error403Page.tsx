@@ -1,5 +1,4 @@
 import { useNavigate } from "react-router-dom";
-import React from "react";
 import { Helmet } from 'react-helmet';
 
 import logo from "../images/403logo.png";

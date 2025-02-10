@@ -6,12 +6,11 @@ import {
 } from "@clerk/clerk-react";
 import PlantForm from "../components/PlantsForm";
 import { PlantFormData } from "../hooks/usePlantForm";
-import React from "react";
 import { Helmet } from 'react-helmet';
 
 
 export default function PlantsRegisterPage() {
-  const { userId } = useAuth(); // Obtém o ID do usuário logado
+  const { userId } = useAuth();
 
   // Função chamada quando o formulário é enviado
   const handleSubmit = async (plantData: PlantFormData) => {
