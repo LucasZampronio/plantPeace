@@ -28,7 +28,7 @@ export const AboutUsPage = () => {
       <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 justify-items-center gap-10 py-12">
         <TeamCard name="Daniel Fernandes da Silva" photo={photo01} github="https://github.com/daniscotti" linkedin="https://www.linkedin.com/in/danfdasilva/" />
         <TeamCard name="Fernando Glaesser da Silva" photo={photo03} github="https://github.com/FeGlaeser" linkedin="https://www.linkedin.com/in/fernando-glaeser-08a0b92b2/" />
-        <TeamCard name="Lucas Zampronio da Silva" photo={photo04} github="https://github.com/daniscotti" linkedin="https://www.linkedin.com/in/lucas-zampronio-036512218/" />
+        <TeamCard name="Lucas Zampronio da Silva" photo={photo04} github="https://github.com/LucasZampronio" linkedin="https://www.linkedin.com/in/lucas-zampronio-036512218/" />
         <TeamCard name="Manuella da Silva Rodrigues" photo={photo02} github="https://github.com/manuzokas" linkedin="https://www.linkedin.com/in/manuella-rodrigues-541a89316/" />
         <TeamCard name="Marcus Vinicius Do Prado" photo={photo05} github="https://github.com/marcuspradoep" linkedin="https://www.linkedin.com/in/marcus-vinicius-do-prado-4a3835331/" />
         <div className="flex flex-col items-center gap-6 pt-6">
