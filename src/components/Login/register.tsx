@@ -8,10 +8,12 @@ interface RegisterFormProps {
     password: string;
     confirmPassword: string;
   }) => void;
+  error?: string;
 }
 
 export const RegisterForm: React.FC<RegisterFormProps> = ({
   onSubmit = () => {},
+  error,
 }) => {
   const { formData, errors, handleChange, handleSubmit } = useForm({
     initialValues: {
@@ -136,6 +138,26 @@ export const RegisterForm: React.FC<RegisterFormProps> = ({
             >
               Register
             </button>
+            {error && (
+              <div
+                className=" p-3 bg-red-50 border border-red-200 text-red-600 rounded-md 
+                          flex items-center justify-center space-x-2 transition-all duration-300"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-5 w-5"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+                <span className="text-sm">{error}</span>
+              </div>
+            )}
           </form>
         </div>
       </div>

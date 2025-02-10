@@ -1,10 +1,9 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useSignIn } from "@clerk/clerk-react";
-import { Helmet } from 'react-helmet';
+import { Helmet } from "react-helmet";
 import LoginForm from "../components/Login/login";
 
-// Definindo o tipo para os dados do usuário
 interface UserData {
   email: string;
   clerkUserId: string;
@@ -13,9 +12,8 @@ interface UserData {
 const LoginPage = () => {
   const navigate = useNavigate();
   const [error, setError] = useState("");
-  const { signIn } = useSignIn(); // hook do Clerk para autenticar usuários
+  const { signIn } = useSignIn();
 
-  // funcao para salvar os dados do usuário no db.json
   const saveUserToDB = async (userData: UserData) => {
     try {
       const response = await fetch("http://localhost:3001/users", {
@@ -30,10 +28,10 @@ const LoginPage = () => {
         throw new Error("Erro ao salvar usuário no banco de dados");
       }
 
-      const data = await response.json();
-      console.log("Usuário salvo com sucesso:", data);
+      await response.json();
     } catch (error) {
       console.error("Erro ao salvar usuário:", error);
+      throw error;
     }
   };
 
@@ -46,31 +44,27 @@ const LoginPage = () => {
         return;
       }
 
-      // autenticando o usuário utilizando o Clerk
       const signInResponse = await signIn.create({
         identifier: data.email,
         password: data.password,
       });
 
-      // Se a auth for bem-sucedida, redireciona para a página principal
-      console.log("Usuário autenticado com sucesso:", signInResponse);
-
-      // obtem o id do usuário autenticado
-      const clerkUserId = signInResponse.createdSessionId; // ou outro identificador único
-
-      // salva os dados do usuário no db.json
       const userData: UserData = {
         email: data.email,
-        clerkUserId: clerkUserId ?? "",
+        clerkUserId: signInResponse.createdSessionId ?? "",
       };
 
       await saveUserToDB(userData);
-
       navigate("/");
       window.location.reload();
     } catch (error) {
-      console.error("Erro ao tentar fazer login:", error);
-      setError("Credenciais inválidas. Tente novamente.");
+      let errorMessage = "Credenciais inválidas. Tente novamente.";
+
+      if (error instanceof Error) {
+        errorMessage = error.message || errorMessage;
+      }
+
+      setError(errorMessage);
     }
   };
 
@@ -79,8 +73,7 @@ const LoginPage = () => {
       <Helmet>
         <title>Login - plantPeace</title>
       </Helmet>
-      <LoginForm onSubmit={handleLogin} />
-      {error && <p className="text-red-500 text-sm mt-4">{error}</p>}
+      <LoginForm onSubmit={handleLogin} error={error} />
     </div>
   );
 };
