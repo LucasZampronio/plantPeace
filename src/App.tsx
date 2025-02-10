@@ -1,5 +1,5 @@
 import "./App.css";
-import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import React, { Suspense } from "react";import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import { SignedIn, SignedOut, RedirectToSignIn } from "@clerk/clerk-react";
 import Layout from "./components/Layout";
 import HomePage from "./pages/HomePage";
@@ -11,6 +11,7 @@ import LoginPage from "./pages/LoginPage";
 import PlantListPage from "./pages/PlantsListPage";
 import UserConfigPage from "./pages/UserConfigPage";
 import PlantDetail from "./pages/PlantsDetail";
+import Loading from "./components/Loading";
 
 // componente para rotas protegidas
 const ProtectedRoute = ({ children }: { children: React.ReactNode }) => {
@@ -98,9 +99,9 @@ const router = createBrowserRouter([
 
 function App() {
   return (
-    <>
+    <Suspense fallback={<Loading />}>
       <RouterProvider router={router} />
-    </>
+    </Suspense>
   );
 }
 

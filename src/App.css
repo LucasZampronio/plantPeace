@@ -2,5 +2,5 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 *{
-    @apply transition-colors duration-300;
+    @apply transition-colors duration-100;
 }
