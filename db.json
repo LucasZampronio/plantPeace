@@ -1,7 +1,7 @@
 {
   "plants": [
     {
-      "name": "Planta 1",
+      "name": "Planta lucas",
       "subtitle": "teste",
       "category": "Outdoor",
       "price": "1",
@@ -13,7 +13,7 @@
       "id": 1
     },
     {
-      "name": "Planta 2",
+      "name": "Planta 1",
       "subtitle": "A majestic plant",
       "category": "Indor",
       "price": "100",
@@ -69,7 +69,7 @@
       "description": "description",
       "imageUrl": "https://media.istockphoto.com/id/1380361370/pt/foto/decorative-banana-plant-in-concrete-vase-isolated-on-white-background.jpg?s=612x612&w=0&k=20&c=v-yfeQc5NaSLKKABNfLXKHETuPSoBz8ImvUAN-zCjXY=",
       "highlightItem": true,
-      "ownerId": "user_2sdljtcmTPLemdloL3NgAEJpP1m",
+      "ownerId": "user_2sj3X5WCyzvvABWlYLP2ey7sDsN",
       "id": 6
     }
   ],

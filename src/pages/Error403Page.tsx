@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
-import logo from "../images/404logo.png";
-import bgImage from "../images/forest-bg.png";
+import logo from "../images/404logo.png"
+import bgImage from "../images/forest-bg.png"
 
 export const ErrorPage = () => {
   const navigate = useNavigate();
@@ -29,18 +29,18 @@ export const ErrorPage = () => {
         />
       ))}
 
-      {/* Container principal com efeito vidro */}
-      <div className="relative bg-emerald-900/40 border border-emerald-500/30 rounded-xl shadow-xl backdrop-blur-sm p-6 md:p-8 text-center max-w-2xl overflow-hidden">
-        {/* Planta com brilho de erro */}
-        <div className="relative w-60 h-24 md:w-120 md:h-40 mx-auto mb-0">
+      {/* container principal com efeito vidro */}
+      <div className="relative bg-emerald-900/40 border border-emerald-500/30 rounded-xl shadow-xl backdrop-blur-sm p-8 text-center max-w-2xl  overflow-hidden">
+        {/* planta com brilho de erro */}
+        <div className="relative w-120 h-40  mx-auto my-auto mb-0">
           <img
             src={logo}
-            className="absolute top-[-70px] md:top-[-140px] z-50 animate-wiggle"
+            className="absolute top-[-140px] z-100 animate-wiggle"
             style={{ transformOrigin: "50% 100%" }}
           />
-          <div className="absolute w-10 h-10 top-6 left-14 md:top-12 md:left-28"></div>
+          <div className="absolute w-10 h-10 top-12 left-28"></div>
 
-          {/* Brilho de energia ao redor da planta */}
+          {/* brilho de energia ao redor da planta */}
           <div className="absolute inset-0 bg-green-100/30 rounded-full blur-xl animate-pulse"></div>
         </div>
 
@@ -58,7 +58,7 @@ export const ErrorPage = () => {
           </p>
         </div>
 
-        {/* Botão estilizado */}
+        {/* botao estilizado */}
         <button
           onClick={() => navigate("/")}
           className="mt-6 px-10 py-3 bg-emerald-900 hover:bg-emerald-700 text-white rounded-lg transition-all duration-300 font-semibold text-lg relative overflow-hidden shadow-lg shadow-yellow-400/20 border border-emerald-700"

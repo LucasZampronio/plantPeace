@@ -29,16 +29,17 @@ const Fourth = () => {
 
   const settings = {
     dots: items.length > 1,
-    infinite: items.length > 1, 
+    infinite: items.length > 1,
     speed: 500,
     slidesToShow: Math.min(items.length, 3),
     slidesToScroll: 1,
     centerMode: items.length === 1,
     centerPadding: "0",
-    prevArrow: <ArrowButton direction="left" onClick={() => {}} />, 
+    prevArrow: <ArrowButton direction="left" onClick={() => {}} />,
     nextArrow: <ArrowButton direction="right" onClick={() => {}} />,
     responsive: [
       {
+
         breakpoint: 1024,
         settings: {
           slidesToShow: Math.min(items.length, 2),
@@ -64,19 +65,23 @@ const Fourth = () => {
     };
 
   return (
-    <section className="flex flex-col justify-center items-center px-4 md:px-40 py-16">
+    <section className=" dark:bg-neutral-900 bg-white flex flex-col justify-center items-center px-4 md:px-40 py-16">
       <div className="flex flex-col self-start mb-12 max-w-4xl">
+        {/* No mobile, usamos w-full para permitir que o texto quebre em várias linhas */}
         <h1 className="font-[Playfair_Display] text-[24px] md:text-[40px] font-bold text-emerald-900 mb-4 w-full md:w-115">
           This week's Most Popular and Best Selling
         </h1>
         <p className="text-gray-500 font-[Inter] text-sm md:text-lg w-full md:w-120">
-          Discover our carefully curated selection of premium plants and
-          gardening essentials.
+          Discover our carefully curated selection of premium plants and gardening essentials.
         </p>
       </div>
-
+      <div className="absolute top-0 right-0 flex space-x-2 z-10">
+        <ArrowButton direction="left" onClick={() => {}} />
+        <ArrowButton direction="right" onClick={() => {}} />
+      </div>
       <div
-        className={`w-full relative mx-auto ${
+      
+        className={`w-full relative mx-auto  ${
           items.length === 1
             ? "max-w-md"
             : items.length === 2
@@ -84,13 +89,13 @@ const Fourth = () => {
             : "max-w-6xl"
         }`}
       >
-        <Slider {...settings}>
+        <Slider {...settings} className="">
           {items.map((item) => (
             <div key={item.id} className="outline-none group px-7">
               <a
                 href={`/plants/${item.id}`}
                 onClick={handleCardClick(item)}
-                className={`bg-gray-100 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 p-4 block cursor-pointer focus:outline-none focus:ring-2 focus:ring-green-500 ${
+                className={` rounded-xl  hover:shadow-xl transition-shadow duration-300 p-4 block cursor-pointer focus:outline-none focus:ring-2 focus:ring-green-500 ${
                   items.length === 1
                     ? "max-w-xs mx-auto"
                     : items.length === 2
@@ -109,20 +114,20 @@ const Fourth = () => {
                   } bg-gray-100 rounded-lg mb-5 overflow-hidden relative`}
                 >
                   {/* Balãozinho da categoria */}
-                  <span className="absolute top-2 right-2 bg-green-600 text-white text-xs font-semibold px-3 py-1 rounded-full shadow-md z-1">
+                  <span className="absolute top-2 right-2 bg-emerald-100 text-emerald-900 text-xs font-semibold px-3 py-1 rounded-full border-emerald-50 border-2 shadow-md z-1">
                     {item.category}
                   </span>
 
                   <img
                     src={item.imageUrl}
                     alt={item.name}
-                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105 opacity-100"
                   />
                 </div>
-                <h3 className="text-base md:text-xl text-black font-semibold mb-2 whitespace-normal break-words">
+                <h3 className="text-xl text-black font-semibold mb-2">
                   {item.name}
                 </h3>
-                <p className="text-green-900 text-xs md:text-lg font-medium mb-4 break-words">
+                <p className="text-green-900 text-lg font-medium mb-4">
                   ${item.price}
                 </p>
               </a>

@@ -1,6 +1,10 @@
 import PlantImage from "../../images/defautplant.png";
 import { useForm } from "../../hooks/useForm";
+<<<<<<< HEAD
 import LogoImage from "../../images/logoicon.svg";
+=======
+import LogoImage from'../../images/logoicon.svg'
+>>>>>>> origin/main
 interface RegisterFormProps {
   onSubmit?: (data: {
     name: string;
@@ -38,6 +42,7 @@ export const RegisterForm: React.FC<RegisterFormProps> = ({
     <div className="min-h-screen bg-[#f8fafc] flex flex-col md:flex-row">
       {/* div da esquerda */}
       <div className="flex-1 flex flex-col items-center justify-center relative p-6 md:p-0">
+<<<<<<< HEAD
         <div className="absolute top-0 left-0 p-4 md:p-3">
           <a href="/">
             <img
@@ -45,6 +50,11 @@ export const RegisterForm: React.FC<RegisterFormProps> = ({
               alt="Logo"
               className="w-10 h-10 md:w-12 md:h-12"
             />
+=======
+        <div className="absolute top-0 left-0 p-4 md:p-10">
+          <a href="/">
+            <img src={LogoImage} alt="Logo" className="w-10 h-10 md:w-12 md:h-12" />
+>>>>>>> origin/main
           </a>
         </div>
         {/* form */}
@@ -58,10 +68,14 @@ export const RegisterForm: React.FC<RegisterFormProps> = ({
             </p>
           </div>
 
+<<<<<<< HEAD
           <form
             onSubmit={handleSubmit}
             className="flex flex-col gap-6 md:gap-8"
           >
+=======
+          <form onSubmit={handleSubmit} className="flex flex-col gap-6 md:gap-8">
+>>>>>>> origin/main
             <div className="flex flex-col gap-4 md:gap-5">
               <div className="flex flex-col gap-2">
                 <label className="text-[#334155] font-medium text-sm">

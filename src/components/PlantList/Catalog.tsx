@@ -16,9 +16,9 @@ interface CatalogProps {
 
 const Catalog: React.FC<CatalogProps> = ({ plants, searchResult }) => {
   return (
-    <div className="w-full p-4">
+    <div className="w-full p-4 bg-white dark:bg-neutral-900">
       {/* Grid responsiva para o catálogo */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+      <div className=" bg-white dark:bg-neutral-900 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
         {plants
           .filter(
             (plant) =>

@@ -23,9 +23,7 @@ export const Footer = () => {
         <div className="flex flex-col sm:flex-row gap-8 lg:gap-24">
           <nav>
             <ul className="flex flex-col gap-4">
-              <li className="font-bold text-xl lg:text-2xl pb-2 lg:pb-4">
-                Links
-              </li>
+              <li className="font-bold text-xl lg:text-2xl pb-2 lg:pb-4">Links</li>
               <li className="hover:underline transition">
                 <Link to="/about">About us</Link>
               </li>
@@ -33,9 +31,7 @@ export const Footer = () => {
           </nav>
           <nav>
             <ul className="flex flex-col gap-4">
-              <li className="font-bold text-xl lg:text-2xl pb-2 lg:pb-4">
-                Community
-              </li>
+              <li className="font-bold text-xl lg:text-2xl pb-2 lg:pb-4">Community</li>
               <li className="hover:underline transition">
                 <a
                   href="https://www.linkedin.com/"
