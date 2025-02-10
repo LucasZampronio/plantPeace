@@ -2,6 +2,8 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useSignUp } from "@clerk/clerk-react"; // Importando o hook para registrar usuários
 import { RegisterForm } from "../components/Login/register";
+import { Helmet } from 'react-helmet';
+
 
 // Definindo o tipo para os dados do usuário
 interface UserData {
@@ -78,6 +80,9 @@ const RegisterPage = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>Register - plantPeace</title>
+      </Helmet>
       <RegisterForm onSubmit={handleRegister} />
       {error && <p className="text-red-500 text-sm mt-4">{error}</p>}
     </div>

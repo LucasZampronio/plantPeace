@@ -18,7 +18,6 @@ const SignUpForm: React.FC<SignUpFormProps> = ({ onSubmit = () => {} }) => {
 
   return (
     <div className="flex min-h-screen bg-gray-100">
-      
       <div className="flex-1 p-16">
         <div className="mt-4">
           <img 

@@ -1,9 +1,14 @@
+import React from "react";
+import { Helmet } from 'react-helmet';
 import photo01 from "../images/photo-dan.jpg";
 import { TeamCard } from "../components/TeamCard";
 
 export const AboutUsPage = () => {
   return (
     <main className="font-[Inter] text-slate-500 px-6 sm:px-10 pt-24 pb-12 grid gap-y-10">
+        <Helmet>
+          <title>About Us - plantPeace</title>
+        </Helmet>
       <section className="grid gap-y-6">
         <h1 className="font-[Playfair_Display] font-bold text-4xl sm:text-5xl text-emerald-900">About Us</h1>
         <p className="text-base sm:text-lg">Welcome to our "About Us" page! We are a team of five internship colleagues united by our passion for technology and our desire to learn, grow, and contribute to innovative projects. Each of us brings unique skills and perspectives, allowing us to work collaboratively and efficiently.</p>

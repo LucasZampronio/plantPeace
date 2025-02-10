@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import SearchBar from "../components/PlantList/SearchBar";
 import Catalog from "../components/PlantList/Catalog";
 import Sidebar from "../components/PlantList/SideBar";
+import { Helmet } from 'react-helmet';
 
 interface Plant {
   id: number;
@@ -61,6 +62,9 @@ const PlantListPage: React.FC = () => {
     // No mobile (até md) os itens serão empilhados (flex-col);
     // a partir de md o layout permanece em linha (flex-row), conforme o design original.
     <div className="flex flex-col md:flex-row py-22">
+      <Helmet>
+        <title>Plants List - plantPeace</title>
+      </Helmet>
       <Sidebar 
         selectedCategories={selectedCategories}
         onCategoryChange={handleCategoryChange}

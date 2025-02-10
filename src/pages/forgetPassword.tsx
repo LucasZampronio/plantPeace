@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Helmet } from 'react-helmet';
 import foto from "/home/fernando/Área de trabalho/Trabalho/src/images/forest-bg.png";
 import logo from "/home/fernando/Área de trabalho/Trabalho/src/images/logoicon.svg";
 import cacto from "/home/fernando/Área de trabalho/Trabalho/src/images/Cacto.png";
@@ -20,7 +21,9 @@ export const ForgotPassword: React.FC<ForgotPasswordProps> = ({
 
   return (
     <div className="flex h-[100%] flex-col items-center bg-white relative overflow-hidden">
-
+      <Helmet>
+        <title>Forgot Password - plantPeace</title>
+      </Helmet>
       <div className="absolute top-5 right-310 ">
           <img src={logo} alt="Logo" className="w-12 h-12" />
       </div>

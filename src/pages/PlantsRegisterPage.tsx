@@ -6,6 +6,9 @@ import {
 } from "@clerk/clerk-react";
 import PlantForm from "../components/PlantsForm";
 import { PlantFormData } from "../hooks/usePlantForm";
+import React from "react";
+import { Helmet } from 'react-helmet';
+
 
 export default function PlantsRegisterPage() {
   const { userId } = useAuth(); // Obtém o ID do usuário logado
@@ -39,6 +42,9 @@ export default function PlantsRegisterPage() {
 
   return (
     <>
+      <Helmet>
+        <title>Plant's Register - plantPeace</title>
+      </Helmet>
       <SignedIn>
         {/* 
           No mobile (default) o formulário é envolvido por um container com 

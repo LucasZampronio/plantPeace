@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Helmet } from 'react-helmet';
 import { useParams, useNavigate } from "react-router-dom";
 import planta from "../images/defautplant.png";
 
@@ -48,6 +49,9 @@ const PlantDetail: React.FC<PlantDetailProps> = () => {
 
   return (
     <div className="flex flex-col lg:flex-row min-h-screen bg-white dark:bg-neutral-900 transition-colors duration-300">
+      <Helmet>
+        <title>Plant's Detail - plantPeace</title>
+      </Helmet>
       {/* Seção de detalhes da planta */}
       <div className="flex-1 flex flex-col pt-[100px] md:pt-[120px] px-8 py-8 justify-start items-start max-w-[650px]">
         {/* Título e subtítulo */}

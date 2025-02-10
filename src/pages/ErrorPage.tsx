@@ -1,4 +1,7 @@
 import { useNavigate } from "react-router-dom";
+import React from "react";
+import { Helmet } from 'react-helmet';
+
 import logo from "../images/404logo.png";
 import bgImage from "../images/forest-bg.png";
 
@@ -13,6 +16,9 @@ export const ErrorPage = () => {
   return (
     <div className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-emerald-900 via-emerald-800 to-emerald-900 text-white overflow-hidden">
       {/* Partículas de poeira/flor voando */}
+      <Helmet>
+        <title>404 - plantPeace</title>
+      </Helmet>
       <img
         src={bgImage}
         alt=""

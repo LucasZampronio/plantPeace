@@ -8,6 +8,7 @@ import {
 } from "@clerk/clerk-react";
 import PlantForm from "../components/PlantsForm";
 import { PlantFormData } from "../hooks/usePlantForm";
+import { Helmet } from 'react-helmet';
 
 export default function PlantsEditPage() {
   const { userId } = useAuth();
@@ -102,6 +103,9 @@ export default function PlantsEditPage() {
 
   return (
     <div className="min-h-screen bg-gray-50">
+      <Helmet>
+        <title>Plant's Edit - plantPeace</title>
+      </Helmet>
       {/* Versão Mobile: Container com padding e largura limitada */}
       <div className="block lg:hidden">
         <div className="flex items-center justify-center p-0">
