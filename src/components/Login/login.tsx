@@ -1,10 +1,7 @@
 import React from "react";
 import PlantImage from "../../images/defautplant.png";
 import { useForm } from "../../hooks/useForm"; // Importe o hook
-import LogoImage from '../../images/logoicon.svg';
-import { Link } from "react-router-dom";
-
-
+import LogoImage from "../../images/logoicon.svg";
 interface LoginFormData {
   email: string;
   password: string;
@@ -35,7 +32,7 @@ const LoginForm: React.FC<LoginFormProps> = ({ onSubmit = () => {} }) => {
         }
 
         if (!data.password) {
-          errors.password = "Password is required";
+          errors.password = "Senha is required";
         }
 
         return errors;
@@ -43,7 +40,7 @@ const LoginForm: React.FC<LoginFormProps> = ({ onSubmit = () => {} }) => {
     });
 
   return (
-    <div className="flex flex-col md:flex-row w-full h-screen bg-white">
+    <div className="flex flex-col md:flex-row w-full h-screen bg-gray-100">
       <div className="flex-1 flex flex-col justify-center items-center p-6 md:p-10">
         <div className="absolute top-4 left-4">
           <a href="/">
@@ -104,13 +101,6 @@ const LoginForm: React.FC<LoginFormProps> = ({ onSubmit = () => {} }) => {
               )}
             </div>
 
-            <Link
-              to="/forgot-password"
-              className="text-sm text-[#064e3b] hover:underline self-end"
-            >
-              Esqueceu sua senha?
-            </Link>
-
             <div className="flex items-center gap-2">
               <input
                 id="stay-connected"
@@ -127,7 +117,6 @@ const LoginForm: React.FC<LoginFormProps> = ({ onSubmit = () => {} }) => {
                 Stay connected
               </label>
             </div>
-
             <button
               type="submit"
               className="w-full bg-[#064e3b] text-[#fcfcfc] py-2 rounded-lg font-semibold hover:bg-[#053e2f] transition-colors"
