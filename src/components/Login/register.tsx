@@ -1,6 +1,6 @@
 import PlantImage from "../../images/defautplant.png";
 import { useForm } from "../../hooks/useForm";
-
+import LogoImage from "../../images/logoicon.svg";
 interface RegisterFormProps {
   onSubmit?: (data: {
     name: string;
@@ -35,13 +35,22 @@ export const RegisterForm: React.FC<RegisterFormProps> = ({
   });
 
   return (
-    <div className="min-h-screen bg-[#f8fafc] flex">
+    <div className="min-h-screen bg-[#f8fafc] flex flex-col md:flex-row">
       {/* div da esquerda */}
-      <div className="flex-1 flex flex-col items-center justify-center relative">
+      <div className="flex-1 flex flex-col items-center justify-center relative p-6 md:p-0">
+        <div className="absolute top-0 left-0 p-4 md:p-3">
+          <a href="/">
+            <img
+              src={LogoImage}
+              alt="Logo"
+              className="w-10 h-10 md:w-12 md:h-12"
+            />
+          </a>
+        </div>
         {/* form */}
-        <div className="w-full max-w-[424px] flex flex-col gap-8 p-3">
-          <div className="flex flex-col">
-            <h1 className="text-4xl font-bold text-[#064e3b] font-['Playfair_Display']">
+        <div className="w-full max-w-md flex flex-col gap-6 md:gap-8 p-4 md:p-3">
+          <div className="flex flex-col text-center md:text-left">
+            <h1 className="text-3xl md:text-4xl font-bold text-[#064e3b] font-['Playfair_Display']">
               Register
             </h1>
             <p className="text-sm text-[#64748b]">
@@ -49,8 +58,11 @@ export const RegisterForm: React.FC<RegisterFormProps> = ({
             </p>
           </div>
 
-          <form onSubmit={handleSubmit} className="flex flex-col gap-8">
-            <div className="flex flex-col gap-5">
+          <form
+            onSubmit={handleSubmit}
+            className="flex flex-col gap-6 md:gap-8"
+          >
+            <div className="flex flex-col gap-4 md:gap-5">
               <div className="flex flex-col gap-2">
                 <label className="text-[#334155] font-medium text-sm">
                   Name
@@ -129,7 +141,7 @@ export const RegisterForm: React.FC<RegisterFormProps> = ({
       </div>
 
       {/* div da direita */}
-      <div className="flex-1">
+      <div className="hidden md:flex flex-1">
         <img
           src={PlantImage}
           alt="Decorative"

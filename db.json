@@ -8,8 +8,8 @@
       "discountPorcentage": "1",
       "description": "teste",
       "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTk4EQlVGe_0ZELKyUdvE3ca97PpQcyhOTanw&s",
-      "highlightItem": false,
-      "ownerId": "user_2sdljtcmTPLemdloL3NgAEJpP1m",
+      "highlightItem": true,
+      "ownerId": "user_2sj7dnfNtQlub42bluUCjFT2ZQo",
       "id": 1
     },
     {
@@ -21,7 +21,7 @@
       "description": "planta carnivora",
       "imageUrl": "https://images.tcdn.com.br/img/img_prod/1162228/planta_carnivora_p9_189_1_0075cc5c135c646db16c801db04ce8c0.jpg",
       "highlightItem": true,
-      "ownerId": "user_2sdljtcmTPLemdloL3NgAEJpP1m",
+      "ownerId": "user_2sj7dnfNtQlub42bluUCjFT2ZQo",
       "id": 2
     },
     {
@@ -32,8 +32,8 @@
       "discountPorcentage": "22",
       "description": "aaaaaaaa",
       "imageUrl": "https://images.ecycle.com.br/wp-content/uploads/2022/09/27153826/hassan-pasha-jxf1k1TS07s-unsplash-1.jpg.webp",
-      "highlightItem": true,
-      "ownerId": "user_2sdljtcmTPLemdloL3NgAEJpP1m",
+      "highlightItem": false,
+      "ownerId": "user_2sj7dnfNtQlub42bluUCjFT2ZQo",
       "id": 3
     },
     {
@@ -44,8 +44,8 @@
       "discountPorcentage": "22",
       "description": "akdmekmdek",
       "imageUrl": "https://cdn.awsli.com.br/300x300/2733/2733498/produto/282761501/whatsapp-image-2024-07-10-at-16-20-31-lrwr9w7j24.jpeg",
-      "highlightItem": true,
-      "ownerId": "user_2sdljtcmTPLemdloL3NgAEJpP1m",
+      "highlightItem": false,
+      "ownerId": "user_2sj7dnfNtQlub42bluUCjFT2ZQo",
       "id": 4
     },
     {
@@ -170,7 +170,7 @@
       "id": 18
     },
     {
-      "name": "babis",
+      "name": "babizkks",
       "email": "babizkks@gmail.com",
       "clerkUserId": "user_2sj7dnfNtQlub42bluUCjFT2ZQo",
       "id": 19
@@ -194,6 +194,21 @@
       "email": "babi@gmail.com",
       "clerkUserId": "sess_2slaPx4JeljpJXBw8vlE6eLbdFF",
       "id": 23
+    },
+    {
+      "email": "babi@gmail.com",
+      "clerkUserId": "sess_2splaWHCojg9Mi4aInvPvx3xHSX",
+      "id": 24
+    },
+    {
+      "email": "babi@gmail.com",
+      "clerkUserId": "sess_2splyMCZnSuBwjcZne9iuQCGnFZ",
+      "id": 25
+    },
+    {
+      "email": "babi@gmail.com",
+      "clerkUserId": "sess_2spmZIS46uVQDqaWX9oLeDFA11i",
+      "id": 26
     }
   ]
 }
