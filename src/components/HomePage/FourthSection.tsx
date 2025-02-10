@@ -39,6 +39,7 @@ const Fourth = () => {
     nextArrow: <ArrowButton direction="right" onClick={() => {}} />,
     responsive: [
       {
+
         breakpoint: 1024,
         settings: {
           slidesToShow: Math.min(items.length, 2),
@@ -74,9 +75,13 @@ const Fourth = () => {
           Discover our carefully curated selection of premium plants and gardening essentials.
         </p>
       </div>
-
+      <div className="absolute top-0 right-0 flex space-x-2 z-10">
+        <ArrowButton direction="left" onClick={() => {}} />
+        <ArrowButton direction="right" onClick={() => {}} />
+      </div>
       <div
-        className={`w-full relative mx-auto ${
+      
+        className={`w-full relative mx-auto  ${
           items.length === 1
             ? "max-w-md"
             : items.length === 2
@@ -84,7 +89,7 @@ const Fourth = () => {
             : "max-w-6xl"
         }`}
       >
-        <Slider {...settings}>
+        <Slider {...settings} className="">
           {items.map((item) => (
             <div key={item.id} className="outline-none group px-7">
               <a

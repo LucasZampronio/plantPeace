@@ -29,15 +29,15 @@ export const Header = () => {
       
       {/* Logo */}
       <div>
-        <Link to="/">
-          <img src={logo} alt="green logo with a jar and 3 leafs" />
+        <Link to="/" className="flex">
+          <img src={logo} alt="green logo with a jar and 3 leafs" className="pr-10" />
+          <DarkMode />
         </Link>
       </div>
-      <DarkMode />
       {/* Desktop navigation menu */}
       <nav className="hidden lg:flex">
         <ul className="flex gap-4 p-4 font-light text-slate-500 dark:text-slate-400">
-          <li className="text-emerald-900 font-normal hover:text-emerald-800 hover:font-bold transition duration-300 dark:text-emerald-700 dark:hover:text-emerald-600">
+          <li className="text-emerald-900 font-normal hover:text-emerald-800 hover:font-bold transition duration-300 dark:text-emerald-900 dark:hover:text-emerald-800">
             <Link to="/">Home</Link>
           </li>
           {isSignedIn && (
