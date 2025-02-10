@@ -12,6 +12,9 @@ import PlantListPage from "./pages/PlantsListPage";
 import UserConfigPage from "./pages/UserConfigPage";
 import PlantDetail from "./pages/PlantsDetail";
 import Loading from "./components/Loading";
+import ResetPasswordPage from "./pages/ResetPasswordPage";
+import ForgotPasswordPage from "./pages/ForgotPasswordPage";
+
 
 // componente para rotas protegidas
 const ProtectedRoute = ({ children }: { children: React.ReactNode }) => {
@@ -94,6 +97,14 @@ const router = createBrowserRouter([
   {
     path: "/sign-up",
     element: <RegisterPage />,
+  },
+  {
+    path: "/forgot-password",
+    element: <ForgotPasswordPage />,
+  },
+  {
+    path: "/reset-password",
+    element: <ResetPasswordPage />,
   },
 ]);
 

@@ -2,6 +2,7 @@ import React from "react";
 import PlantImage from "../../images/defautplant.png";
 import { useForm } from "../../hooks/useForm"; // Importe o hook
 import LogoImage from '../../images/logoicon.svg';
+import { Link } from "react-router-dom";
 
 
 interface LoginFormData {
@@ -48,9 +49,8 @@ const LoginForm: React.FC<LoginFormProps> = ({ onSubmit = () => {} }) => {
           <a href="/">
             <img src={LogoImage} alt="Logo" className="w-10 h-10" />
           </a>
-
         </div>
-        
+
         <div className="flex flex-col gap-6 w-full max-w-md">
           <div>
             <h1 className="text-3xl md:text-4xl text-green-900 mb-2 font-[Playfair_Display] font-bold">
@@ -63,7 +63,10 @@ const LoginForm: React.FC<LoginFormProps> = ({ onSubmit = () => {} }) => {
 
           <form onSubmit={handleSubmit} className="flex flex-col gap-4">
             <div className="flex flex-col gap-1">
-              <label htmlFor="email" className="text-sm text-[#334155] font-[Inter]">
+              <label
+                htmlFor="email"
+                className="text-sm text-[#334155] font-[Inter]"
+              >
                 E-mail
               </label>
               <input
@@ -75,11 +78,16 @@ const LoginForm: React.FC<LoginFormProps> = ({ onSubmit = () => {} }) => {
                 placeholder="email@example.com"
                 className="w-full p-2 bg-[#ebf0f5] border border-[#e2e8f0] rounded-lg text-[#64748b]"
               />
-              {errors.email && <p className="text-red-500 text-sm">{errors.email}</p>}
+              {errors.email && (
+                <p className="text-red-500 text-sm">{errors.email}</p>
+              )}
             </div>
 
             <div className="flex flex-col gap-1">
-              <label htmlFor="password" className="text-sm text-[#334155] font-[Inter]">
+              <label
+                htmlFor="password"
+                className="text-sm text-[#334155] font-[Inter]"
+              >
                 Password
               </label>
               <input
@@ -91,8 +99,17 @@ const LoginForm: React.FC<LoginFormProps> = ({ onSubmit = () => {} }) => {
                 placeholder="••••••••"
                 className="w-full p-2 bg-[#ebf0f5] border border-[#e2e8f0] rounded-lg text-[#64748b]"
               />
-              {errors.password && <p className="text-red-500 text-sm">{errors.password}</p>}
+              {errors.password && (
+                <p className="text-red-500 text-sm">{errors.password}</p>
+              )}
             </div>
+
+            <Link
+              to="/forgot-password"
+              className="text-sm text-[#064e3b] hover:underline self-end"
+            >
+              Esqueceu sua senha?
+            </Link>
 
             <div className="flex items-center gap-2">
               <input
@@ -103,7 +120,10 @@ const LoginForm: React.FC<LoginFormProps> = ({ onSubmit = () => {} }) => {
                 onChange={handleChange}
                 className="w-4 h-4 cursor-pointer"
               />
-              <label htmlFor="stay-connected" className="text-sm text-gray-500 font-[Inter]">
+              <label
+                htmlFor="stay-connected"
+                className="text-sm text-gray-500 font-[Inter]"
+              >
                 Stay connected
               </label>
             </div>
