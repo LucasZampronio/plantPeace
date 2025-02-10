@@ -65,7 +65,7 @@ const RegisterPage = () => {
       // dados do user para salvar no db.json
       const userData: UserData = {
         email: data.email,
-        clerkUserId: userId ?? "", 
+        clerkUserId: userId ?? "",
         firstName: data.firstName,
       };
 
@@ -73,7 +73,9 @@ const RegisterPage = () => {
       await saveUserToDB(userData);
 
       // redirecionando para a página de login após o cadastro
-      navigate("/sign-in");
+      navigate("/");
+      window.location.reload();
+
     } catch (error) {
       console.error("Erro:", error);
       setError("Erro ao registrar usuário. Tente novamente.");

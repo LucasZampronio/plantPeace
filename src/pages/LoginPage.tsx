@@ -65,7 +65,7 @@ const LoginPage = () => {
 
       await saveUserToDB(userData);
 
-      navigate("/sign-in");
+      navigate("/");
       window.location.reload();
     } catch (error) {
       console.error("Erro ao tentar fazer login:", error);

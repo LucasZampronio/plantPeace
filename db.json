@@ -240,6 +240,51 @@
       "clerkUserId": "user_2sr8pZBwfeMXqz1C1lWsCSwGBey",
       "firstName": "manuella pb",
       "id": 32
+    },
+    {
+      "email": "testes@gmail.com",
+      "clerkUserId": "user_2sr9noSPGW0hYUS0oPskpvXaUiO",
+      "firstName": "testando",
+      "id": 33
+    },
+    {
+      "email": "testando123@gmail.com",
+      "clerkUserId": "user_2srAWncmJmw8qmwq9i3DRVVPlJU",
+      "firstName": "testando 123",
+      "id": 34
+    },
+    {
+      "email": "testeando@gmail.com",
+      "clerkUserId": "user_2srAuZf58rMnMYcQgt8rjGmeUfe",
+      "id": 35
+    },
+    {
+      "email": "testeoficial@gmail.com",
+      "clerkUserId": "user_2srB9LeDEDjq4BwKvi9ZmH5yA4I",
+      "firstName": "testando oficialmente",
+      "id": 36
+    },
+    {
+      "email": "testandos@gmail.com",
+      "clerkUserId": "user_2srBFoRRqBFnFF7mbsxCCeSRL5K",
+      "firstName": "testando",
+      "id": 37
+    },
+    {
+      "email": "manuella.rodrigue.pb@compasso.com.br",
+      "clerkUserId": "user_2srBQh3u7kaMKcHSUNeWgirvP9E",
+      "firstName": "manu pv",
+      "id": 38
+    },
+    {
+      "email": "manuella.rodrigue.pb@compasso.com.br",
+      "clerkUserId": "sess_2srBnJO8wyk1NUASTLdN9RznpPP",
+      "id": 39
+    },
+    {
+      "email": "manuella.rodrigue.pb@compasso.com.br",
+      "clerkUserId": "sess_2srBrHISoDQi1nR3UebRzjNWTh5",
+      "id": 40
     }
   ]
 }

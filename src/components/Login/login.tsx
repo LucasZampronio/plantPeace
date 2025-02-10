@@ -8,6 +8,7 @@ interface LoginFormData {
   stayConnected: boolean;
   [key: string]: string | boolean;
 }
+import { Link } from "react-router-dom";
 
 interface LoginFormProps {
   onSubmit?: (data: LoginFormData) => void;
@@ -99,6 +100,9 @@ const LoginForm: React.FC<LoginFormProps> = ({ onSubmit = () => {} }) => {
               {errors.password && (
                 <p className="text-red-500 text-sm">{errors.password}</p>
               )}
+              <p className="text-sm text-blue-500 hover:underline mt-1">
+                <Link to="/forgot-password">Esqueceu sua senha?</Link>
+              </p>
             </div>
 
             <div className="flex items-center gap-2">
