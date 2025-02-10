@@ -2,7 +2,6 @@ import React from "react";
 import PlantImage from "../../images/defautplant.png";
 import { useForm } from "../../hooks/useForm"; // Importe o hook
 import LogoImage from '../../images/logoicon.svg';
-import DarkMode from '../DarkMode';
 
 
 interface LoginFormData {
@@ -35,7 +34,7 @@ const LoginForm: React.FC<LoginFormProps> = ({ onSubmit = () => {} }) => {
         }
 
         if (!data.password) {
-          errors.password = "Senha is required";
+          errors.password = "Password is required";
         }
 
         return errors;

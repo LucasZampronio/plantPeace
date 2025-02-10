@@ -1,26 +1,26 @@
 {
   "plants": [
     {
-      "name": "Planta lucas",
-      "subtitle": "teste",
+      "name": "Planta 1",
+      "subtitle": "A majestic plant",
       "category": "Outdoor",
       "price": "1",
       "discountPorcentage": "1",
-      "description": "teste",
-      "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTk4EQlVGe_0ZELKyUdvE3ca97PpQcyhOTanw&s",
-      "highlightItem": false,
+      "description": "planta 1",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/7/74/Lily_flower_on_white_background.jpg",
+      "highlightItem": true,
       "ownerId": "user_2sj7dnfNtQlub42bluUCjFT2ZQo",
       "id": 1
     },
     {
-      "name": "Planta 1",
+      "name": "Planta 2",
       "subtitle": "A majestic plant",
       "category": "Indor",
-      "price": "100",
+      "price": "2",
       "discountPorcentage": "10",
       "description": "planta carnivora",
       "imageUrl": "https://images.tcdn.com.br/img/img_prod/1162228/planta_carnivora_p9_189_1_0075cc5c135c646db16c801db04ce8c0.jpg",
-      "highlightItem": false,
+      "highlightItem": true,
       "ownerId": "user_2sj7dnfNtQlub42bluUCjFT2ZQo",
       "id": 2
     },
@@ -28,8 +28,8 @@
       "name": "Planta 3",
       "subtitle": "marcus",
       "category": "Office Desk",
-      "price": "222",
-      "discountPorcentage": "22",
+      "price": "3",
+      "discountPorcentage": "10",
       "description": "aaaaaaaa",
       "imageUrl": "https://images.ecycle.com.br/wp-content/uploads/2022/09/27153826/hassan-pasha-jxf1k1TS07s-unsplash-1.jpg.webp",
       "highlightItem": true,
@@ -38,10 +38,10 @@
     },
     {
       "name": "Planta 4",
-      "subtitle": "teste",
+      "subtitle": "A majestic plant",
       "category": "Outdoor",
-      "price": "222",
-      "discountPorcentage": "22",
+      "price": "4",
+      "discountPorcentage": "10",
       "description": "akdmekmdek",
       "imageUrl": "https://cdn.awsli.com.br/300x300/2733/2733498/produto/282761501/whatsapp-image-2024-07-10-at-16-20-31-lrwr9w7j24.jpeg",
       "highlightItem": false,
@@ -50,26 +50,26 @@
     },
     {
       "name": "Planta 5",
-      "subtitle": "test subtitle",
+      "subtitle": "A majestic plant",
       "category": "Terracy e Balcony",
-      "price": "220",
-      "discountPorcentage": "20",
-      "description": "testing",
+      "price": "5",
+      "discountPorcentage": "10",
+      "description": "plant 5",
       "imageUrl": "https://plus.unsplash.com/premium_photo-1675864663002-c330710c6ba0?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cGxhbnRhfGVufDB8fDB8fHww",
-      "highlightItem": true,
+      "highlightItem": false,
       "ownerId": "user_2sj7dnfNtQlub42bluUCjFT2ZQo",
       "id": 5
     },
     {
       "name": "Planta 6",
-      "subtitle": "subtitle",
+      "subtitle": "A majestic plant",
       "category": "Indor",
-      "price": "234",
-      "discountPorcentage": "23",
-      "description": "description",
+      "price": "6",
+      "discountPorcentage": "10",
+      "description": "plant 6",
       "imageUrl": "https://media.istockphoto.com/id/1380361370/pt/foto/decorative-banana-plant-in-concrete-vase-isolated-on-white-background.jpg?s=612x612&w=0&k=20&c=v-yfeQc5NaSLKKABNfLXKHETuPSoBz8ImvUAN-zCjXY=",
-      "highlightItem": true,
-      "ownerId": "user_2sj3X5WCyzvvABWlYLP2ey7sDsN",
+      "highlightItem": false,
+      "ownerId": "user_2sj7dnfNtQlub42bluUCjFT2ZQo",
       "id": 6
     }
   ],
@@ -214,6 +214,11 @@
       "email": "babi@gmail.com",
       "clerkUserId": "sess_2spsmLFALld8FEUYiHpWaLBL0hS",
       "id": 27
+    },
+    {
+      "email": "babi@gmail.com",
+      "clerkUserId": "sess_2sqrhnQSdJ6HYO1UigWASBUm6Ik",
+      "id": 28
     }
   ]
 }

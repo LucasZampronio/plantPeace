@@ -26,7 +26,7 @@ export const RegisterForm: React.FC<RegisterFormProps> = ({
 
       if (!data.name) errors.name = "Name is required.";
       if (!data.email) errors.email = "Email is required.";
-      if (!data.password) errors.password = "Senha is required.";
+      if (!data.password) errors.password = "Password is required.";
       if (data.password !== data.confirmPassword)
         errors.confirmPassword = " passwords do not match.";
 
