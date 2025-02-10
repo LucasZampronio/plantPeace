@@ -28,11 +28,11 @@ export const Header = () => {
     <header className="bg-white dark:bg-neutral-900 h-[89px] flex justify-between items-center px-10 py-4 font-[Inter] fixed w-full border-b border-slate-200 dark:border-gray-500 z-50" data-theme='dark'>
       
       {/* Logo */}
-      <div>
+      <div className="flex">
         <Link to="/" className="flex">
           <img src={logo} alt="green logo with a jar and 3 leafs" className="pr-10" />
-          <DarkMode />
         </Link>
+        <DarkMode />
       </div>
       {/* Desktop navigation menu */}
       <nav className="hidden lg:flex">
