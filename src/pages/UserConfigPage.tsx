@@ -3,6 +3,8 @@ import { useState, useEffect } from "react";
 import { useAuth, useUser } from "@clerk/clerk-react";
 import { useNavigate } from "react-router-dom";
 import UserConfigForm from "../components/UserConfig/UserConfigForm";
+import { Helmet } from 'react-helmet';
+
 
 interface UserData {
   name: string;
@@ -127,6 +129,9 @@ const UserConfigPage = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>User Configuration - plantPeace</title>
+      </Helmet>
       {userData ? (
         <UserConfigForm
           onSubmit={handleSubmit}

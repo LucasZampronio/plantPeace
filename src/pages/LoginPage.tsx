@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useSignIn } from "@clerk/clerk-react";
+import { Helmet } from 'react-helmet';
 import LoginForm from "../components/Login/login";
 
 // Definindo o tipo para os dados do usuário
@@ -75,6 +76,9 @@ const LoginPage = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>Login - plantPeace</title>
+      </Helmet>
       <LoginForm onSubmit={handleLogin} />
       {error && <p className="text-red-500 text-sm mt-4">{error}</p>}
     </div>

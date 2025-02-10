@@ -89,6 +89,9 @@ const RegisterPage = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>Register - plantPeace</title>
+      </Helmet>
       <RegisterForm onSubmit={handleRegister} />
       {error && <p className="text-red-500 text-sm mt-4">{error}</p>}
     </div>
