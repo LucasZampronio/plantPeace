@@ -1,8 +1,8 @@
 import { useNavigate } from "react-router-dom";
-import logo from "../images/404logo.png";
+import logo from "../images/403logo.png";
 import bgImage from "../images/forest-bg.png";
 
-export const ErrorPage = () => {
+export const Error403Page = () => {
   const navigate = useNavigate();
 
   const getRandomPosition = () => ({
@@ -35,7 +35,7 @@ export const ErrorPage = () => {
         <div className="relative w-60 h-24 md:w-120 md:h-40 mx-auto mb-0">
           <img
             src={logo}
-            className="absolute top-[-70px] md:top-[-140px] z-50 animate-wiggle"
+            className="absolute left-43 w-34 h-34  animate-wiggle"
             style={{ transformOrigin: "50% 100%" }}
           />
           <div className="absolute w-10 h-10 top-6 left-14 md:top-12 md:left-28"></div>
@@ -48,13 +48,12 @@ export const ErrorPage = () => {
           {/* efeito glitch no título */}
           <h1 className="relative text-4xl font-extrabold text-emerald-100 tracking-wide">
             <span className="relative z-10 text-green-100 animate-glitch font-extrabold bg-gradient-to-r from-emerald-300/10 via-transparent to-emerald-300/10 px-4 py-2 rounded-md shadow-md shadow-emerald-800/20">
-              404 - Page not found
+              403 - Forbidden
             </span>
           </h1>
 
           <p className="text-xl mt-2 text-green-50">
-          It looks like this page has withered... but we have plenty of plants waiting for you!
-          🌿
+          It looks like you dont have acess to this page... Please login or register your account!🔒
           </p>
         </div>
 
@@ -71,4 +70,4 @@ export const ErrorPage = () => {
   );
 };
 
-export default ErrorPage;
+export default Error403Page;

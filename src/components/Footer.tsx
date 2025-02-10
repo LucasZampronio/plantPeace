@@ -25,7 +25,7 @@ export const Footer = () => {
             <ul className="flex flex-col gap-4">
               <li className="font-bold text-xl lg:text-2xl pb-2 lg:pb-4">Links</li>
               <li className="hover:underline transition">
-                <Link to="/about">About us</Link>
+                <Link to="/about-us">About us</Link>
               </li>
             </ul>
           </nav>

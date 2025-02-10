@@ -14,7 +14,7 @@ import PlantDetail from "./pages/PlantsDetail";
 import Loading from "./components/Loading";
 import ResetPasswordPage from "./pages/ResetPasswordPage";
 import ForgotPasswordPage from "./pages/ForgotPasswordPage";
-
+import { AboutUsPage } from "./pages/AboutUsPage";
 
 // componente para rotas protegidas
 const ProtectedRoute = ({ children }: { children: React.ReactNode }) => {
@@ -46,7 +46,12 @@ const router = createBrowserRouter([
           </ProtectedRoute>
         ),
       },
-
+      {
+        path: "/about-us",
+        element: (
+            <AboutUsPage/>
+        ),
+      },
       {
         path: "/user/config",
         element: (

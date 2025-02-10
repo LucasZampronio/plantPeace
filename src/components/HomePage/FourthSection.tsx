@@ -86,15 +86,15 @@ const Fourth = () => {
 
   return (
     <section className="flex flex-col justify-center items-center px-4 md:px-40 py-16">
-      <div className="flex flex-col self-start mb-12 max-w-4xl">
-        <h1 className="font-[Playfair_Display] text-[40px] font-bold text-emerald-900 mb-4 w-115">
-          This week's Most Popular and Best Selling
-        </h1>
-        <p className="text-gray-500 font-[Inter] text-lg w-120">
-          Discover our carefully curated selection of premium plants and
-          gardening essentials.
-        </p>
-      </div>
+      <div className="flex flex-col self-start mb-12 max-w-4xl px-4 md:px-8">
+  <h1 className="font-[Playfair_Display] text-3xl md:text-4xl lg:text-5xl font-bold text-emerald-900 mb-4">
+    This week's Most Popular and Best Selling
+  </h1>
+  <p className="text-gray-500 font-[Inter] text-base md:text-lg lg:text-xl">
+    Discover our carefully curated selection of premium plants and gardening essentials.
+  </p>
+</div>
+
 
       <div
         className={`w-full relative mx-auto ${
