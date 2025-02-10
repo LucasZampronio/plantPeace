@@ -101,7 +101,7 @@ const LoginForm: React.FC<LoginFormProps> = ({ onSubmit = () => {} }) => {
                 <p className="text-red-500 text-sm">{errors.password}</p>
               )}
               <p className="text-sm text-blue-500 hover:underline mt-1">
-                <Link to="/forgot-password">Esqueceu sua senha?</Link>
+                <Link to="/forgot-password">Forgot your password?</Link>
               </p>
             </div>
 
