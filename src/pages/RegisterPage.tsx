@@ -5,6 +5,7 @@ import { RegisterForm } from "../components/Login/register";
 
 // Definindo o tipo para os dados do usuário
 interface UserData {
+  firstName: string;
   email: string;
   clerkUserId: string;
 }
@@ -38,6 +39,7 @@ const RegisterPage = () => {
 
   const handleRegister = async (data: {
     email: string;
+    firstName: string;
     password: string;
     stayConnected?: boolean;
   }) => {
@@ -53,6 +55,7 @@ const RegisterPage = () => {
       const signUpResponse = await signUp.create({
         emailAddress: data.email,
         password: data.password,
+        firstName: data.firstName,
       });
 
       const userId = signUpResponse.createdUserId; // obtendo o ID do user criado
@@ -63,6 +66,7 @@ const RegisterPage = () => {
       const userData: UserData = {
         email: data.email,
         clerkUserId: userId ?? "", 
+        firstName: data.firstName,
       };
 
       // salvando os dados do usuário no db.json

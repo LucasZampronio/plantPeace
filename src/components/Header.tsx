@@ -84,7 +84,9 @@ export const Header = () => {
         )}
         {isSignedIn && (
           <div className="flex items-center gap-4">
-            <span className="text-emerald-900">Hi, {user?.firstName}</span>
+            <span className="text-emerald-900">
+              Hi, {user?.firstName}
+            </span>
           </div>
         )}
         <button

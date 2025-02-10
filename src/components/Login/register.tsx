@@ -3,7 +3,7 @@ import { useForm } from "../../hooks/useForm";
 import LogoImage from'../../images/logoicon.svg'
 interface RegisterFormProps {
   onSubmit?: (data: {
-    name: string;
+    firstName: string;
     email: string;
     password: string;
     confirmPassword: string;
@@ -15,7 +15,7 @@ export const RegisterForm: React.FC<RegisterFormProps> = ({
 }) => {
   const { formData, errors, handleChange, handleSubmit } = useForm({
     initialValues: {
-      name: "",
+      firstName: "",
       email: "",
       password: "",
       confirmPassword: "",
@@ -24,7 +24,7 @@ export const RegisterForm: React.FC<RegisterFormProps> = ({
     validate: (data) => {
       const errors: Record<string, string> = {};
 
-      if (!data.name) errors.name = "Name is required.";
+      if (!data.firstName) errors.name = "Name is required.";
       if (!data.email) errors.email = "Email is required.";
       if (!data.password) errors.password = "Password is required.";
       if (data.password !== data.confirmPassword)
@@ -40,7 +40,11 @@ export const RegisterForm: React.FC<RegisterFormProps> = ({
       <div className="flex-1 flex flex-col items-center justify-center relative p-6 md:p-0">
         <div className="absolute top-0 left-0 p-4 md:p-10">
           <a href="/">
-            <img src={LogoImage} alt="Logo" className="w-10 h-10 md:w-12 md:h-12" />
+            <img
+              src={LogoImage}
+              alt="Logo"
+              className="w-10 h-10 md:w-12 md:h-12"
+            />
           </a>
         </div>
         {/* form */}
@@ -54,7 +58,10 @@ export const RegisterForm: React.FC<RegisterFormProps> = ({
             </p>
           </div>
 
-          <form onSubmit={handleSubmit} className="flex flex-col gap-6 md:gap-8">
+          <form
+            onSubmit={handleSubmit}
+            className="flex flex-col gap-6 md:gap-8"
+          >
             <div className="flex flex-col gap-4 md:gap-5">
               <div className="flex flex-col gap-2">
                 <label className="text-[#334155] font-medium text-sm">
@@ -62,11 +69,11 @@ export const RegisterForm: React.FC<RegisterFormProps> = ({
                 </label>
                 <input
                   type="text"
-                  name="name"
-                  value={formData.name}
+                  name="firstName"
+                  value={formData.firstName}
                   onChange={handleChange}
                   placeholder="Your name"
-                  className="w-full p-2 bg-[#f1f5f9] border border-[#e2e8f0] rounded-lg text-[#64748b]"
+                  className="w-full p-2 bg-[#f1f5f9] border border-[#e2e8f0] rounded-lg text-[#64748b] z-10"
                 />
                 {errors.name && (
                   <p className="text-red-500 text-sm">{errors.name}</p>
