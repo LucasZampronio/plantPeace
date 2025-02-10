@@ -40,3 +40,7 @@
   .slick-prev { left: -25px; }
   .slick-next { right: -25px; }
 }
+
+:root {
+  --header-height: 89px; /* valor padrão para o caso de JavaScript estar desativado */
+}
