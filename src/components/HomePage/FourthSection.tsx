@@ -90,7 +90,7 @@ const Fourth = () => {
               <a
                 href={`/plants/${item.id}`}
                 onClick={handleCardClick(item)}
-                className={`bg-gray-100 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 p-4 block cursor-pointer focus:outline-none focus:ring-2 focus:ring-green-500 ${
+                className={` rounded-xl  hover:shadow-xl transition-shadow duration-300 p-4 block cursor-pointer focus:outline-none focus:ring-2 focus:ring-green-500 ${
                   items.length === 1
                     ? "max-w-xs mx-auto"
                     : items.length === 2
@@ -108,23 +108,23 @@ const Fourth = () => {
                       : "h-64"
                   } bg-gray-100 rounded-lg mb-5 overflow-hidden relative`}
                 >
-                  {/* Balão da categoria */}
-                  <span className="absolute top-2 right-2 bg-green-600 text-white text-xs font-semibold px-3 py-1 rounded-full shadow-md z-1">
+                  {/* Balãozinho da categoria */}
+                  <span className="absolute top-2 right-2 bg-emerald-100 text-emerald-900 text-xs font-semibold px-3 py-1 rounded-full border-emerald-50 border-2 shadow-md z-1">
                     {item.category}
                   </span>
 
                   <img
                     src={item.imageUrl}
                     alt={item.name}
-                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105 opacity-100"
                   />
                 </div>
                 {/* Título com fonte menor no mobile e forçando quebra de linha */}
-                <h3 className="text-base md:text-xl text-black font-semibold mb-2 whitespace-normal break-words">
+                <h3 className="text-base md:text-xl text-slate-600 dark:text-slate-300 font-semibold mb-2 whitespace-normal break-words font-[Inter]">
                   {item.name}
                 </h3>
                 {/* Preço com fonte reduzida para mobile */}
-                <p className="text-green-900 text-xs md:text-lg font-medium mb-4 break-words">
+                <p className="text-xs md:text-base text-slate-500 dark:text-slate-400 font-light mb-4 break-words font-[Inter]">
                   ${item.price}
                 </p>
               </a>
