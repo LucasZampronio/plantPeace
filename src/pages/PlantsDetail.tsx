@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import planta from "../images/defautplant.png";
-import DarkMode from "../components/DarkMode"; // Importe o componente DarkMode
 
 interface PlantDetailProps {
   onEdit?: () => void;
@@ -92,7 +91,7 @@ const PlantDetail: React.FC<PlantDetailProps> = () => {
                 Highlight Product
               </p>
               <p className="font-inter text-md text-gray-500 dark:text-gray-400">
-                {plant.highlightItem ? "Sim" : "Não"}
+                {plant.highlightItem ? "Yes" : "No"}
               </p>
             </div>
           </div>
