@@ -51,7 +51,7 @@ const PlantDetail: React.FC<PlantDetailProps> = () => {
       {/* Seção de detalhes da planta */}
       <div className="flex-1 flex flex-col py-5 justify-center items-center mt-25 w-full h-auto relative">
         <div className="absolute top-4 right-4 z-10">
-          <DarkMode /> {/* Botão de dark mode */}
+          {/* <DarkMode /> */}
         </div>
 
         <div className="mb-5 pl-15 self-start">
