@@ -29,13 +29,13 @@ const Fourth = () => {
 
   const settings = {
     dots: items.length > 1,
-    infinite: items.length > 1, 
+    infinite: items.length > 1,
     speed: 500,
     slidesToShow: Math.min(items.length, 3),
     slidesToScroll: 1,
     centerMode: items.length === 1,
     centerPadding: "0",
-    prevArrow: <ArrowButton direction="left" onClick={() => {}} />, 
+    prevArrow: <ArrowButton direction="left" onClick={() => {}} />,
     nextArrow: <ArrowButton direction="right" onClick={() => {}} />,
     responsive: [
       {
@@ -66,10 +66,11 @@ const Fourth = () => {
   return (
     <section className=" dark:bg-neutral-900 bg-white flex flex-col justify-center items-center px-4 md:px-40 py-16">
       <div className="flex flex-col self-start mb-12 max-w-4xl">
-        <h1 className="font-[Playfair_Display] text-[40px] font-bold text-emerald-900 mb-4 w-115">
+        {/* No mobile, usamos w-full para permitir que o texto quebre em várias linhas */}
+        <h1 className="font-[Playfair_Display] text-[24px] md:text-[40px] font-bold text-emerald-900 mb-4 w-full md:w-115">
           This week's Most Popular and Best Selling
         </h1>
-        <p className="text-gray-500 font-[Inter] text-lg w-120">
+        <p className="text-gray-500 font-[Inter] text-sm md:text-lg w-full md:w-120">
           Discover our carefully curated selection of premium plants and gardening essentials.
         </p>
       </div>
@@ -118,10 +119,12 @@ const Fourth = () => {
                     className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105 opacity-100"
                   />
                 </div>
-                <h3 className="text-xl text-slate-600 font-semibold mb-2 font-[Inter]">
+                {/* Título com fonte menor no mobile e forçando quebra de linha */}
+                <h3 className="text-base md:text-xl text-slate-600 dark:text-slate-300 font-semibold mb-2 whitespace-normal break-words font-[Inter]">
                   {item.name}
                 </h3>
-                <p className="text-slate-500  text-base font-light  font-[Inter] mb-4">
+                {/* Preço com fonte reduzida para mobile */}
+                <p className="text-xs md:text-base text-slate-500 dark:text-slate-400 font-light mb-4 break-words font-[Inter]">
                   ${item.price}
                 </p>
               </a>
