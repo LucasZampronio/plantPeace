@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useSignUp } from "@clerk/clerk-react";
 import { RegisterForm } from "../components/Login/register";
 import { useAuth } from "@clerk/clerk-react"; 
+import { Helmet } from "react-helmet";
 
 
 // Definindo o tipo para os dados do usuário

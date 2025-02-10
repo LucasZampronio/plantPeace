@@ -31,8 +31,8 @@ const ResetPasswordPage = () => {
       });
 
       if (result.status === "complete") {
-        await signOut(); // Agora funciona
-        navigate("/sign-in?reset=success"); // Redirecione com parâmetro
+        await signOut();
+        navigate("/sign-in?reset=success");
         window.location.reload();
       } else {
         setError("Erro ao redefinir senha.");

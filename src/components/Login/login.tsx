@@ -43,9 +43,9 @@ const LoginForm: React.FC<LoginFormProps> = ({ onSubmit = () => {} }) => {
   return (
     <div className="flex flex-col md:flex-row w-full h-screen bg-gray-100">
       <div className="flex-1 flex flex-col justify-center items-center p-6 md:p-10">
-        <div className="absolute top-4 left-4">
+        <div className="absolute top-10 left-9">
           <a href="/">
-            <img src={LogoImage} alt="Logo" className="w-10 h-10" />
+            <img src={LogoImage} alt="Logo" className="w-12 h-12" />
           </a>
         </div>
 
