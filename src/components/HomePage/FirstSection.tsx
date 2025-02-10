@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const FirstSection = () => {
   return (
     // Adiciona padding-top para evitar sobreposição com o header
-    <section className="pt-24 md:pt-32 dark:bg-neutral-900 bg-white h-[636px] flex flex-col md:grid grid-cols-2 md:grid-cols-2">
+    <section className="pt-2 dark:bg-neutral-900 bg-white h-[636px] flex flex-col md:grid grid-cols-2 md:grid-cols-2">
       <div className="gap-6 content-around px-[10%] flex flex-col justify-center items-start flex-1">
         <h1 className="font-[Playfair_Display] text-[40px] md:text-[64px] font-bold text-emerald-900 w-full">
           Discover your green side
@@ -24,7 +24,7 @@ const FirstSection = () => {
       </div>
       {/* No mobile, a imagem é removida; em md e acima, ela é exibida */}
       <img
-        className="flex-1 object-cover h-full w-full max-h-[635px] opacity-100 dark:opacity-70 hidden md:block"
+        className="flex-1 object-cover h-full w-full opacity-100 dark:opacity-70 hidden md:block"
         src={imageHero}
         alt="A beautifull green plant with no flowers and a blank wall"
       />
