@@ -113,52 +113,51 @@ export const Header = () => {
         </button>
       </div>
 
-      {/* Menu mobile overlay */}
       {isMobileMenuOpen && (
-        <div className="lg:hidden absolute top-[89px] inset-x-0 bg-white shadow-md z-40 transition-all duration-300">
-          <ul className="flex flex-col gap-4 p-4 font-light text-slate-500">
-            <li className="hover:text-emerald-700 hover:font-normal transition">
-              <Link to="/" onClick={() => setIsMobileMenuOpen(false)}>
-                Home
-              </Link>
-            </li>
-            {isSignedIn && (
-              <>
-                <li className="hover:text-emerald-700 hover:font-normal transition">
-                  <Link to="/plants/list" onClick={() => setIsMobileMenuOpen(false)}>
-                    Products
-                  </Link>
-                </li>
-                <li className="hover:text-emerald-700 hover:font-normal transition">
-                  <Link to="/user/config" onClick={() => setIsMobileMenuOpen(false)}>
-                    About me
-                  </Link>
-                </li>
-              </>
-            )}
-            <li className="pt-4 border-t border-slate-200">
-              {!isSignedIn && (
-                <Link
-                  to="/sign-up"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="block text-slate-900 cursor-pointer hover:underline hover:text-slate-600 transition"
-                >
-                  Register
-                </Link>
-              )}
-              <button
-                onClick={() => {
-                  handleAuthAction();
-                  setIsMobileMenuOpen(false);
-                }}
-                className="w-full text-left mt-2 text-white bg-emerald-900 px-4 py-2 rounded-xl cursor-pointer hover:bg-emerald-700 transition"
-              >
-                {isSignedIn ? "Log out" : "Login"}
-              </button>
-            </li>
-          </ul>
-        </div>
+  <div className="lg:hidden absolute top-[89px] inset-x-0 bg-white dark:bg-neutral-900 shadow-md z-40 transition-all duration-300">
+    <ul className="flex flex-col gap-4 p-4 font-light text-slate-500 dark:text-slate-400">
+      <li className="hover:text-emerald-700 dark:hover:text-emerald-600 hover:font-normal transition">
+        <Link to="/" onClick={() => setIsMobileMenuOpen(false)}>
+          Home
+        </Link>
+      </li>
+      {isSignedIn && (
+        <>
+          <li className="hover:text-emerald-700 dark:hover:text-emerald-600 hover:font-normal transition">
+            <Link to="/plants/list" onClick={() => setIsMobileMenuOpen(false)}>
+              Products
+            </Link>
+          </li>
+          <li className="hover:text-emerald-700 dark:hover:text-emerald-600 hover:font-normal transition">
+            <Link to="/user/config" onClick={() => setIsMobileMenuOpen(false)}>
+              About me
+            </Link>
+          </li>
+        </>
       )}
+      <li className="pt-4 border-t border-slate-200 dark:border-gray-500">
+        {!isSignedIn && (
+          <Link
+            to="/sign-up"
+            onClick={() => setIsMobileMenuOpen(false)}
+            className="block text-slate-900 dark:text-slate-300 cursor-pointer hover:underline hover:text-slate-600 transition"
+          >
+            Register
+          </Link>
+        )}
+        <button
+          onClick={() => {
+            handleAuthAction();
+            setIsMobileMenuOpen(false);
+          }}
+          className="w-full text-left mt-2 text-white bg-emerald-900 dark:bg-emerald-950 px-4 py-2 rounded-xl cursor-pointer hover:bg-emerald-700 dark:hover:bg-emerald-900 transition"
+        >
+          {isSignedIn ? "Log out" : "Login"}
+        </button>
+      </li>
+    </ul>
+  </div>
+)}
     </header>
   );
 };
