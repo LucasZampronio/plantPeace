@@ -11,6 +11,7 @@ import LoginPage from "./pages/LoginPage";
 import PlantListPage from "./pages/PlantsListPage";
 import UserConfigPage from "./pages/UserConfigPage";
 import PlantDetail from "./pages/PlantsDetail";
+import { AboutUsPage } from "./pages/AboutUsPage";
 
 // componente para rotas protegidas
 const ProtectedRoute = ({ children }: { children: React.ReactNode }) => {
