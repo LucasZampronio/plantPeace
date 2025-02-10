@@ -1,5 +1,9 @@
 import { Helmet } from 'react-helmet';
 import photo01 from "../images/photo-dan.jpg";
+import photo02 from "../images/photo-man.jpg";
+import photo03 from "../images/photo-fer.jpg";
+import photo04 from "../images/photo-luc.jpg";
+import photo05 from "../images/photo-mar.jpg";
 
 import { TeamCard } from "../components/TeamCard";
 
@@ -11,22 +15,22 @@ export const AboutUsPage = () => {
         </Helmet>
       <section className="grid gap-y-6">
         <h1 className="font-[Playfair_Display] font-bold text-4xl sm:text-5xl text-emerald-900">About Us</h1>
-        <p className="text-base sm:text-lg">Welcome to our "About Us" page! We are a team of five internship colleagues united by our passion for technology and our desire to learn, grow, and contribute to innovative projects. Each of us brings unique skills and perspectives, allowing us to work collaboratively and efficiently.</p>
+        <p className="text-base font-[Inter] sm:text-lg">Welcome to our "About Us" page! We are a team of five internship colleagues united by our passion for technology and our desire to learn, grow, and contribute to innovative projects. Each of us brings unique skills and perspectives, allowing us to work collaboratively and efficiently.</p>
       </section>
       <section className="grid gap-y-6">
         <h1 className="font-[Playfair_Display] font-bold text-4xl sm:text-5xl text-emerald-900">Our Mission</h1>
-        <p className="text-base sm:text-lg">Our goal is to develop creative solutions, learn through hands-on experience and contribute to the company. We believe that teamwork and knowledge sharing are key to achieving exceptional results.</p>
+        <p className="text-base font-[Inter] sm:text-lg">Our goal is to develop creative solutions, learn through hands-on experience and contribute to the company. We believe that teamwork and knowledge sharing are key to achieving exceptional results.</p>
       </section>
       <section className="grid gap-y-6">
         <h1 className="font-[Playfair_Display] font-bold text-4xl sm:text-5xl text-emerald-900">Meet the Team</h1>
-        <p className="text-base sm:text-lg">Here’s a little about each of us:</p>
+        <p className="text-base font-[Inter] sm:text-lg">Here’s a little about each of us:</p>
       </section>
       <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 justify-items-center gap-10 py-12">
         <TeamCard name="Daniel Fernandes da Silva" photo={photo01} github="https://github.com/daniscotti" linkedin="https://www.linkedin.com/in/danfdasilva/" />
-        <TeamCard name="Fernando Glaesser da Silva" photo={photo01} github="https://github.com/daniscotti" linkedin="" />
-        <TeamCard name="Lucas Zampronio da Silva" photo={photo01} github="https://github.com/daniscotti" linkedin="" />
-        <TeamCard name="Manuella da Silva Rodrigues" photo={photo01} github="https://github.com/daniscotti" linkedin="" />
-        <TeamCard name="Marcus Vinicius Do Prado" photo={photo01} github="https://github.com/daniscotti" linkedin="" />
+        <TeamCard name="Fernando Glaesser da Silva" photo={photo03} github="https://github.com/FeGlaeser" linkedin="https://www.linkedin.com/in/fernando-glaeser-08a0b92b2/" />
+        <TeamCard name="Lucas Zampronio da Silva" photo={photo04} github="https://github.com/LucasZampronio" linkedin="https://www.linkedin.com/in/lucas-zampronio-036512218/" />
+        <TeamCard name="Manuella da Silva Rodrigues" photo={photo02} github="https://github.com/manuzokas" linkedin="https://www.linkedin.com/in/manuella-rodrigues-541a89316/" />
+        <TeamCard name="Marcus Vinicius Do Prado" photo={photo05} github="https://github.com/marcuspradoep" linkedin="https://www.linkedin.com/in/marcus-vinicius-do-prado-4a3835331/" />
         <div className="flex flex-col items-center gap-6 pt-6">
           <h2 className="font-semibold text-center text-xl sm:text-2xl text-slate-900 dark:text-white">Edson Moreira da Costa Filho</h2>
           <p>Instructor</p>

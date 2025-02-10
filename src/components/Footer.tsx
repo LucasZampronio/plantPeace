@@ -65,7 +65,7 @@ export const Footer = () => {
       </div>
       {/* Seção inferior */}
       <div className="flex flex-col lg:flex-row justify-between items-center pt-4 lg:pt-7 border-t border-emerald-950">
-        <a href="#">
+        <a href="/">
           <img
             src={logo}
             alt="white logo with a jar and 3 leafs"

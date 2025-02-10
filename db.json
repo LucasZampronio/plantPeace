@@ -356,14 +356,20 @@
       "id": 53
     },
     {
-      "email": "babi@gmail.com",
-      "clerkUserId": "sess_2srhifGdMzMt4mrHiwYbVygSHXj",
+      "email": "lucas.zampronio.silva@gmail.com",
+      "clerkUserId": "user_2srjTUum0mAKdBMVpcfyjNkjEaj",
+      "firstName": "Lucas Zampronio",
       "id": 54
     },
     {
-      "email": "babi@gmail.com",
-      "clerkUserId": "sess_2srjiQuUh3wR3r7fcbddufIkj1t",
+      "email": "lucas.zampronio.silva@gmail.com",
+      "clerkUserId": "sess_2srjWa5LtJ8dTVKS2EjRO3XR0sg",
       "id": 55
+    },
+    {
+      "email": "lucas.zampronio.silva@gmail.com",
+      "clerkUserId": "sess_2srjgBVhkCbfdqob7FjdpLMCgis",
+      "id": 56
     }
   ]
 }
