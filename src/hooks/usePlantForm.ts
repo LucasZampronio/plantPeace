@@ -46,7 +46,7 @@ export function usePlantForm({ initialData, onSubmit }: UsePlantFormProps) {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [successMessage, setSuccessMessage] = useState<string | null>(null);
-
+  
   const sanitizeInput = (value: string) => {
   return value.replace(/<[^>]*>?/gm, ""); 
 };

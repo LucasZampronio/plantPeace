@@ -12,14 +12,13 @@ import { PlantFormData } from "../hooks/usePlantForm";
 export default function PlantsEditPage() {
   const { userId } = useAuth();
   const { id } = useParams();
-  const [initialData, setInitialData] = useState<Partial<PlantFormData> | null>(
-    null
-  );
+  const [initialData, setInitialData] = useState<Partial<PlantFormData> | null>(null);
   const [successMessage, setSuccessMessage] = useState<string | null>(null);
   const navigate = useNavigate();
 
   useEffect(() => {
     if (!id) {
+      navigate("/");
       console.error("Erro: plantId não foi encontrado na URL.");
       return;
     }
@@ -31,14 +30,20 @@ export default function PlantsEditPage() {
           throw new Error("Erro ao carregar os dados da planta");
         }
         const data = await response.json();
+        if (!data) {
+          console.error("Planta não encontrada.");
+          navigate("/*");
+          return;
+        }
         setInitialData(data);
       } catch (error) {
         console.error("Erro:", error);
+        navigate("/*");
       }
     };
 
     loadPlantData();
-  }, [id]);
+  }, [id, navigate]);
 
   const handleSubmit = async (plantData: PlantFormData) => {
     try {
@@ -63,7 +68,7 @@ export default function PlantsEditPage() {
       // Exibe a mensagem de sucesso
       setSuccessMessage("Planta editada com sucesso!");
 
-      // Esconde a mensagem após 3 segundos
+      // Esconde a mensagem após 1 segundo e recarrega a página
       setTimeout(() => {
         setSuccessMessage(null);
         navigate(0);
@@ -73,7 +78,8 @@ export default function PlantsEditPage() {
     }
   };
 
-  return (
+  // Conteúdo original, sem alterações (para desktop)
+  const content = (
     <>
       <SignedIn>
         {initialData ? (
@@ -82,6 +88,7 @@ export default function PlantsEditPage() {
             initialData={initialData}
             onSubmit={handleSubmit}
             successMessage={successMessage}
+            onCancel={() => navigate(`/plants/detail/${id}`)}
           />
         ) : (
           <p>Carregando...</p>
@@ -91,5 +98,22 @@ export default function PlantsEditPage() {
         <RedirectToSignIn />
       </SignedOut>
     </>
+  );
+
+  return (
+    <div className="min-h-screen bg-gray-50">
+      {/* Versão Mobile: Container com padding e largura limitada */}
+      <div className="block lg:hidden">
+        <div className="flex items-center justify-center p-0">
+          <div className="w-full max-w-xl">
+            {content}
+          </div>
+        </div>
+      </div>
+      {/* Versão Desktop: Sem alterações */}
+      <div className="hidden lg:block">
+        {content}
+      </div>
+    </div>
   );
 }

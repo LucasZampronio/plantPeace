@@ -10,7 +10,7 @@ import RegisterPage from "./pages/RegisterPage";
 import LoginPage from "./pages/LoginPage";
 import PlantListPage from "./pages/PlantsListPage";
 import UserConfigPage from "./pages/UserConfigPage";
-import { AboutUsPage } from "./pages/AboutUsPage";
+import PlantDetail from "./pages/PlantsDetail";
 
 // componente para rotas protegidas
 const ProtectedRoute = ({ children }: { children: React.ReactNode }) => {
@@ -32,6 +32,8 @@ const router = createBrowserRouter([
     children: [
       // rota pública
       { index: true, element: <HomePage /> },
+
+      // rotas protegidas
       {
         path: "/plants/list",
         element: (
@@ -55,7 +57,6 @@ const router = createBrowserRouter([
         ),
       },
 
-      // rotas protegidas
       {
         path: "/plants/register",
         element: (
@@ -69,6 +70,15 @@ const router = createBrowserRouter([
         element: (
           <ProtectedRoute>
             <PlantsEditPage />
+          </ProtectedRoute>
+        ),
+      },
+
+      {
+        path: "/plants/detail/:id",
+        element: (
+          <ProtectedRoute>
+            <PlantDetail />
           </ProtectedRoute>
         ),
       },
@@ -92,7 +102,11 @@ const router = createBrowserRouter([
 ]);
 
 function App() {
-  return <RouterProvider router={router} />;
+  return (
+    <>
+      <RouterProvider router={router} />
+    </>
+  );
 }
 
 export default App;

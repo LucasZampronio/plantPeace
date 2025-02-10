@@ -1,40 +1,76 @@
 {
   "plants": [
     {
-      "name": "oi",
+      "name": "Planta lucas",
       "subtitle": "teste",
-      "category": "teste",
+      "category": "Outdoor",
       "price": "1",
       "discountPorcentage": "1",
       "description": "teste",
       "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTk4EQlVGe_0ZELKyUdvE3ca97PpQcyhOTanw&s",
-      "highlightItem": true,
-      "ownerId": "user_2siszFZLiwwhNAqLBmpI6AqRm9a",
+      "highlightItem": false,
+      "ownerId": "user_2sj7dnfNtQlub42bluUCjFT2ZQo",
       "id": 1
     },
     {
-      "name": "Planta Carnívoras",
+      "name": "Planta 1",
       "subtitle": "A majestic plant",
-      "category": "Carnívora",
+      "category": "Indor",
       "price": "100",
       "discountPorcentage": "10",
-      "description": "plana carnivora",
+      "description": "planta carnivora",
       "imageUrl": "https://images.tcdn.com.br/img/img_prod/1162228/planta_carnivora_p9_189_1_0075cc5c135c646db16c801db04ce8c0.jpg",
       "highlightItem": false,
-      "ownerId": "user_2sh76VG2W5Mx211U2FWG1dOlsh6",
+      "ownerId": "user_2sj7dnfNtQlub42bluUCjFT2ZQo",
       "id": 2
     },
     {
-      "name": "planta marcus",
+      "name": "Planta 3",
       "subtitle": "marcus",
-      "category": "marcus",
+      "category": "Office Desk",
       "price": "222",
       "discountPorcentage": "22",
       "description": "aaaaaaaa",
       "imageUrl": "https://images.ecycle.com.br/wp-content/uploads/2022/09/27153826/hassan-pasha-jxf1k1TS07s-unsplash-1.jpg.webp",
-      "highlightItem": false,
-      "ownerId": "user_2siszFZLiwwhNAqLBmpI6AqRm9a",
+      "highlightItem": true,
+      "ownerId": "user_2sj7dnfNtQlub42bluUCjFT2ZQo",
       "id": 3
+    },
+    {
+      "name": "Planta 4",
+      "subtitle": "teste",
+      "category": "Outdoor",
+      "price": "222",
+      "discountPorcentage": "22",
+      "description": "akdmekmdek",
+      "imageUrl": "https://cdn.awsli.com.br/300x300/2733/2733498/produto/282761501/whatsapp-image-2024-07-10-at-16-20-31-lrwr9w7j24.jpeg",
+      "highlightItem": false,
+      "ownerId": "user_2sj7dnfNtQlub42bluUCjFT2ZQo",
+      "id": 4
+    },
+    {
+      "name": "Planta 5",
+      "subtitle": "test subtitle",
+      "category": "Terracy e Balcony",
+      "price": "220",
+      "discountPorcentage": "20",
+      "description": "testing",
+      "imageUrl": "https://plus.unsplash.com/premium_photo-1675864663002-c330710c6ba0?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cGxhbnRhfGVufDB8fDB8fHww",
+      "highlightItem": true,
+      "ownerId": "user_2sj7dnfNtQlub42bluUCjFT2ZQo",
+      "id": 5
+    },
+    {
+      "name": "Planta 6",
+      "subtitle": "subtitle",
+      "category": "Indor",
+      "price": "234",
+      "discountPorcentage": "23",
+      "description": "description",
+      "imageUrl": "https://media.istockphoto.com/id/1380361370/pt/foto/decorative-banana-plant-in-concrete-vase-isolated-on-white-background.jpg?s=612x612&w=0&k=20&c=v-yfeQc5NaSLKKABNfLXKHETuPSoBz8ImvUAN-zCjXY=",
+      "highlightItem": true,
+      "ownerId": "user_2sj3X5WCyzvvABWlYLP2ey7sDsN",
+      "id": 6
     }
   ],
   "users": [
@@ -126,48 +162,58 @@
       "email": "babi@gmail.com",
       "clerkUserId": "user_2sj32cZkqgTFigca7HWDSFXdKwB",
       "id": 17
-    }
-  ],
-  "carouselItems": [
-    {
-      "id": 1,
-      "title": "Echinocereus Cactus",
-      "price": "$49.99",
-      "image": "https://static.wixstatic.com/media/1da931_870e8d00b691472bbd2e3c2792d722b6~mv2.jpg/v1/fill/w_288,h_288,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/1da931_870e8d00b691472bbd2e3c2792d722b6~mv2.jpg",
-      "tags": [
-        "Indoor",
-        "Cactus"
-      ]
     },
     {
-      "id": 2,
-      "title": "Echinocereus Cactus",
-      "price": "$69.99",
-      "image": "https://blog.polipet.com.br/wp-content/uploads/2023/01/AdobeStock_436215405-445x445.jpeg",
-      "tags": [
-        "Indoor",
-        "Cactus"
-      ]
+      "name": "barbara",
+      "email": "babi@gmail.com",
+      "clerkUserId": "user_2sj7QezY160vaA82HijZvbAetit",
+      "id": 18
     },
     {
-      "id": 3,
-      "title": "Echinocereus Cactus",
-      "price": "$39.99",
-      "image": "https://static.itdg.com.br/images/622-auto/4eb9fbe4784c9c80c2aeab06e8096ab6/cacto-2-.jpg",
-      "tags": [
-        "Indoor",
-        "Cactus"
-      ]
+      "name": "babizkks",
+      "email": "babizkks@gmail.com",
+      "clerkUserId": "user_2sj7dnfNtQlub42bluUCjFT2ZQo",
+      "id": 19
     },
     {
-      "id": 4,
-      "title": "Epipremnum aureum",
-      "price": "$29.99",
-      "image": "https://images.tcdn.com.br/img/img_prod/422498/cactos_flor_estrela_do_mar_estapelia_gigante_stapelia_hirsuta_huernia_belli_plantas_1191_1_a654856c1b04565029170eb73fe1e09d.jpg",
-      "tags": [
-        "Indoor",
-        "Cactus"
-      ]
+      "email": "babi@gmail.com",
+      "clerkUserId": "sess_2sjCbdgSOE2S6j2Zz33GM70YCpA",
+      "id": 20
+    },
+    {
+      "email": "babi@gmail.com",
+      "clerkUserId": "sess_2skGYCBjlQiaR1fbDHLMPIrRwuL",
+      "id": 21
+    },
+    {
+      "email": "babi@gmail.com",
+      "clerkUserId": "sess_2skHo47Gdxx8t7j5gTHs3lnY9GV",
+      "id": 22
+    },
+    {
+      "email": "babi@gmail.com",
+      "clerkUserId": "sess_2slaPx4JeljpJXBw8vlE6eLbdFF",
+      "id": 23
+    },
+    {
+      "email": "babi@gmail.com",
+      "clerkUserId": "sess_2splaWHCojg9Mi4aInvPvx3xHSX",
+      "id": 24
+    },
+    {
+      "email": "babi@gmail.com",
+      "clerkUserId": "sess_2splyMCZnSuBwjcZne9iuQCGnFZ",
+      "id": 25
+    },
+    {
+      "email": "babi@gmail.com",
+      "clerkUserId": "sess_2spmZIS46uVQDqaWX9oLeDFA11i",
+      "id": 26
+    },
+    {
+      "email": "babi@gmail.com",
+      "clerkUserId": "sess_2spsmLFALld8FEUYiHpWaLBL0hS",
+      "id": 27
     }
   ]
 }

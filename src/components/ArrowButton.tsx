@@ -11,7 +11,7 @@ const ArrowButton = ({ onClick, direction }: ArrowButtonProps) => {
 
   return (
     <button
-      className={`absolute ${positionClass} z-10 p-2 rounded-full shadow-md transition`}
+      className={`absolute ${positionClass} z-10 p-2 rounded-full shadow-md transition bg-white dark:bg-emerald-900 dark:`}
       onClick={onClick}
       style={{ top: "50%", transform: "translateY(-50%)" }}
     >

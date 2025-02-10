@@ -10,12 +10,14 @@ interface PlantFormProps {
   initialData?: Partial<PlantFormData>;
   onSubmit: (data: PlantFormData) => Promise<void>;
   successMessage?: string | null;
+  onCancel?: () => void;
 }
 
 const PlantForm = ({
   mode = "register",
   initialData,
   onSubmit,
+  onCancel
 }: PlantFormProps) => {
   const {
     formData,
@@ -24,7 +26,7 @@ const PlantForm = ({
     handleSubmit,
     handleCheckboxChange,
     handleChange,
-    successMessage,
+    successMessage
   } = usePlantForm({
     initialData,
     onSubmit,
@@ -67,15 +69,16 @@ const PlantForm = ({
     },
     {
       label: "Category",
-      placeholder: "Cactus",
+      placeholder: "Select a category",
       error: errors.category,
       errorId: "category-error",
-      type: "text",
+      type: "select",
       id: "category",
       name: "category",
       autoComplete: "category",
       value: formData.category,
       onChange: handleChange,
+      options: ["Indor", "Outdoor", "Terracy e Balcony", "Office Desk"],
     },
     {
       label: "Price",
@@ -127,53 +130,81 @@ const PlantForm = ({
     },
   ];
 
+  const renderBackButton = () => {
+    if (mode === "edit" && onCancel) {
+      return (
+        <button
+          type="button"
+          onClick={onCancel}
+          className="mb-4 flex items-center text-emerald-700 hover:text-emerald-800 transition-colors group z-100"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-5 w-5 mr-2 transition-transform group-hover:-translate-x-1"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+          >
+            <path
+              fillRule="evenodd"
+              d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z"
+              clipRule="evenodd"
+            />
+          </svg>
+          Back to Details
+        </button>
+      );
+    }
+    return null;
+  };
+
   return (
-    <div className="flex w-full relative h-auto py-30 md:py-0 lg:py-0">
+    <div className="flex w-full relative h-auto py-30 md:py-0 lg:py-0 bg-white dark:bg-neutral-900">
       {/* Imagem de fundo */}
       <img
         src={nature}
         alt=""
-        className="absolute top-0 left-0 w-full h-full object-cover opacity-50 z-0"
+        className="absolute top-0 left-0 w-full h-full object-cover opacity-50 z-0 dark:opacity-70"
       />
       <div className="flex flex-1 flex-col justify-center items-center">
         <form
           onSubmit={handleSubmit}
-          className="flex flex-col justify-center items-center gap-2 rounded-2xl bg-white"
+          className="flex flex-col justify-center items-center gap-2 rounded-2xl bg-white dark:bg-neutral-900"
         >
           {/* Cabeçalho */}
-          <div className="flex flex-col items-start gap-1 sm:pr-0 pl-10 w-full max-w-lg">
-            <h2 className="text-2xl font-extrabold bg-gradient-to-r from-emerald-800 to-emerald-700 bg-clip-text text-transparent">
+          <div className="flex flex-col items-start gap-1 sm:pr-0 pl-10 w-full max-w-lg bg-white dark:bg-neutral-900">
+            <h2 className="text-2xl font-extrabold bg-gradient-to-r from-emerald-800 to-emerald-700 bg-clip-text text-transparent bg-white dark:bg-neutral-900">
               {formConfig.title}
             </h2>
-            <p className="text-left text-gray-500 w-[400px] text-sm ">
+            <p className="text-left text-gray-500 w-[400px] text-sm bg-white dark:bg-neutral-900">
               {formConfig.description}
             </p>
           </div>
 
           {/* Campos do formulário */}
-          <div className="flex flex-col sm:pl-10 sm:pr-10 w-full max-w-lg h-full">
+          <div className="flex flex-col sm:pl-10 sm:pr-10 w-full max-w-lg h-full bg-white dark:bg-neutral-900">
             {inputFields.slice(0, 3).map((field) => (
-              <div className="relative w-full mt-2" key={field.id}>
+              <div className="relative w-full mt-2 text-black dark:text-gray-200" key={field.id}>
                 <InputField {...field} />
               </div>
             ))}
             <div className="flex gap-4 w-full mt-4">
-              <div className="relative w-1/2">
+              <div className="relative w-1/2 text-black dark:text-gray-200">
                 <InputField {...inputFields[3]} className="w-full" />
               </div>
-              <div className="relative w-1/2">
+              <div className="relative w-1/2 text-black dark:text-gray-200">
                 <InputField {...inputFields[4]} className="w-full" />
               </div>
             </div>
             {inputFields.slice(5).map((field) => (
-              <div className="relative w-full mt-4" key={field.id}>
+              <div className="relative w-full mt-4 text-black dark:text-gray-200" key={field.id}>
                 <InputField {...field} />
               </div>
             ))}
-            <div className="relative w-full mt-4 mb-2">
+            <div className="relative w-full mt-4 mb-2 text-black dark:text-gray-200">
               <CheckboxField
                 id="highlightItem"
                 label="Highlight this item"
+                checked={formData.highlightItem}
                 onChange={(checked) => handleCheckboxChange(checked)}
               />
             </div>
@@ -227,6 +258,7 @@ const PlantForm = ({
               formConfig.buttonText
             )}
           </Button>
+          {renderBackButton()}
           {/* Mensagem de sucesso */}
           {successMessage && (
             <div className="mt-2 p-3 bg-green-100 text-green-700 rounded-lg flex items-center gap-2">
