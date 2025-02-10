@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const SearchBar: React.FC<{ onSearch: (query: string) => boolean }> = ({
   onSearch,
@@ -6,15 +7,20 @@ const SearchBar: React.FC<{ onSearch: (query: string) => boolean }> = ({
   const [query, setQuery] = useState("");
   const [borderColor, setBorderColor] = useState("border-gray-300");
   const [hasSearched, setHasSearched] = useState(false);
+  const navigate = useNavigate();
 
   const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setQuery(e.target.value);
+    const inputQuery = e.target.value;
+    setQuery(inputQuery);
+
+    // busca em tempo real, sem o botão de busca
+    const found = onSearch(inputQuery);
+    setBorderColor(found ? "border-green-400" : "border-red-400");
+    setHasSearched(true); 
   };
 
-  const handleSearchSubmit = () => {
-    setHasSearched(true);
-    const found = onSearch(query);
-    setBorderColor(found ? "border-green-400" : "border-red-400");
+  const handleAddClick = () => {
+    navigate("/plants/register");
   };
 
   return (
@@ -29,7 +35,7 @@ const SearchBar: React.FC<{ onSearch: (query: string) => boolean }> = ({
           placeholder="Search by name"
         />
         <button
-          onClick={handleSearchSubmit}
+          onClick={handleAddClick}
           className="px-8 py-2 bg-[#064E3B] text-[#FCFCFC] rounded-lg hover:bg-[#3f875e]"
           style={{
             fontFamily: "Inter",
@@ -38,7 +44,7 @@ const SearchBar: React.FC<{ onSearch: (query: string) => boolean }> = ({
             lineHeight: "24.72px",
           }}
         >
-          Search Plant
+          Add Plant
         </button>
       </div>
 
