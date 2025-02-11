@@ -9,6 +9,7 @@ interface CarouselItem {
   id: number;
   name: string;
   price: string;
+  discountPorcentage: string;
   imageUrl: string;
   highlightItem: boolean;
   category: string;
@@ -142,11 +143,28 @@ const Fourth = () => {
                 <h3 className="text-xl text-black font-semibold mb-2">
                   {item.name}
                 </h3>
-                <p className="text-green-900 dark:text-gray-300 text-lg font-medium mb-4">
-                  ${item.price}
-                </p>
-              </a>
-            </div>
+                <p className="text-slate-500 dark:text-gray-300 text-lg font-medium mb-4">
+                  
+                  {!isNaN(Number(item.price))
+                    ? (
+                      item.discountPorcentage ? (
+                          <>
+                          ${(Number(item.price) * (1 - Number(item.discountPorcentage) / 100)).toFixed(2)}
+                          <span style={{ marginLeft: '15px' }}></span>
+                            <span className="line-through mr-2 text-slate-400">
+                              ${Number(item.price).toFixed(2)}
+                            </span>
+                          </>
+                        ) : (
+                          <>${Number(item.price).toFixed(2)}</>
+
+                          
+                        )
+                      )
+                    : "Invalid price"}
+                              </p>
+                    </a>
+                  </div>
           ))}
         </Slider>
       </div>
