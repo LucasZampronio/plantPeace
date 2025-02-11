@@ -10,12 +10,12 @@ const ThirdSection = () => {
   {/* Div com imagens, exibida apenas em telas médias e maiores */}
   <div className="hidden lg:grid grid-cols-2 gap-4">
     <img
-      className="object-cover w-full h-full max-h-[400px] lg:max-h-[500px] opacity-100 dark:opacity-70"
+      className="object-cover h-full max-h-[697px] opacity-100 dark:opacity-70"
       src={image1}
       alt=""
     />
     <img
-      className="object-cover w-full h-full max-h-[400px] lg:max-h-[500px] opacity-100 dark:opacity-70"
+      className="object-cover h-full max-h-[697px] opacity-100 dark:opacity-70"
       src={image2}
       alt=""
     />

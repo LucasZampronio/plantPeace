@@ -39,15 +39,14 @@ const Fourth = () => {
   };
 
   return (
-    <section className="flex flex-col justify-center px-4 md:px-40 py-16">
+    <section className="flex flex-col justify-center px-4 md:px-20 py-16">
       {/* Cabeçalho */}
-      <div className="flex flex-col self-start mb-12 max-w-4xl px-4 md:px-8">
+      <div className="flex flex-col self-start mb-12 max-w-4xl">
         <h1 className="font-[Playfair_Display] text-l md:text-4xl lg:text-5xl font-bold text-emerald-900 mb-4">
           This week's Most Popular and Best Selling
         </h1>
         <p className="text-gray-500 font-[Inter] text-xs md:text-lg lg:text-base">
-          Lorem ipsum dolor sit amet consectetur. Amet a egestas mauris faucibus
-          dolor volutpat adipiscing amet ipsum. In.
+        Take a look at our popular products. Take advantage of promotions and find similar products.
         </p>
       </div>
 
