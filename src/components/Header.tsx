@@ -1,5 +1,5 @@
 import { useAuth, useUser } from "@clerk/clerk-react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import { useState } from "react";
 import logo from "../images/logoicon.svg";
 import DarkMode from "../components/DarkMode";
@@ -10,7 +10,15 @@ export const Header = () => {
   const { isSignedIn, signOut } = useAuth();
   const { user } = useUser();
   const navigate = useNavigate();
+  const location = useLocation();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  // Função para verificar a rota ativa
+  const isActive = (path: string, exact = false) => {
+    return exact
+      ? location.pathname === path
+      : location.pathname.startsWith(path);
+  };
 
   const handleAuthAction = async () => {
     if (isSignedIn) {
@@ -21,7 +29,6 @@ export const Header = () => {
     }
   };
 
-  //useEffect responsavel por setar a altura do header
   useEffect(() => {
     if (headerRef.current) {
       const headerHeight = headerRef.current.offsetHeight;
@@ -35,6 +42,27 @@ export const Header = () => {
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
+
+  // Classe base para os links
+  const linkBaseClass = "transition duration-300 font-normal";
+
+  // Classes condicionais para desktop
+  const desktopLinkClass = (path: string, exact = false) => `
+    ${linkBaseClass}
+    ${isActive(path, exact)
+      ? "text-emerald-900 dark:text-emerald-500 font-medium"
+      : "text-slate-500 dark:text-slate-400 hover:text-emerald-800 dark:hover:text-emerald-500"
+    }
+  `;
+
+  // Classes condicionais para mobile
+  const mobileLinkClass = (path: string, exact = false) => `
+    ${linkBaseClass}
+    ${isActive(path, exact)
+      ? "text-emerald-700 dark:text-emerald-500 font-medium"
+      : "text-slate-500 dark:text-slate-400 hover:text-emerald-700 dark:hover:text-emerald-500"
+    }
+  `;
 
   return (
     <header
@@ -53,19 +81,35 @@ export const Header = () => {
         </Link>
         <DarkMode />
       </div>
+
       {/* Desktop navigation menu */}
       <nav className="hidden lg:flex">
-        <ul className="flex gap-4 p-4 font-light text-slate-500 dark:text-slate-400">
-          <li className="text-emerald-900 font-normal hover:text-emerald-800 hover:font-medium transition duration-300 dark:text-emerald-900 dark:hover:text-emerald-800">
-            <Link to="/">Home</Link>
+        <ul className="flex gap-4 p-4">
+          <li>
+            <Link
+              to="/"
+              className={desktopLinkClass("/", true)}
+            >
+              Home
+            </Link>
           </li>
           {isSignedIn && (
             <>
-              <li className="hover:text-emerald-800 text-emerald-900 font-normal hover:font-medium transition">
-                <Link to="/plants/list">Products</Link>
+              <li>
+                <Link
+                  to="/plants/list"
+                  className={desktopLinkClass("/plants/list")}
+                >
+                  Products
+                </Link>
               </li>
-              <li className="hover:text-emerald-800 text-emerald-900  font-normal hover:font-medium transition">
-                <Link to="/user/config">About me</Link>
+              <li>
+                <Link
+                  to="/user/config"
+                  className={desktopLinkClass("/user/config")}
+                >
+                  About me
+                </Link>
               </li>
             </>
           )}
@@ -77,26 +121,27 @@ export const Header = () => {
         {!isSignedIn && (
           <Link
             to="/sign-up"
-            className="text-slate-900 cursor-pointer hover:underline hover:text-slate-600 transition dark:text-slate-500 dark:hover:text-emerald-700 dark:"
+            className="text-slate-900 cursor-pointer hover:underline hover:text-slate-600 transition dark:text-slate-500 dark:hover:text-emerald-700"
           >
             Register
           </Link>
         )}
         {isSignedIn && (
           <div className="flex items-center gap-4">
-            <span className="text-emerald-900">
+            <span className="text-emerald-900 dark:text-emerald-500">
               Hi, {user?.firstName}
             </span>
           </div>
         )}
         <button
           onClick={handleAuthAction}
-          className="text-white bg-emerald-900 px-10 py-3 rounded-xl cursor-pointer hover:bg-emerald-700 transition"
+          className="text-white bg-emerald-900 px-10 py-3 rounded-xl cursor-pointer hover:bg-emerald-700 transition dark:bg-emerald-950 dark:hover:bg-emerald-900"
         >
           {isSignedIn ? "Log out" : "Login"}
         </button>
       </div>
-      {/* Botão de menu hambúrguer para mobile */}
+
+      {/* Menu mobile */}
       <div className="lg:hidden">
         <button onClick={toggleMobileMenu} aria-label="Toggle mobile menu">
           {isMobileMenuOpen ? (
@@ -135,26 +180,32 @@ export const Header = () => {
 
       {isMobileMenuOpen && (
         <div className="lg:hidden absolute top-[89px] inset-x-0 bg-white dark:bg-neutral-900 shadow-md z-40 transition-all duration-300">
-          <ul className="flex flex-col gap-4 p-4 font-light text-slate-500 dark:text-slate-400">
-            <li className="hover:text-emerald-700 dark:hover:text-emerald-600 hover:font-normal transition">
-              <Link to="/" onClick={() => setIsMobileMenuOpen(false)}>
+          <ul className="flex flex-col gap-4 p-4">
+            <li>
+              <Link
+                to="/"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className={mobileLinkClass("/", true)}
+              >
                 Home
               </Link>
             </li>
             {isSignedIn && (
               <>
-                <li className="hover:text-emerald-700 dark:hover:text-emerald-600 hover:font-normal transition">
+                <li>
                   <Link
                     to="/plants/list"
                     onClick={() => setIsMobileMenuOpen(false)}
+                    className={mobileLinkClass("/plants/list")}
                   >
                     Products
                   </Link>
                 </li>
-                <li className="hover:text-emerald-700 dark:hover:text-emerald-600 hover:font-normal transition">
+                <li>
                   <Link
                     to="/user/config"
                     onClick={() => setIsMobileMenuOpen(false)}
+                    className={mobileLinkClass("/user/config")}
                   >
                     About me
                   </Link>
