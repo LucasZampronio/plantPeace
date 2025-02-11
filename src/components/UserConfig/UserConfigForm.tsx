@@ -54,7 +54,7 @@ const UserConfigForm: React.FC<UserConfigFormProps> = ({ user, onSubmit }) => {
   return (
     <section className="bg-white dark:bg-neutral-900 flex flex-col sm:flex-row h-screen">
       {/* Formulário */}
-      <div className="flex flex-1 flex-col pt-[var(--header-height)] sm:py-30 items-left justify-start w-full px-4 sm:pl-15 sm:pr-10 sm:pb-10">
+      <div className=" bg-white dark:bg-neutral-900 flex flex-1 flex-col pt-[var(--header-height)] sm:py-30 items-left justify-start w-full px-4 sm:pl-15 sm:pr-10 sm:pb-10">
         <div className="border-green-500 w-full sm:w-[70%]">
           <h1 className="font-[Playfair_Display] text-2xl sm:text-4xl font-bold mb-3 text-[#064E3B]">
             User Settings
@@ -63,11 +63,11 @@ const UserConfigForm: React.FC<UserConfigFormProps> = ({ user, onSubmit }) => {
             Update your account information and password
           </p>
         </div>
-        <form
+        <form 
           onSubmit={handleSubmit}
-          className="flex flex-col gap-2 rounded-2xl bg-white w-full"
+          className="  dark:bg-neutral-900 flex flex-col gap-2 rounded-2xl bg-white w-full"
         >
-          <label htmlFor="name" className="text-sm sm:text-base">
+          <label htmlFor="name" className="text-black  dark:text-slate-600 text- text-sm sm:text-base">
             Name
           </label>
           <input
@@ -75,10 +75,10 @@ const UserConfigForm: React.FC<UserConfigFormProps> = ({ user, onSubmit }) => {
             value={name}
             placeholder="Your name"
             onChange={handleNameChange}
-            className="mt-1 py-2 px-4 sm:px-6 bg-[#F1F5F9] text-[#334155] border-[#E2E8F0] border-2 placeholder-[#64748B] rounded-lg text-sm sm:text-base"
+            className="mt-1 py-2 px-4 sm:px-6 dark:bg-neutral-900 dark:text-slate-200  bg-[#F1F5F9] text-[#334155] border-[#E2E8F0] border-1 placeholder-[#64748B] rounded-lg text-sm sm:text-base"
           />
 
-          <label htmlFor="email" className="text-sm sm:text-base">
+          <label htmlFor="email" className="text-black dark:text-slate-600 text-sm sm:text-base">
             E-mail
           </label>
           <input
@@ -86,10 +86,10 @@ const UserConfigForm: React.FC<UserConfigFormProps> = ({ user, onSubmit }) => {
             value={email}
             placeholder="your.email@example.com"
             onChange={handleEmailChange}
-            className="mt-1 py-2 px-4 sm:px-6 bg-[#F1F5F9] text-[#334155] border-[#E2E8F0] border-2 placeholder-[#64748B] rounded-lg text-sm sm:text-base"
+            className="mt-1 py-2 px-4 sm:px-6 dark:bg-neutral-900 dark:text-slate-200 bg-[#F1F5F9] text-[#334155] border-[#E2E8F0] border-1 placeholder-[#64748B] rounded-lg text-sm sm:text-base"
           />
 
-          <label htmlFor="current-password" className="text-sm sm:text-base">
+          <label htmlFor="current-password" className="text-black dark:text-slate-600 text-sm sm:text-base">
             Current Password
           </label>
           <input
@@ -98,10 +98,10 @@ const UserConfigForm: React.FC<UserConfigFormProps> = ({ user, onSubmit }) => {
             onChange={handleCurrentPasswordChange}
             placeholder="Enter current password"
             required
-            className="mt-1 py-2 px-4 sm:px-6 bg-[#F1F5F9] text-[#334155] border-[#E2E8F0] border-2 placeholder-[#64748B] rounded-lg text-sm sm:text-base"
+            className="mt-1 py-2 px-4 sm:px-6 bg-[#F1F5F9] dark:bg-neutral-900 dark:text-slate-200 text-[#334155] border-[#E2E8F0] border-1 placeholder-[#64748B] rounded-lg text-sm sm:text-base"
           />
 
-          <label htmlFor="new-password" className="text-sm sm:text-base">
+          <label htmlFor="new-password" className="text-black dark:text-slate-600 text-sm sm:text-base">
             New Password
           </label>
           <input
@@ -109,12 +109,12 @@ const UserConfigForm: React.FC<UserConfigFormProps> = ({ user, onSubmit }) => {
             value={newPassword}
             onChange={handlePasswordChange}
             placeholder="Enter new password"
-            className="mt-1 py-2 px-4 sm:px-6 bg-[#F1F5F9] text-[#334155] border-[#E2E8F0] border-2 placeholder-[#64748B] rounded-lg text-sm sm:text-base"
+            className="mt-1 py-2 px-4 sm:px-6 bg-[#F1F5F9] dark:bg-neutral-900 dark:text-slate-200 text-[#334155] border-[#E2E8F0] border-1 placeholder-[#64748B] rounded-lg text-sm sm:text-base"
           />
 
           <button
             type="submit"
-            className="mt-4 py-2 px-4 sm:px-6 bg-[#064E3B] text-white rounded-lg hover:bg-[#267355] transition-colors text-sm sm:text-base"
+            className="mt-4 py-2 px-4 sm:px-6 bg-[#064E3B]  text-white rounded-lg hover:bg-[#267355] transition-colors text-sm sm:text-base"
           >
             Save Changes
           </button>

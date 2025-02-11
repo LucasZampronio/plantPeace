@@ -85,17 +85,16 @@ const Fourth = () => {
     };
 
   return (
-    <section className="flex flex-col justify-center items-center px-4 md:px-40 py-16">
+    <section className="flex flex-col justify-center px-4 md:px-40 py-16">
       <div className="flex flex-col self-start mb-12 max-w-4xl px-4 md:px-8">
-  <h1 className="font-[Playfair_Display] text-3xl md:text-4xl lg:text-5xl font-bold text-emerald-900 mb-4">
+  <h1 className="font-[Playfair_Display] text-l md:text-4xl w-140 lg:text-5xl font-bold text-emerald-900 mb-4">
     This week's Most Popular and Best Selling
   </h1>
-  <p className="text-gray-500 font-[Inter] text-base md:text-lg lg:text-xl">
-    Discover our carefully curated selection of premium plants and gardening essentials.
+  <p className="text-gray-500 font-[Inter] text-xs w-130 md:text-lg lg:text-base">
+    Lorem ipsum dolor sit amet consectetur. Amet a egestas mauris faucibus dolor volutpat adipiscing amet ipsum. In.
   </p>
+  
 </div>
-
-
       <div
         className={`w-full relative mx-auto ${
           items.length === 1
@@ -130,7 +129,7 @@ const Fourth = () => {
                   } bg-gray-100 rounded-lg mb-5 overflow-hidden relative`}
                 >
                   {/* Balãozinho da categoria */}
-                  <span className="absolute top-2 right-2 bg-green-600 dark:bg-emerald-600 text-white dark:text-black text-xs font-semibold px-3 py-1 rounded-full shadow-md z-1">
+                  <span className="absolute top-2 right-2 bg-emerald-100 border-emerald-50 border-2 dark:bg-emerald-600 text-emerald-900 dark:text-black text-xs font-semibold px-3 py-1 rounded-full shadow-md z-1">
                     {item.category}
                   </span>
 

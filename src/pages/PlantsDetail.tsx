@@ -41,7 +41,7 @@ const PlantDetail: React.FC<PlantDetailProps> = () => {
 
   if (!plant) {
     return (
-      <div className="p-4 text-teal-800 dark:text-teal-200">Carregando...</div>
+      <div className="p-4 text-teal-800 dark:text-emerald-200">Loading...</div>
     );
   }
 
@@ -54,10 +54,10 @@ const PlantDetail: React.FC<PlantDetailProps> = () => {
         </div>
 
         <div className="mb-5 pl-15 self-start">
-          <h1 className="font-playfair text-3xl font-bold text-teal-800 dark:text-teal-200 mb-1 leading-tight">
+          <h1 className="font-[Playfair_Display] text-3xl font-bold text-teal-800 dark:text-emerald-900 mb-1 leading-tight">
             {plant.name}
           </h1>
-          <p className="font-inter text-lg text-gray-500 dark:text-gray-300 m-0">
+          <p className="font-[Inter] text-base text-slate-500 dark:text-slate-300 m-0">
             {plant.subtitle}
           </p>
         </div>
@@ -65,32 +65,32 @@ const PlantDetail: React.FC<PlantDetailProps> = () => {
         <img
           src={plant.imageUrl}
           alt="Plant"
-          className="w-[642px] h-[385px] object-cover mb-6 rounded-sm shadow-lg dark:shadow-gray-700"
+          className="w-[642px] h-[385px] object-cover mb-6 rounded-sm shadow-lg dark:shadow-slate-700"
         />
 
         <div className="mb-2">
           <div className="flex gap-6 w-full pr-68">
             <div className="mb-4">
-              <p className="font-inter text-md font-medium text-gray-800 dark:text-gray-200 mb-2">
+              <p className="font-[Inter] text-md font-medium text-slate-800 dark:text-slate-200 mb-2">
                 Price
               </p>
-              <p className="font-inter text-md text-gray-500 dark:text-gray-400">
+              <p className="font-[Inter] text-md text-slate-500 dark:text-slate-400">
                 ${plant.price}
               </p>
             </div>
             <div>
-              <p className="font-inter text-md font-medium text-gray-800 dark:text-gray-200 mb-2">
+              <p className="font-[Inter] text-md font-medium text-slate-800 dark:text-slate-200 mb-2">
                 Discount Porcentage
               </p>
-              <p className="font-inter text-md text-gray-500 dark:text-gray-400">
+              <p className="font-[Inter] text-md text-slate-500 dark:text-slate-400">
                 {plant.discountPorcentage}%
               </p>
             </div>
             <div>
-              <p className="font-inter text-md font-medium text-gray-800 dark:text-gray-200 mb-2">
+              <p className="font-[Inter] text-md font-medium text-slate-800 dark:text-slate-200 mb-2">
                 Highlight Product
               </p>
-              <p className="font-inter text-md text-gray-500 dark:text-gray-400">
+              <p className="font-[Inter] text-md text-slate-500 dark:text-slate-400">
                 {plant.highlightItem ? "Yes" : "No"}
               </p>
             </div>
@@ -98,18 +98,18 @@ const PlantDetail: React.FC<PlantDetailProps> = () => {
 
           <div className="flex flex-col gap-4">
             <div>
-              <p className="font-inter text-md font-medium text-gray-800 dark:text-gray-200 mb-2">
+              <p className="font-[Inter] text-md font-medium text-slate-800 dark:text-slate-200 mb-2">
                 Description
               </p>
-              <p className="font-inter text-md text-gray-500 dark:text-gray-400">
+              <p className="font-[Inter] text-md text-slate-500 dark:text-gray-400">
                 {plant.description}
               </p>
             </div>
             <div>
-              <p className="font-inter text-md font-medium text-gray-800 dark:text-gray-200 mb-2">
+              <p className="font-[Inter] text-md font-medium text-slate-800 dark:text-gray-200 mb-2">
                 Category
               </p>
-              <p className="font-inter px-2 py-2 w-fit text-md text-gray-500 dark:text-teal-100 bg-teal-100 dark:bg-teal-800 rounded-full">
+              <p className="font-[Inter] px-2 py-2 w-fit text-md text-emerald-900  bg-emerald-100 border-2 border-emerald-50 rounded-full">
                 {plant.category}
               </p>
             </div>
@@ -118,7 +118,7 @@ const PlantDetail: React.FC<PlantDetailProps> = () => {
         <div className="flex justify-center w-full pb-16 pt-3">
           <button
             onClick={() => navigate(`/plants/${plant.id}`)}
-            className="w-160 py-1 pt-2 bg-teal-800 dark:bg-teal-700 rounded-md text-white font-inter text-lg font-semibold cursor-pointer transition-colors duration-200 hover:bg-teal-700 dark:hover:bg-teal-600"
+            className="w-160 py-1 pt-2 bg-emerald-900 dark:bg-emerald-900 rounded-md text-white font-inter text-lg font-semibold cursor-pointer transition-colors duration-200 hover:bg-emerald-700 dark:hover:bg-emerald-700"
           >
             Edit Plant
           </button>
