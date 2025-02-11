@@ -170,7 +170,7 @@
       "id": 18
     },
     {
-      "name": "babizkks",
+      "name": "babis",
       "email": "babizkks@gmail.com",
       "clerkUserId": "user_2sj7dnfNtQlub42bluUCjFT2ZQo",
       "id": 19
@@ -397,9 +397,20 @@
       "id": 61
     },
     {
+<<<<<<< HEAD
       "email": "lucas.zampronio.silva@gmail.com",
       "clerkUserId": "sess_2stra8FauQmJeu1g6OpCuAuGQLW",
       "id": 62
+=======
+      "email": "babi@gmail.com",
+      "clerkUserId": "sess_2ssBYzpjLv7XwntSGw5wiR5fTP5",
+      "id": 62
+    },
+    {
+      "email": "babi@gmail.com",
+      "clerkUserId": "sess_2stotjptJXSQaVsq8f9RU3voY7E",
+      "id": 63
+>>>>>>> d4eb49bc96739a888f7b0e23af7a6ebbd3490bf0
     }
   ]
 }
