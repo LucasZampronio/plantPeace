@@ -6,6 +6,7 @@ interface CarouselItem {
   id: number;
   name: string;
   price: string;
+  discountPorcentage: string;
   imageUrl: string;
   highlightItem: boolean;
   category: string;

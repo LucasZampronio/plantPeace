@@ -7,6 +7,7 @@ interface Plant {
   category: string;
   price: string;
   imageUrl: string;
+  discountPorcentage: string;
 }
 
 interface CatalogProps {
@@ -57,13 +58,25 @@ const Catalog: React.FC<CatalogProps> = ({ plants, searchResult }) => {
               <div className="absolute top-3 right-2 max-w-[90%] bg-emerald-100 text-emerald-900 rounded-full p-2 border-2 border-emerald-50 text-sm sm:text-base text-center">
                 {plant.category}
                 </div>
-              <div className="text-2xl font-semibold text-[#475569] text-left">
+              <div className="text-2xl font-semibold text-[#475569] dark:text-emerald-900 text-left">
                 {plant.name}
               </div>
-              <div className="text-base text-[#64748B] text-left">
-                $
+              <div className="text-base text-slate-600 dark:text-white text-left">
+                
                 {!isNaN(Number(plant.price))
-                  ? Number(plant.price).toFixed(2)
+                  ? (
+                      plant.discountPorcentage ? (
+                        <>
+                        ${(Number(plant.price) * (1 - Number(plant.discountPorcentage) / 100)).toFixed(2)}
+                        <span style={{ marginLeft: '10px' }}> </span>
+                          <span className="line-through mr-2 text-slate-400">
+                            ${Number(plant.price).toFixed(2)}
+                          </span>
+                        </>
+                      ) : (
+                        <> $  {Number(plant.price).toFixed(2)} </>
+                      )
+                    )
                   : "Invalid price"}
               </div>
             </Link>
