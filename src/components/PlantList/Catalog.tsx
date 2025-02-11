@@ -15,10 +15,8 @@ interface CatalogProps {
 }
 
 const Catalog: React.FC<CatalogProps> = ({ plants, searchResult }) => {
-  // Estado para controlar o carregamento das imagens
   const [loadingImages, setLoadingImages] = useState(true);
 
-  // Função para quando a imagem for carregada
   const handleImageLoad = () => {
     setLoadingImages(false);
   };
@@ -46,7 +44,6 @@ const Catalog: React.FC<CatalogProps> = ({ plants, searchResult }) => {
               to={`/plants/detail/${plant.id}`} // Define a rota dinâmica
               className="relative flex flex-col items-start rounded-sm overflow-hidden cursor-pointer w-full"
             >
-              {/* Imagem da planta */}
               <img
                 src={
                   plant.imageUrl ||

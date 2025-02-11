@@ -397,9 +397,20 @@
       "id": 61
     },
     {
+<<<<<<< HEAD
+      "email": "babi@gmail.com",
+      "clerkUserId": "sess_2ssBYzpjLv7XwntSGw5wiR5fTP5",
+      "id": 62
+    },
+    {
+      "email": "babi@gmail.com",
+      "clerkUserId": "sess_2stotjptJXSQaVsq8f9RU3voY7E",
+      "id": 63
+=======
       "email": "lucas.zampronio.silva@gmail.com",
       "clerkUserId": "sess_2stra8FauQmJeu1g6OpCuAuGQLW",
       "id": 62
+>>>>>>> 1d3b2022a1d2569c6c55ed735ab6b8eb5067965f
     }
   ]
 }
