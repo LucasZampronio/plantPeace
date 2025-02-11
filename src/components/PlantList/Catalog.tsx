@@ -54,7 +54,7 @@ const Catalog: React.FC<CatalogProps> = ({ plants, searchResult }) => {
                 className="h-[318px] w-[318px] object-cover border-2 border-gray-50"
                 onLoad={handleImageLoad} // Chama a função quando a imagem carregar
               />
-              <div className="absolute top-2 right-2 max-w-[90%] bg-emerald-100 text-emerald-900 rounded-full p-2 border-2 border-emerald-50 text-sm sm:text-base text-center">
+              <div className="absolute top-3 right-2 max-w-[90%] bg-emerald-100 text-emerald-900 rounded-full p-2 border-2 border-emerald-50 text-sm sm:text-base text-center">
                 {plant.category}
                 </div>
               <div className="text-2xl font-semibold text-[#475569] text-left">
