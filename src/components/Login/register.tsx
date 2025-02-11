@@ -51,7 +51,7 @@ export const RegisterForm: React.FC<RegisterFormProps> = ({
         </div>
         {/* form */}
         <div className="w-full max-w-md flex flex-col gap-6 md:gap-8 p-4 md:p-3">
-          <div className="flex flex-col text-center md:text-left">
+          <div className="flex flex-col text-center md:text-left gap-[5px]">
             <h1 className="text-3xl md:text-4xl font-bold text-[#064e3b] font-['Playfair_Display']">
               Register
             </h1>

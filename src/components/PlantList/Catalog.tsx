@@ -7,7 +7,7 @@ interface Plant {
   category: string;
   price: string;
   imageUrl: string;
-  discountPorcentage: string;
+  discountPorcentage?: string;
 }
 
 interface CatalogProps {

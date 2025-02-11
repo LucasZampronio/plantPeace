@@ -11,6 +11,7 @@ interface Plant {
   category: string;
   price: string; // 'price' continua sendo string, conforme seu DB
   imageUrl: string;
+  discountPorcentage?: string;
 }
 
 const PlantListPage: React.FC = () => {
