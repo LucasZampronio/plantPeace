@@ -24,7 +24,7 @@ const Catalog: React.FC<CatalogProps> = ({ plants, searchResult }) => {
   };
 
   return (
-    <div className="flex w-full p-4 bg-white dark:bg-neutral-900">
+    <div className="flex bg-white dark:bg-neutral-900 w-full">
       {/* Condicionalmente exibe o loading enquanto as imagens carregam */}
       {loadingImages && (
         <div className="absolute inset-0 flex justify-center items-center bg-emerald-800 z-50">
@@ -33,7 +33,7 @@ const Catalog: React.FC<CatalogProps> = ({ plants, searchResult }) => {
       )}
 
       {/* Grid responsiva para o catálogo */}
-      <div className="bg-white justify-center mx-auto pl-5 dark:bg-neutral-900 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 sm:gap-14">
+      <div className="bg-white justify-center pl-20 dark:bg-neutral-900 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-x-20 gap-y-10 gap w-full">
         {plants
           .filter(
             (plant) =>
@@ -44,25 +44,26 @@ const Catalog: React.FC<CatalogProps> = ({ plants, searchResult }) => {
             <Link
               key={plant.id}
               to={`/plants/detail/${plant.id}`} // Define a rota dinâmica
-              className="relative flex flex-col items-start rounded-sm overflow-hidden cursor-pointer"
+              className="relative flex flex-col items-start rounded-sm overflow-hidden cursor-pointer w-full"
             >
               {/* Imagem da planta */}
               <img
                 src={
                   plant.imageUrl ||
                   "https://img.freepik.com/fotos-gratis/monstera-deliciosa-planta-em-um-vaso_53876-133116.jpg?semt=ais_hybrid"
+                
                 }
                 alt={plant.name}
-                className="w-64 h-64 object-cover border-2 border-gray-50"
+                className="h-[318px] w-[318px] object-cover border-2 border-gray-50"
                 onLoad={handleImageLoad} // Chama a função quando a imagem carregar
               />
-              <div className="absolute top-2 right-2 max-w-[90%] bg-green-200 rounded-2xl p-1 border-2 border-green-100 text-sm sm:text-base text-center">
+                <div className="absolute p-1 px-3 top-3 right-3 max-w-[90%] bg-green-200 rounded-full border-2 border-white text-sm sm:text-base text-center font-inter font-normal">
                 {plant.category}
-              </div>
-              <div className="pt-1 text-2xl font-semibold text-[#475569] text-left">
+                </div>
+              <div className="text-2xl font-semibold text-[#475569] text-left">
                 {plant.name}
               </div>
-              <div className="pt-1 text-base text-[#64748B] text-left">
+              <div className="text-base text-[#64748B] text-left">
                 $
                 {!isNaN(Number(plant.price))
                   ? Number(plant.price).toFixed(2)
