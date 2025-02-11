@@ -1,10 +1,8 @@
-// UserConfigPage.tsx
 import { useState, useEffect } from "react";
 import { useAuth, useUser } from "@clerk/clerk-react";
 import { useNavigate } from "react-router-dom";
 import UserConfigForm from "../components/UserConfig/UserConfigForm";
-import { Helmet } from 'react-helmet';
-
+import { Helmet } from "react-helmet";
 
 interface UserData {
   name: string;
@@ -19,6 +17,7 @@ const UserConfigPage = () => {
   const { user } = useUser();
   const [userData, setUserData] = useState<UserData | null>(null);
   const [successMessage, setSuccessMessage] = useState<string | null>(null);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null); // Novo estado para erros
 
   useEffect(() => {
     if (!user) {
@@ -49,15 +48,16 @@ const UserConfigPage = () => {
           if (data.length > 0) {
             setUserData(data[0]);
           } else {
-            setSuccessMessage("Usuário não encontrado");
+            setErrorMessage("Usuário não encontrado");
             console.log("Nenhum usuário encontrado com clerkUserId:", user.id);
           }
         } else {
           console.error("Response não OK:", response.statusText);
+          setErrorMessage("Erro ao carregar usuário");
         }
       } catch (error) {
         console.error("Erro na requisição:", error);
-        setSuccessMessage("Erro ao buscar usuário");
+        setErrorMessage("Erro ao buscar usuário");
       }
     };
 
@@ -74,7 +74,6 @@ const UserConfigPage = () => {
 
     try {
       console.log("Dados enviados para atualização:", updatedData);
-      // Atualizar dados no Clerk
       await user.update({
         firstName: updatedData.name,
       });
@@ -87,12 +86,17 @@ const UserConfigPage = () => {
       }
 
       // Atualizar senha se foi alterada
-      if (updatedData.newPassword) {
-        await user.updatePassword({
-          currentPassword: updatedData.currentPassword,
-          newPassword: updatedData.newPassword,
-        });
+      if (updatedData.newPassword && !updatedData.currentPassword) {
+        throw new Error("Senha atual é obrigatória para alterar a senha");
       }
+
+      console.log("Senha atual fornecida:", updatedData.currentPassword);
+
+      // Verificar credenciais primeiro
+      await user.updatePassword({
+        currentPassword: updatedData.currentPassword,
+        newPassword: updatedData.newPassword,
+      });
 
       // Atualizar JSON Server
       const token = await getToken();
@@ -117,18 +121,20 @@ const UserConfigPage = () => {
         const data = await response.json();
         console.log("Dados retornados após PUT:", data);
         setSuccessMessage("Perfil atualizado com sucesso!");
+        setErrorMessage(null); // Limpa mensagens de erro ao atualizar com sucesso
         setUserData(data);
       } else {
         console.error("Erro ao atualizar JSON Server:", response.statusText);
+        setErrorMessage("Erro ao atualizar perfil");
       }
     } catch (error) {
       console.error("Erro na atualização:", error);
-      setSuccessMessage("Erro ao atualizar perfil");
+      setErrorMessage("Erro ao atualizar perfil");
     }
   };
 
   return (
-    <div>
+    <div className="min-h-screen bg-gray-50 dark:bg-neutral-800 transition-colors duration-300">
       <Helmet>
         <title>User Configuration - plantPeace</title>
       </Helmet>
@@ -136,11 +142,18 @@ const UserConfigPage = () => {
         <UserConfigForm
           onSubmit={handleSubmit}
           user={{ name: userData.name, email: userData.email }}
+          errorMessage={errorMessage}
         />
       ) : (
-        <p>Carregando dados...</p>
+        <p className="text-gray-800 dark:text-gray-200">Carregando dados...</p>
       )}
-      {successMessage && <p>{successMessage}</p>}
+
+      {successMessage && (
+        <p className="mt-4 p-3 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-50 rounded-lg">
+          {successMessage}
+        </p>
+      )}
+
     </div>
   );
 };
