@@ -19,7 +19,7 @@
       "price": "2",
       "discountPorcentage": "10",
       "description": "planta carnivora",
-      "imageUrl": "https://images.tcdn.com.br/img/img_prod/1162228/planta_carnivora_p9_189_1_0075cc5c135c646db16c801db04ce8c0.jpg",
+      "imageUrl": "https://plus.unsplash.com/premium_photo-1663962158765-982d6ad0d006?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8cGxhbnRhJTIwdHJvcGljYWx8ZW58MHx8MHx8fDA%3D",
       "highlightItem": true,
       "ownerId": "user_2sj7dnfNtQlub42bluUCjFT2ZQo",
       "id": 2
@@ -43,8 +43,8 @@
       "price": "4",
       "discountPorcentage": "10",
       "description": "akdmekmdek",
-      "imageUrl": "https://cdn.awsli.com.br/300x300/2733/2733498/produto/282761501/whatsapp-image-2024-07-10-at-16-20-31-lrwr9w7j24.jpeg",
-      "highlightItem": false,
+      "imageUrl": "https://img.freepik.com/fotos-gratis/planta-em-um-vaso-de-terracota-planta-ninho-de-passaros-samambaia_53876-146303.jpg?semt=ais_hybrid",
+      "highlightItem": true,
       "ownerId": "user_2sj7dnfNtQlub42bluUCjFT2ZQo",
       "id": 4
     },
@@ -405,6 +405,11 @@
       "email": "babi@gmail.com",
       "clerkUserId": "sess_2stotjptJXSQaVsq8f9RU3voY7E",
       "id": 63
+    },
+    {
+      "email": "babi@gmail.com",
+      "clerkUserId": "sess_2su4tq7xEBlPKIPSWOQlxoryucM",
+      "id": 64
     }
   ]
 }

@@ -13,58 +13,6 @@
     font-style: normal;
 }
 
-@keyframes glitch2 {
-  0% { transform: translate(0); }
-  20% { transform: translate(2px, -2px); }
-  40% { transform: translate(2px, 2px); }
-  60% { transform: translate(-2px, -2px); }
-  80% { transform: translate(-2px, 2px); }
-  100% { transform: translate(0); }
-}
-
-.animate-glitch2 { animation: glitch2 0.5s infinite; }
-
-/* Estilo global para slick-prev e slick-next */
-.slick-prev,
-.slick-next {
-  z-index: 1;
-  width: 40px;
-  height: 40px;
-  background: none !important;  /* Remove o fundo */
-  border: none !important;      /* Remove borda */
-  font-size: 24px;              /* Ajuste o tamanho da seta */
-  cursor: pointer;             /* Aponta para a interação do mouse */
-}
-
-.slick-prev::before,
-.slick-next::before {
-  color: green;                /* Cor das setas */
-  font-size: 24px;             /* Tamanho da seta */
-}
-
-.slick-prev { 
-  left: -45px; 
-}
-
-.slick-next { 
-  right: -45px; 
-}
-
-.slick-slide img {
-  transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  transform-origin: center center; /* Mantém o zoom centralizado */
-}
-
-/* Efeito de zoom ao passar o mouse */
-.slick-slide:hover img {
-  transform: scale(1.05); /* Ajuste o valor para mais/menos zoom */
-}
-
-@media (max-width: 768px) {
-  .slick-prev { left: -25px; }
-  .slick-next { right: -25px; }
-}
-
 :root {
   --header-height: 89px; /* valor padrão para o caso de JavaScript estar desativado */
 }

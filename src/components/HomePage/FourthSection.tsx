@@ -1,9 +1,6 @@
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import ArrowButton from "../ArrowButton";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 
 interface CarouselItem {
   id: number;
@@ -16,139 +13,102 @@ interface CarouselItem {
 
 const Fourth = () => {
   const [items, setItems] = useState<CarouselItem[]>([]);
+  const [currentIndex, setCurrentIndex] = useState(0);
   const navigate = useNavigate();
 
   useEffect(() => {
     fetch("http://localhost:3001/plants")
       .then((response) => response.json())
-      .then((data) =>
-        setItems(data.filter((plant: CarouselItem) => plant.highlightItem))
-      )
+      .then((data) => {
+        const highlightedPlants = data.filter(
+          (plant: CarouselItem) => plant.highlightItem
+        );
+        setItems(highlightedPlants);
+      })
       .catch((error) => console.error("Erro ao buscar plantas:", error));
   }, []);
 
-  const settings = {
-    dots: items.length > 1,
-    infinite: items.length > 1,
-    speed: 500,
-    slidesToShow: Math.min(items.length, 3),
-    slidesToScroll: 1,
-    centerMode: items.length === 1,
-    centerPadding: "10px",
-    prevArrow: <ArrowButton direction="left" onClick={() => {}} />,
-    nextArrow: <ArrowButton direction="right" onClick={() => {}} />,
-    responsive: [
-      {
-        breakpoint: 1280, // Telas grandes (ex: notebooks)
-        settings: {
-          slidesToShow: Math.min(items.length, 3),
-          slidesToScroll: 1,
-          infinite: items.length > 1,
-          dots: items.length > 1,
-        },
-      },
-      {
-        breakpoint: 1024, // Tablets grandes
-        settings: {
-          slidesToShow: Math.min(items.length, 2),
-          slidesToScroll: 1,
-          infinite: items.length > 1,
-          dots: items.length > 1,
-        },
-      },
-      {
-        breakpoint: 768, // Tablets pequenos
-        settings: {
-          slidesToShow: Math.min(items.length, 1),
-          slidesToScroll: 1,
-          infinite: items.length > 1,
-          dots: true,
-        },
-      },
-      {
-        breakpoint: 480, // Celulares
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          infinite: items.length > 1,
-          dots: true,
-        },
-      },
-    ],
+  // Ajustar navegação do carrossel
+  const handlePrev = () => {
+    setCurrentIndex((prev) => (prev === 0 ? items.length - 3 : prev - 1));
   };
 
-
-  const handleCardClick =
-    (item: CarouselItem) => (e: React.MouseEvent<HTMLAnchorElement>) => {
-      e.preventDefault();
-      navigate(`/plants/${item.id}`);
-    };
+  const handleNext = () => {
+    setCurrentIndex((prev) => (prev >= items.length - 3 ? 0 : prev + 1));
+  };
 
   return (
     <section className="flex flex-col justify-center px-4 md:px-40 py-16">
+      {/* Cabeçalho */}
       <div className="flex flex-col self-start mb-12 max-w-4xl px-4 md:px-8">
-  <h1 className="font-[Playfair_Display] text-l md:text-4xl w-140 lg:text-5xl font-bold text-emerald-900 mb-4">
-    This week's Most Popular and Best Selling
-  </h1>
-  <p className="text-gray-500 font-[Inter] text-xs w-130 md:text-lg lg:text-base">
-    Lorem ipsum dolor sit amet consectetur. Amet a egestas mauris faucibus dolor volutpat adipiscing amet ipsum. In.
-  </p>
-  
-</div>
-      <div
-        className={`w-full relative mx-auto ${
-          items.length === 1
-            ? "max-w-md"
-            : items.length === 2
-            ? "max-w-4xl"
-            : "max-w-6xl"
-        }`}
-      >
-        <Slider {...settings}>
+        <h1 className="font-[Playfair_Display] text-l md:text-4xl lg:text-5xl font-bold text-emerald-900 mb-4">
+          This week's Most Popular and Best Selling
+        </h1>
+        <p className="text-gray-500 font-[Inter] text-xs md:text-lg lg:text-base">
+          Lorem ipsum dolor sit amet consectetur. Amet a egestas mauris faucibus
+          dolor volutpat adipiscing amet ipsum. In.
+        </p>
+      </div>
+
+      {/* Controles do Carrossel */}
+      <div className="flex justify-end items-center mb-4">
+        {items.length > 3 && (
+          <>
+            <button
+              onClick={handlePrev}
+              className="p-2 hover:bg-gray-100 rounded-full transition"
+            >
+              <ArrowLeft className="w-6 h-6 text-slate-400" />
+            </button>
+            <button
+              onClick={handleNext}
+              className="p-2 hover:bg-gray-100 text-slate-400 rounded-full transition"
+            >
+              <ArrowRight className="w-6 h-6" />
+            </button>
+          </>
+        )}
+      </div>
+
+      {/* Carrossel */}
+      <div className="relative w-full overflow-hidden">
+        <div
+          className="flex transition-transform duration-500 ease-in-out gap-2"
+          style={{
+            transform: `translateX(-${currentIndex * (100 / 3)}%)`,
+          }}
+        >
           {items.map((item) => (
-            <div key={item.id} className="outline-none group px-7">
+            <div
+              key={item.id}
+              className="w-1/3 flex-shrink-0 px-0" // Ajustado para exibir 3 itens por vez
+            >
               <a
                 href={`/plants/${item.id}`}
-                onClick={handleCardClick(item)}
-                className={`bg-gray-100 dark:bg-emerald-900 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 p-4 block cursor-pointer focus:outline-none focus:ring-2 focus:ring-green-500 ${
-                  items.length === 1
-                    ? "max-w-xs mx-auto"
-                    : items.length === 2
-                    ? "max-w-sm"
-                    : "max-w-sm"
-                }`}
-                aria-label={`View details about ${item.name}`}
+                onClick={(e) => {
+                  e.preventDefault();
+                  navigate(`/plants/${item.id}`);
+                }}
+                className="block cursor-pointer group"
               >
-                <div
-                  className={`${
-                    items.length === 1
-                      ? "h-48"
-                      : items.length === 2
-                      ? "h-56"
-                      : "h-64"
-                  } bg-gray-100 rounded-lg mb-5 overflow-hidden relative`}
-                >
-                  {/* Balãozinho da categoria */}
-                  <span className="absolute top-2 right-2 bg-emerald-100 border-emerald-50 border-2 dark:bg-emerald-600 text-emerald-900 dark:text-black text-xs font-semibold px-3 py-1 rounded-full shadow-md z-1">
-                    {item.category}
-                  </span>
-
+                <div className="h-auto rounded-lg overflow-hidden relative">
                   <img
                     src={item.imageUrl}
                     alt={item.name}
-                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                    className="relative w-[388px] h-[388px] border-1 border-gray-100 object-cover transition-transform duration-300 group-hover:scale-105"
                   />
+                  <span className="absolute top-4 right-6 bg-emerald-100 text-emerald-900 text-xs font-semibold px-3 py-1 rounded-full">
+                    {item.category}
+                  </span>
                 </div>
-                <h3 className="text-xl text-black font-semibold mb-2">
-                  {item.name}
-                </h3>
-                <p className="text-green-900 dark:text-gray-300 text-lg font-medium mb-4">
-                  ${item.price}
-                </p>
+                <div className="mt-4">
+                  <h3 className="text-xl font-semibold">{item.name}</h3>
+                  <p className="text-green-900 text-lg">${item.price}</p>
+                </div>
               </a>
             </div>
           ))}
-        </Slider>
+        </div>
       </div>
     </section>
   );
