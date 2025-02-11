@@ -15,6 +15,7 @@ import Loading from "./components/Loading";
 import ResetPasswordPage from "./pages/ResetPasswordPage";
 import ForgotPasswordPage from "./pages/ForgotPasswordPage";
 import { AboutUsPage } from "./pages/AboutUsPage";
+import Error403 from "./pages/Error403Page";
 
 
 // componente para rotas protegidas
@@ -23,7 +24,7 @@ const ProtectedRoute = ({ children }: { children: React.ReactNode }) => {
     <>
       <SignedIn>{children}</SignedIn>
       <SignedOut>
-        <RedirectToSignIn />
+        <Error403/>
       </SignedOut>
     </>
   );

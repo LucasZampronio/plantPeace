@@ -92,19 +92,19 @@ const Fourth = () => {
                 }}
                 className="block cursor-pointer group"
               >
-                <div className="h-auto rounded-lg overflow-hidden relative">
+                <div className="h-auto overflow-hidden relative">
                   <img
                     src={item.imageUrl}
                     alt={item.name}
-                    className="relative w-[388px] h-[388px] border-1 border-gray-100 object-cover transition-transform duration-300 group-hover:scale-105"
+                    className="relative w-[388px] h-[388px] border-1 border-gray-100 object-cover transition-transform duration-300 group-hover:scale-105 dark:border-black"
                   />
-                  <span className="absolute top-4 right-6 bg-emerald-100 text-emerald-900 text-xs font-semibold px-3 py-1 rounded-full">
+                  <span className="absolute top-4 right-10 bg-emerald-100 text-emerald-900 text-xs font-semibold px-3 py-1 rounded-full">
                     {item.category}
                   </span>
                 </div>
                 <div className="mt-4">
-                  <h3 className="text-xl font-semibold">{item.name}</h3>
-                  <p className="text-green-900 text-lg">${item.price}</p>
+                  <h3 className="text-xl text-black font-semibold dark:text-emerald-50">{item.name}</h3>
+                  <p className="text-green-900 text-lg dark:text-emerald-50">${item.price}</p>
                 </div>
               </a>
             </div>
