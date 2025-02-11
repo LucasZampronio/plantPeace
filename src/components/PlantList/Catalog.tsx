@@ -57,7 +57,7 @@ const Catalog: React.FC<CatalogProps> = ({ plants, searchResult }) => {
                 className="h-[318px] w-[318px] object-cover border-2 border-gray-50"
                 onLoad={handleImageLoad} // Chama a função quando a imagem carregar
               />
-                <div className="absolute p-1 px-3 top-3 right-3 max-w-[90%] bg-green-200 rounded-full border-2 border-white text-sm sm:text-base text-center font-inter font-normal">
+              <div className="absolute top-2 right-2 max-w-[90%] bg-emerald-100 text-emerald-900 rounded-2xl p-1 border-2 border-emerald-50 text-sm sm:text-base text-center">
                 {plant.category}
                 </div>
               <div className="text-2xl font-semibold text-[#475569] text-left">
@@ -67,7 +67,7 @@ const Catalog: React.FC<CatalogProps> = ({ plants, searchResult }) => {
                 $
                 {!isNaN(Number(plant.price))
                   ? Number(plant.price).toFixed(2)
-                  : "Preço inválido"}
+                  : "Invalid price"}
               </div>
             </Link>
           ))}

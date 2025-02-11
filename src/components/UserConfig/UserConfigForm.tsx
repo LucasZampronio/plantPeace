@@ -45,7 +45,7 @@ const UserConfigForm: React.FC<UserConfigFormProps> = ({
             Update your account information
           </p>
         </div>
-        <form
+        <form 
           onSubmit={handleSubmit}
           className="flex flex-col gap-2 rounded-2xl bg-white dark:bg-neutral-900 p-6 transition-colors duration-300"
         >

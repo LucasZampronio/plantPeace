@@ -20,7 +20,7 @@ const DarkMode = () => {
   const toggleDarkMode = () => setIsDarkMode(!isDarkMode);
 
   return (
-    <div className="flex">
+    <div className="flex border-1 rounded-full border-yellow-600 dark:border-gray-200">
       <button
         onClick={toggleDarkMode}
         className="p-4 rounded-full transition-colors duration-300 cursor-pointer"
@@ -28,11 +28,11 @@ const DarkMode = () => {
           isDarkMode ? "Alternar para modo claro" : "Alternar para modo escuro"
         }
       >
-        <div className="relative w-6 h-6">
+        <div className="relative w-6 h-6 ">
           {/* Ícone do Sol */}
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            className={`absolute w-6 h-6 transition-all duration-300 text-yellow-600 ${
+            className={`absolute w-6 h-6 transition-all duration-300   text-yellow-600 ${
               isDarkMode ? "opacity-0 rotate-90" : "opacity-100 rotate-0"
             }`}
             fill="none"
