@@ -157,8 +157,6 @@ const Fourth = () => {
                           </>
                         ) : (
                           <>${Number(item.price).toFixed(2)}</>
-
-                          
                         )
                       )
                     : "Invalid price"}
