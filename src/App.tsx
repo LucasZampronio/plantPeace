@@ -1,6 +1,6 @@
 import "./App.css";
 import React, { Suspense } from "react";import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import { SignedIn, SignedOut, RedirectToSignIn } from "@clerk/clerk-react";
+import { SignedIn, SignedOut } from "@clerk/clerk-react";
 import Layout from "./components/Layout";
 import HomePage from "./pages/HomePage";
 import PlantsRegisterPage from "./pages/PlantsRegisterPage";
