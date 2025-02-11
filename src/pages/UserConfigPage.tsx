@@ -67,8 +67,6 @@ const UserConfigPage = () => {
   const handleSubmit = async (updatedData: {
     name: string;
     email: string;
-    currentPassword: string;
-    newPassword: string;
   }) => {
     if (!user || !userData) return;
 
@@ -84,19 +82,6 @@ const UserConfigPage = () => {
         await user.createEmailAddress({ email: updatedData.email });
         console.log("Email atualizado no Clerk para:", updatedData.email);
       }
-
-      // Atualizar senha se foi alterada
-      if (updatedData.newPassword && !updatedData.currentPassword) {
-        throw new Error("Senha atual é obrigatória para alterar a senha");
-      }
-
-      console.log("Senha atual fornecida:", updatedData.currentPassword);
-
-      // Verificar credenciais primeiro
-      await user.updatePassword({
-        currentPassword: updatedData.currentPassword,
-        newPassword: updatedData.newPassword,
-      });
 
       // Atualizar JSON Server
       const token = await getToken();
@@ -143,17 +128,11 @@ const UserConfigPage = () => {
           onSubmit={handleSubmit}
           user={{ name: userData.name, email: userData.email }}
           errorMessage={errorMessage}
+          successMessage={successMessage}
         />
       ) : (
         <p className="text-gray-800 dark:text-gray-200">Carregando dados...</p>
       )}
-
-      {successMessage && (
-        <p className="mt-4 p-3 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-50 rounded-lg">
-          {successMessage}
-        </p>
-      )}
-
     </div>
   );
 };
