@@ -3,7 +3,7 @@
     {
       "name": "Planta 1",
       "subtitle": "A majestic plant",
-      "category": "Outdoor",
+      "category": "outdoor",
       "price": "1",
       "discountPorcentage": "1",
       "description": "planta 1",
@@ -15,7 +15,7 @@
     {
       "name": "Planta 2",
       "subtitle": "A majestic plant",
-      "category": "Indor",
+      "category": "indoor",
       "price": "2",
       "discountPorcentage": "10",
       "description": "planta carnivora",
@@ -27,7 +27,7 @@
     {
       "name": "Planta 3",
       "subtitle": "marcus",
-      "category": "Office Desk",
+      "category": "office desk",
       "price": "3",
       "discountPorcentage": "10",
       "description": "aaaaaaaa",
@@ -39,7 +39,7 @@
     {
       "name": "Planta 4",
       "subtitle": "A majestic plant",
-      "category": "Outdoor",
+      "category": "outdoor",
       "price": "4",
       "discountPorcentage": "10",
       "description": "akdmekmdek",
@@ -51,7 +51,7 @@
     {
       "name": "Planta 5",
       "subtitle": "A majestic plant",
-      "category": "Terracy e Balcony",
+      "category": "terracy e balcony",
       "price": "5",
       "discountPorcentage": "10",
       "description": "plant 5",
@@ -63,7 +63,7 @@
     {
       "name": "Planta 6",
       "subtitle": "A majestic plant",
-      "category": "Indor",
+      "category": "indoor",
       "price": "6",
       "discountPorcentage": "10",
       "description": "plant 6",
@@ -397,6 +397,7 @@
       "id": 61
     },
     {
+<<<<<<< HEAD
       "email": "babi@gmail.com",
       "clerkUserId": "sess_2ssBYzpjLv7XwntSGw5wiR5fTP5",
       "id": 62
@@ -405,6 +406,11 @@
       "email": "babi@gmail.com",
       "clerkUserId": "sess_2stotjptJXSQaVsq8f9RU3voY7E",
       "id": 63
+=======
+      "email": "lucas.zampronio.silva@gmail.com",
+      "clerkUserId": "sess_2stra8FauQmJeu1g6OpCuAuGQLW",
+      "id": 62
+>>>>>>> 1d3b2022a1d2569c6c55ed735ab6b8eb5067965f
     }
   ]
 }

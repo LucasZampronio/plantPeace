@@ -78,7 +78,7 @@ const PlantForm = ({
       autoComplete: "category",
       value: formData.category,
       onChange: handleChange,
-      options: ["Indor", "Outdoor", "Terracy e Balcony", "Office Desk"],
+      options: ["indoor", "outdoor", "terracy e balcony", "office desk"],
     },
     {
       label: "Price",

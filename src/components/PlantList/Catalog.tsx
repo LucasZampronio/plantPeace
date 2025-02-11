@@ -22,14 +22,16 @@ const Catalog: React.FC<CatalogProps> = ({ plants, searchResult }) => {
   };
 
   return (
-    <div className="flex w-full p-4 bg-white dark:bg-neutral-900">
+    <div className="flex bg-white dark:bg-neutral-900 w-full">
+      {/* Condicionalmente exibe o loading enquanto as imagens carregam */}
       {loadingImages && (
         <div className="absolute inset-0 flex justify-center items-center bg-emerald-800 z-50">
           <div className="w-16 h-16 border-4 border-t-4 border-white border-solid rounded-full animate-spin"></div>
         </div>
       )}
 
-      <div className="bg-white justify-center mx-auto pl-5 dark:bg-neutral-900 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 sm:gap-14">
+      {/* Grid responsiva para o catálogo */}
+      <div className="bg-white justify-center pl-20 dark:bg-neutral-900 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-x-20 gap-y-10 gap w-full">
         {plants
           .filter(
             (plant) =>
@@ -39,25 +41,26 @@ const Catalog: React.FC<CatalogProps> = ({ plants, searchResult }) => {
           .map((plant) => (
             <Link
               key={plant.id}
-              to={`/plants/detail/${plant.id}`}
-              className="relative flex flex-col items-start rounded-sm overflow-hidden cursor-pointer"
+              to={`/plants/detail/${plant.id}`} // Define a rota dinâmica
+              className="relative flex flex-col items-start rounded-sm overflow-hidden cursor-pointer w-full"
             >
               <img
                 src={
                   plant.imageUrl ||
                   "https://img.freepik.com/fotos-gratis/monstera-deliciosa-planta-em-um-vaso_53876-133116.jpg?semt=ais_hybrid"
+                
                 }
                 alt={plant.name}
-                className="w-64 h-64 object-cover border-2 border-gray-50"
-                onLoad={handleImageLoad}
+                className="h-[318px] w-[318px] object-cover border-2 border-gray-50"
+                onLoad={handleImageLoad} // Chama a função quando a imagem carregar
               />
-              <div className="absolute top-2 right-2 max-w-[90%] bg-emerald-100 rounded-2xl p-1 border-2 text-emerald-900 border-emerald-50 text-sm sm:text-base text-center">
+              <div className="absolute top-2 right-2 max-w-[90%] bg-emerald-100 text-emerald-900 rounded-2xl p-1 border-2 border-emerald-50 text-sm sm:text-base text-center">
                 {plant.category}
-              </div>
-              <div className="pt-1 text-2xl font-semibold text-[#475569] text-left">
+                </div>
+              <div className="text-2xl font-semibold text-[#475569] text-left">
                 {plant.name}
               </div>
-              <div className="pt-1 text-base text-[#64748B] text-left">
+              <div className="text-base text-[#64748B] text-left">
                 $
                 {!isNaN(Number(plant.price))
                   ? Number(plant.price).toFixed(2)
