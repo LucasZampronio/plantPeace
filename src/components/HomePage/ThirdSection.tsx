@@ -6,9 +6,9 @@ import { Link } from "react-router-dom";
 const ThirdSection = () => {
   return (
     // Mobile: grid de 1 coluna; Desktop: grid de 2 colunas (mantendo o layout original)
-    <section className="px-4 md:px-[5%] pt-14 pb-20 grid grid-cols-1 lg:grid-cols-2 gap-8 dark:bg-neutral-900 bg-white">
+    <section className="px-4 md:px-[5%] pt-14 pb-20 grid grid-cols-1 lg:grid-cols-2 gap-24 dark:bg-neutral-900 bg-white">
   {/* Div com imagens, exibida apenas em telas médias e maiores */}
-  <div className="hidden lg:grid grid-cols-2 gap-4">
+  <div className="hidden lg:grid grid-cols-2">
     <img
       className="object-cover h-full max-h-[697px] opacity-100 dark:opacity-70"
       src={image1}
@@ -22,11 +22,11 @@ const ThirdSection = () => {
   </div>
 
   {/* Conteúdo textual e botão */}
-  <div className="flex flex-col w-full gap-8 items-baseline">
+  <div className="flex flex-col w-full gap-8 items-baseline lg:max-w-[555px]">
     {/* Imagem exibida somente no desktop */}
     <div className="hidden md:block">
       <img
-        className="object-cover w-full max-w-[555px]"
+        className="object-cover w-full lg:max-w-[555px]"
         src={imageField}
         alt=""
       />
