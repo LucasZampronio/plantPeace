@@ -1,6 +1,6 @@
-### 🪴 GreenWork's - E-comerce de Plantas em geral.
+### 🪴 plantPeace - E-comerce de Plantas em geral.
 
-o GreenWork é um E-comerce voltado totalmente para a venda de plantas como cactos rosas e suculentas
+o plantPeace é um E-comerce voltado totalmente para a venda de plantas como cactos rosas e suculentas
 Criado com React, Tailwind e TypeScript, o projeto busca proporcionar uma ótima experiência pra quem busca ter um Jardim mais verde.
 
 ### Funcionalidades.
