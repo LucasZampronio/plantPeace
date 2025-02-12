@@ -274,7 +274,8 @@
       "email": "manuella.rodrigue.pb@compasso.com.br",
       "clerkUserId": "user_2srBQh3u7kaMKcHSUNeWgirvP9E",
       "firstName": "manu pv",
-      "id": 38
+      "id": 38,
+      "name": "manu"
     },
     {
       "email": "manuella.rodrigue.pb@compasso.com.br",
@@ -420,6 +421,26 @@
       "email": "lucas.zampronio.silva@gmail.com",
       "clerkUserId": "sess_2sv2ws5JcxnUflQa6jWr13IdXTb",
       "id": 66
+    },
+    {
+      "email": "manurodrig00@gmail.com",
+      "clerkUserId": "sess_2svYik5l9g4Zvh0EXKnxGOkB7Jh",
+      "id": 67
+    },
+    {
+      "email": "babi@gmail.com",
+      "clerkUserId": "sess_2svYqtveUF6wOOdhUBi4vKHQ1UW",
+      "id": 68
+    },
+    {
+      "email": "manurodrig00@gmail.com",
+      "clerkUserId": "sess_2svYstteCvk1tufbarLghGzUIMb",
+      "id": 69
+    },
+    {
+      "email": "manuella.rodrigue.pb@compasso.com.br",
+      "clerkUserId": "sess_2svZ4YaETEYbtMqtYPQqXw22TEy",
+      "id": 70
     }
   ]
 }
