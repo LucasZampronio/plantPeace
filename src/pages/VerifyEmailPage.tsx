@@ -29,7 +29,7 @@ const VerifyEmailPage = () => {
       await user?.update({ primaryEmailAddressId: emailAddress.id });
 
       setIsVerified(true);
-      setTimeout(() => navigate("/user-config"), 2000);
+      setTimeout(() => navigate("/user/config"), 2000);
     } catch {
       setError("Código inválido ou expirado");
     }
