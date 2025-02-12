@@ -68,7 +68,7 @@ const PlantDetail: React.FC<PlantDetailProps> = () => {
           className="w-[642px] h-[385px] object-cover mb-6 rounded-sm shadow-lg dark:shadow-slate-700"
         />
 
-        <div className="mb-2">
+        <div className="mb-2 lg:w-160">
           <div className="flex gap-6 w-full pr-68">
             <div className="mb-4">
               <p className="font-[Inter] text-md font-medium text-slate-800 dark:text-slate-200 mb-2">
@@ -79,10 +79,10 @@ const PlantDetail: React.FC<PlantDetailProps> = () => {
               </p>
             </div>
             <div>
-              <p className="font-[Inter] text-md font-medium text-slate-800 dark:text-slate-200 mb-2">
+              <p className="font-[Inter] mr-10 ml-10 text-md font-medium text-slate-800 dark:text-slate-200 mb-2">
                 Discount Porcentage
               </p>
-              <p className="font-[Inter] text-md text-slate-500 dark:text-slate-400">
+              <p className="font-[Inter]  mr-10 ml-10  text-md text-slate-500 dark:text-slate-400">
                 {plant.discountPorcentage}%
               </p>
             </div>
@@ -98,7 +98,7 @@ const PlantDetail: React.FC<PlantDetailProps> = () => {
 
           <div className="flex flex-col gap-4">
             <div>
-              <p className="font-[Inter] text-md font-medium text-slate-800 dark:text-slate-200 mb-2">
+              <p className="font-[Inter] text-md  font-medium text-slate-800 dark:text-slate-200 mb-2">
                 Description
               </p>
               <p className="font-[Inter] text-md text-slate-500 dark:text-gray-400">
@@ -106,7 +106,7 @@ const PlantDetail: React.FC<PlantDetailProps> = () => {
               </p>
             </div>
             <div>
-              <p className="font-[Inter] text-md font-medium text-slate-800 dark:text-gray-200 mb-2">
+              <p className="font-[Inter] text-md mt- font-medium text-slate-800 dark:text-gray-200 mb-2">
                 Category
               </p>
               <p className="font-[Inter] px-2 py-2 w-fit text-md text-emerald-900  bg-emerald-100 border-2 border-emerald-50 rounded-full">
