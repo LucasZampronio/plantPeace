@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import bgImage from "../images/forest-bg.png";
-import cactoMan from "../images/cactoManDefault.png";
+import cactoMan from "../images/cactoManHappy.png";
 import { Link } from "react-router-dom";
 
 const ResetPasswordSuccess = () => {

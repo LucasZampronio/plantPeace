@@ -51,14 +51,15 @@ const Fourth = () => {
   return (
     <section className="flex flex-col justify-center px-4 md:px-20 py-16">
       {/* Cabeçalho */}
-      <div className="flex flex-col self-start mb-12 max-w-4xl">
-        <h1 className="font-[Playfair_Display] text-l md:text-4xl w-140 lg:text-5xl font-bold text-emerald-900 mb-4">
-          This week's Most Popular and Best Selling
-        </h1>
-        <p className="text-slate-500 text-sm  md:text-lg lg:text-base w-130">
-          Take a look at our popular products. Take advantage of promotions and find similar products.
-        </p>
-      </div>
+      <div className="flex flex-col self-start mb-12 max-w-full md:max-w-3xl lg:max-w-4xl px-4">
+  <h1 className="font-[Playfair_Display] text-xl sm:text-2xl md:text-4xl lg:text-5xl font-bold text-emerald-900 mb-4">
+    This week's Most Popular and Best Selling
+  </h1>
+  <p className="text-slate-500 text-xs sm:text-sm md:text-lg lg:text-base">
+    Take a look at our popular products. Take advantage of promotions and find similar products.
+  </p>
+</div>
+
 
       <div className="flex justify-end items-center mb-4 mr-9.5">
         {items.length > itemsPerView && (
