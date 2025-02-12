@@ -54,7 +54,7 @@ const PlantDetail: React.FC<PlantDetailProps> = () => {
         
         {/* div que engloba todo conteudo da direita */}
         <div className="flex flex-col items-center justify-center w-full">
-          <div className="mb-5 pl-15 self-start">
+          <div className="mb-6 pl-15 self-start">
             <h1 className="font-[Playfair_Display] text-3xl font-bold text-teal-800 dark:text-emerald-900 mb-1 leading-tight">
               {plant.name}
             </h1>

@@ -9,6 +9,7 @@ const CustomCursor = () => {
     cursor.style.height = "32px";
     cursor.style.pointerEvents = "none";
     cursor.style.background = `url(${regador}) no-repeat center/contain`;
+    cursor.style.zIndex = "9999";
     document.body.appendChild(cursor);
 
     interface MouseEventWithClient extends MouseEvent {
