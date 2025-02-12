@@ -116,8 +116,26 @@ const Fourth = () => {
               </div>
               <div className="mt-4">
                 <h3 className="text-xl text-black font-semibold dark:text-emerald-50">{item.name}</h3>
-                <p className="text-green-900 text-lg dark:text-emerald-50">${item.price}</p>
+                <div className="text-base text-slate-600 dark:text-white text-left">
+                
+                {!isNaN(Number(item.price))
+                  ? (
+                    item.discountPorcentage ? (
+                        <>
+                        ${(Number(item.price) * (1 - Number(item.discountPorcentage) / 100)).toFixed(2)}
+                        <span style={{ marginLeft: '10px' }}> </span>
+                          <span className="line-through mr-2 text-slate-400">
+                            ${Number(item.price).toFixed(2)}
+                          </span>
+                        </>
+                      ) : (
+                        <> $  {Number(item.price).toFixed(2)} </>
+                      )
+                    )
+                  : "Invalid price"}
               </div>
+              </div>
+              
 
               </a>
             </div>
