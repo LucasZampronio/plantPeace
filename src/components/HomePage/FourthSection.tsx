@@ -111,7 +111,7 @@ const Fourth = () => {
                     className="w-full h-full border-1 border-gray-100 object-cover transition-transform duration-300 group-hover:scale-105 dark:border-black"
                   />
                   {/* balao de categoria */}
-                  <span className="absolute top-4 right-4 bg-emerald-100 border-emerald-50 border-2 text-emerald-900 text-md font-semibold px-3 py-1 rounded-full">
+                  <span className="absolute top-4 right-13 bg-emerald-100 border-emerald-50 border-2 text-emerald-900 text-md font-semibold px-3 py-1 rounded-full">
                     {item.category}
                   </span>
                 </div>
