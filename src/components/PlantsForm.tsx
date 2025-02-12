@@ -279,7 +279,6 @@ const PlantForm = ({
     </form>
   </div>
 
-  {/* Side Image (Hidden on Mobile) */}
   <img
     src={loginBackground}
     alt=""
