@@ -1,3 +1,4 @@
+<a id="readme-top"></a>
 ### 🪴 plantPeace - E-comerce de Plantas em geral.
 
 o plantPeace é um E-comerce voltado totalmente para a venda de plantas como cactos rosas e suculentas
@@ -39,7 +40,7 @@ _Aqui vai as instruções de como fazer a instalação e rodar nosso projeto!_
 
 1. Clone o repositorio.
    ```sh
-   git clone https://github.com/github_username/repo_name.git
+   git clone https://github.com/LucasZampronio/ARD24_D02_GRUPO1
    ```
 2. Instale os pacotes.
    ```sh
@@ -75,6 +76,8 @@ _Aqui vai as instruções de como fazer a instalação e rodar nosso projeto!_
 
 ### About us
 ![Image](https://github.com/user-attachments/assets/35286e10-69ae-4d82-a427-120318839790)
+
+<p align="right">(<a href="#readme-top">Voltar ao inicio</a>)</p>
 
 
 
