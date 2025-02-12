@@ -33,7 +33,7 @@ const ResetPasswordPage = () => {
 
       if (result.status === "complete") {
         await signOut();
-        navigate("/sign-in?reset=success");
+        navigate("/reset-password-success");
         window.location.reload();
       } else {
         setError("Error resetting password.");
