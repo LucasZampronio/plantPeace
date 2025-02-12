@@ -79,7 +79,6 @@ export default function PlantsEditPage() {
     }
   };
 
-  // Conteúdo original, sem alterações (para desktop)
   const content = (
     <>
       <SignedIn>
@@ -106,7 +105,6 @@ export default function PlantsEditPage() {
       <Helmet>
         <title>Plant's Edit - plantPeace</title>
       </Helmet>
-      {/* Versão Mobile: Container com padding e largura limitada */}
       <div className="block lg:hidden">
         <div className="flex items-center justify-center p-0">
           <div className="w-full max-w-xl">
