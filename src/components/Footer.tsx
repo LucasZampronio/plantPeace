@@ -71,7 +71,7 @@ export const Footer = () => {
             className="h-12 lg:h-auto"
           />
         </a>
-        <p className="text-center">Compassinhos®. All rights reserved.</p>
+        <a href="*"><p className="text-center">Compassinhos®. All rights reserved.</p></a>
       </div>
     </section>
   );
