@@ -17,6 +17,7 @@ import ForgotPasswordPage from "./pages/ForgotPasswordPage";
 import { AboutUsPage } from "./pages/AboutUsPage";
 import Error403 from "./pages/Error403Page";
 import ResetPasswordsuccess from "./pages/resetPasswordSuccess";
+import VerifyEmailPage from "./pages/VerifyEmailPage";
 
 
 // componente para rotas protegidas
@@ -51,9 +52,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/about-us",
-        element: (
-            <AboutUsPage/>
-        ),
+        element: <AboutUsPage />,
       },
       {
         path: "/user/config",
@@ -117,6 +116,10 @@ const router = createBrowserRouter([
   {
     path: "/reset-password-success",
     element: <ResetPasswordsuccess />,
+  },
+  {
+    path: "//verify-email/:emailId",
+    element: <VerifyEmailPage />,
   },
 ]);
 

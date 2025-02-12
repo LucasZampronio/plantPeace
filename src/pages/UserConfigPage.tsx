@@ -49,42 +49,42 @@ const UserConfigPage = () => {
     fetchUserData();
   }, [user, getToken, navigate]);
 
-  useEffect(() => {
-    const interval = setInterval(async () => {
-      if (!pendingEmail || !user) return;
+  // useEffect(() => {
+  //   const interval = setInterval(async () => {
+  //     if (!pendingEmail || !user) return;
 
-      try {
-        const emailAddress = user.emailAddresses.find(
-          (e) => e.id === pendingEmail.id
-        );
+  //     try {
+  //       const emailAddress = user.emailAddresses.find(
+  //         (e) => e.id === pendingEmail.id
+  //       );
 
-        if (emailAddress?.verification.status === "verified") {
-          await user.update({ primaryEmailAddressId: emailAddress.id });
+  //       if (emailAddress?.verification.status === "verified") {
+  //         await user.update({ primaryEmailAddressId: emailAddress.id });
 
-          const token = await getToken();
-          await fetch(`http://localhost:3001/users/${userData?.id}`, {
-            method: "PUT",
-            headers: {
-              "Content-Type": "application/json",
-              Authorization: `Bearer ${token}`,
-            },
-            body: JSON.stringify({
-              ...userData,
-              email: pendingEmail.email,
-            }),
-          });
+  //         const token = await getToken();
+  //         await fetch(`http://localhost:3001/users/${userData?.id}`, {
+  //           method: "PUT",
+  //           headers: {
+  //             "Content-Type": "application/json",
+  //             Authorization: `Bearer ${token}`,
+  //           },
+  //           body: JSON.stringify({
+  //             ...userData,
+  //             email: pendingEmail.email,
+  //           }),
+  //         });
 
-          setSuccessMessage("Email principal atualizado com sucesso!");
-          setPendingEmail(null);
-          clearInterval(interval);
-        }
-      } catch (error) {
-        console.error("Erro ao verificar email:", error);
-      }
-    }, 5000);
+  //         setSuccessMessage("Email principal atualizado com sucesso!");
+  //         setPendingEmail(null);
+  //         clearInterval(interval);
+  //       }
+  //     } catch (error) {
+  //       console.error("Erro ao verificar email:", error);
+  //     }
+  //   }, 5000);
 
-    return () => clearInterval(interval);
-  }, [pendingEmail, user, userData, getToken]);
+  //   return () => clearInterval(interval);
+  // }, [pendingEmail, user, userData, getToken]);
 
   const handleSubmit = async (updatedData: { name: string; email: string }) => {
     if (!user || !userData) return;
@@ -109,6 +109,8 @@ const UserConfigPage = () => {
         setSuccessMessage(
           "Enviamos um código de verificação. Por favor, verifique seu novo email antes de continuar."
         );
+
+        navigate(`/verify-email/${newEmail.id}`);
         return;
       }
 
