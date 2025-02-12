@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { useSignIn } from "@clerk/clerk-react";
 import bgImage from "../images/forest-bg.png";
+import cactoManSad from "../images/cactoSad.png";
+
 import { Link } from "react-router-dom";
 import { EnvelopeIcon } from "@heroicons/react/24/solid";
 
@@ -41,26 +43,15 @@ const ForgotPassword = () => {
         backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)), url(${bgImage})`,
       }}
     >
-      <div className="max-w-md w-full px-4">
-        <div className="bg-gray-100 rounded-2xl shadow-lg p-8 transition-all duration-300 hover:shadow-xl">
-          {/* Cabeçalho com ícone floral */}
-          <div className="text-center mb-6">
-            <div className="mx-auto bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mb-4">
-              <svg 
-                className="w-8 h-8 text-green-600" 
-                fill="none" 
-                stroke="currentColor" 
-                viewBox="0 0 24 24"
-              >
-                <path 
-                  strokeLinecap="round" 
-                  strokeLinejoin="round" 
-                  strokeWidth="2" 
-                  d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0zM16 15l-3 3m0 0l-3-3m3 3V11"
-                />
-              </svg>
-            </div>
-            <h2 className="text-3xl font-bold text-gray-800 mb-2 font-serif">
+      <div className="max-w-md w-full px-4 pt-8">
+        <div className="bg-gray-100 rounded-2xl shadow-lg p-8 transition-all duration-300 hover:shadow-xl pt-0">
+          <div className="text-center mb-6 ">
+          <img
+              src={cactoManSad} 
+              alt="Password Reset"
+              className="mx-auto w-75 h-75 object-contain mb-0"
+            />
+            <h2 className="text-3xl font-bold text-gray-800 mb-2 font-serif mt-[-30px]">
               Change Password
             </h2>
             <p className="text-gray-500">
@@ -88,7 +79,7 @@ const ForgotPassword = () => {
 
             <button
               onClick={handleResetPassword}
-              className="w-full bg-green-600 hover:bg-green-700 text-white py-3 px-4 rounded-lg font-medium transition-all duration-300 transform hover:scale-[1.01] cursor-pointer"
+              className="w-full bg-green-900 hover:bg-green-900 text-white py-3 px-4 rounded-lg font-medium transition-all duration-300 transform hover:scale-[1.01] cursor-pointer"
             >
               Send Instructions
             </button>
@@ -116,7 +107,7 @@ const ForgotPassword = () => {
           <div className="mt-6 text-center">
             <Link 
               to="/reset-password" 
-              className="text-green-600 hover:text-green-800 text-sm font-medium transition-colors"
+              className="text-green-900 hover:text-green-900 text-sm font-medium transition-colors underline"
             >
               Already have a code? Reset your password →
             </Link>
