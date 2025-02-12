@@ -125,7 +125,7 @@ const Fourth = () => {
                         <>
                         ${(Number(item.price) * (1 - Number(item.discountPorcentage) / 100)).toFixed(2)}
                         <span style={{ marginLeft: '10px' }}> </span>
-                          <span className="line-through mr-2 text-xs text-slate-400">
+                          <span className="line-through mr-2 text-base text-slate-400">
                             ${Number(item.price).toFixed(2)}
                           </span>
                         </>

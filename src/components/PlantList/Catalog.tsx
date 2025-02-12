@@ -57,7 +57,7 @@ const Catalog: React.FC<CatalogProps> = ({ plants, searchResult }) => {
               <div className="absolute top-3 right-2 max-w-[90%] bg-emerald-100 text-emerald-900 rounded-full p-2 border-2 border-emerald-50 text-sm sm:text-base text-center">
                 {plant.category}
                 </div>
-              <div className="text-2xl font-semibold text-[#475569] dark:text-emerald-900 text-left">
+              <div className="text-slate-700 font-[Inter] dark:text-emerald-50 text-xl mt-3 text-left">
                 {plant.name}
               </div>
               <div className="text-base text-slate-600 dark:text-white text-left">
