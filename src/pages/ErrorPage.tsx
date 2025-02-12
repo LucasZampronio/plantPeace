@@ -11,10 +11,10 @@ export const ErrorPage = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    document.body.style.cursor = "none"; // Remove o cursor padrão
+    document.body.style.cursor = "none";
 
     return () => {
-      document.body.style.cursor = "auto"; // Restaura o cursor ao sair da página
+      document.body.style.cursor = "auto";
     };
   }, []);
 
@@ -69,7 +69,7 @@ export const ErrorPage = () => {
 
         <button
           onClick={() => navigate("/")}
-          className="mt-6 px-6 sm:px-8 py-3 bg-emerald-900 hover:bg-emerald-700 text-white rounded-lg transition-all duration-300 font-semibold text-lg relative overflow-hidden shadow-lg shadow-yellow-400/20 border border-emerald-700 cursor-pointer"
+          className="mt-6 px-6 sm:px-8 py-3 bg-emerald-900 hover:bg-emerald-700 text-white rounded-lg transition-all duration-300 font-semibold text-lg relative overflow-hidden shadow-lg shadow-yellow-400/20 border border-emerald-700 cursor-none"
         >
           <span className="relative z-10">Back to the garden</span>
           <div className="absolute inset-0 bg-gradient-to-r from-yellow-400/10 to-transparent animate-shine"></div>
