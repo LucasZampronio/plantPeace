@@ -98,7 +98,7 @@ const Fourth = () => {
                 href={`/plants/${item.id}`}
                 onClick={(e) => {
                   e.preventDefault();
-                  navigate(`/plants/${item.id}`);
+                  navigate(`/plants/detail/${item.id}`);
                 }}
                 className="block cursor-pointer group"
               >
