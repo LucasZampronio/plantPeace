@@ -458,6 +458,29 @@
       "email": "lucas.zampronio.silva@gmail.com",
       "clerkUserId": "sess_2sx38KZfQexFOMULkPeSI0pG8vt",
       "id": 78
+    },
+    {
+      "email": "testefinal@gmail.com",
+      "clerkUserId": "user_2sx6qDLUtbd8VHu8b5GQ0iNv4gs",
+      "firstName": "teste final",
+      "id": 79
+    },
+    {
+      "email": "testefinal@gmail.com",
+      "clerkUserId": "sess_2sx6rI9s6mnHT4s5p9rGlymHVzc",
+      "id": 80
+    },
+    {
+      "email": "testefinal@gmail.com",
+      "clerkUserId": "user_2sx7xCoicebF6Hub3OGz949pQiy",
+      "firstName": "teste final",
+      "id": 81,
+      "name": "teste final"
+    },
+    {
+      "email": "testefinal@gmail.com",
+      "clerkUserId": "sess_2sx7xlb3p7aOPenHFPZ0k4BCPCz",
+      "id": 82
     }
   ]
 }
