@@ -24,7 +24,7 @@ const SearchBar: React.FC<{ onSearch: (query: string) => boolean }> = ({
   };
 
   return (
-    <div className="py-10 pl-10 flex flex-col bg-white dark:bg-neutral-900 w-full">
+    <div className="pr-10 py-10 xl:py-10 xl:pl-10 flex flex-col bg-white dark:bg-neutral-900 w-full">
       {/* Container principal responsivo */}
       <div className="flex flex-col md:flex-row gap-2 md:gap-3 pl-10 w-full">
         {/* Input container com crescimento flexível */}
@@ -33,7 +33,7 @@ const SearchBar: React.FC<{ onSearch: (query: string) => boolean }> = ({
             type="text"
             value={query}
             onChange={handleSearch}
-            className={`w-full pl-3 h-10 md:h-12 rounded-lg bg-[#F1F5F9] dark:bg-neutral-800 border ${borderColor} 
+            className={`w-full pl-3 md:h-12 rounded-lg bg-[#F1F5F9] dark:bg-neutral-800 border ${borderColor} 
               transition-border duration-300 px-5 text-gray-900 dark:text-white
               focus:ring-2 focus:ring-emerald-500 focus:outline-none
               min-w-[200px] md:max-w-300 dark:border-neutral-600`}
@@ -61,7 +61,7 @@ const SearchBar: React.FC<{ onSearch: (query: string) => boolean }> = ({
       {/* Mensagem de erro responsiva */}
       {hasSearched && !borderColor.includes("green") && (
         <div
-          className="mt-4 w-full p-3 md:p-4 bg-white dark:bg-neutral-800 rounded-lg 
+          className="mt-4 w-full p-2 xl:w-242 xl:ml-10 bg-red-100 dark:bg-neutral-800 rounded-lg 
           border border-gray-200 dark:border-neutral-600 text-center
           text-sm md:text-base text-gray-600 dark:text-gray-300"
         >

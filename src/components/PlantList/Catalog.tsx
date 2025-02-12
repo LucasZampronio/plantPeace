@@ -31,8 +31,7 @@ const Catalog: React.FC<CatalogProps> = ({ plants, searchResult }) => {
         </div>
       )}
 
-      {/* Grid responsiva para o catálogo */}
-      <div className="bg-white justify-center pl-20 dark:bg-neutral-900 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-x-20 gap-y-10 gap w-full">
+      <div className="bg-white justify-center pl-25 sm:px-20 md:pl-5 md:pr-5 xl:pl-20 dark:bg-neutral-900 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 sm:gap-x-10 lg:gap-x-10 xl:gap-x-20 md:gap-x-20 md:gap-y-10 xl:gap-y-10 xl:w-full gap-y-5">
         {plants
           .filter(
             (plant) =>
@@ -52,7 +51,7 @@ const Catalog: React.FC<CatalogProps> = ({ plants, searchResult }) => {
                 
                 }
                 alt={plant.name}
-                className="h-[318px] w-[318px] object-cover border-2 border-gray-50"
+                className="h-70 w-70 xl:h-[318px] xl:w-[318px] md:h-70 md:w-70 sm:h-60 sm:w-60 object-cover border-2 border-gray-50"
                 onLoad={handleImageLoad} // Chama a função quando a imagem carregar
               />
               <div className="absolute top-3 right-2 max-w-[90%] bg-emerald-100 text-emerald-900 rounded-full p-2 border-2 border-emerald-50 text-sm sm:text-base text-center">

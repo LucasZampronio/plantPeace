@@ -9,7 +9,7 @@ const SideBar: React.FC<SidebarProps> = ({
   onCategoryChange,
 }) => {
   return (
-    <div className="flex flex-col min-w-[250px] max-w-[100px] border-r gap-4 border-gray-300 bg-white dark:bg-neutral-900">
+    <div className="flex flex-col gap-3 md:min-w-[250px] md:max-w-[100px] md:border-r md:gap-4 md:border-gray-300 bg-white dark:bg-neutral-900">
       {/* Div do Filtro */}
       <div className="border-b border-gray-300 pb-3 pt-5 font-normal text-lg text-[#475569] px-6">
         Filter
@@ -20,7 +20,7 @@ const SideBar: React.FC<SidebarProps> = ({
       </div>
 
       {["indoor", "outdoor", "terracy e balcony", "office desk"].map(
-        (category) => (
+        (category) => ( 
           <label
             key={category}
             className="flex items-center space-x-2 px-6 group"
