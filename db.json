@@ -6,7 +6,7 @@
       "category": "outdoor",
       "price": "1",
       "discountPorcentage": "1",
-      "description": "planta 1",
+      "description": "Our website offers a wide array of stunning plants, ranging from vibrant flowers to lush indoor foliage, allowing you to create your very own green oasis. In addition to our extensive plant selection.",
       "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/7/74/Lily_flower_on_white_background.jpg",
       "highlightItem": true,
       "ownerId": "user_2sj7dnfNtQlub42bluUCjFT2ZQo",
@@ -462,6 +462,11 @@
       "email": "manurodrig00@gmail.com",
       "clerkUserId": "sess_2swjuzsTBebYNHh79m7U10y44o3",
       "id": 74
+    },
+    {
+      "email": "babi@gmail.com",
+      "clerkUserId": "sess_2swoaxkIg3LkMs5H1Nlfrgk0RZt",
+      "id": 75
     }
   ]
 }

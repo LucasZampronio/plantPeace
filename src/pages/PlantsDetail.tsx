@@ -49,69 +49,72 @@ const PlantDetail: React.FC<PlantDetailProps> = () => {
     <div className="flex flex-col lg:flex-row min-h-screen bg-gray-50 dark:bg-neutral-900 transition-colors duration-300">
       {/* Seção de detalhes da planta */}
       <div className="flex-1 flex flex-col py-5 justify-center items-center mt-25 w-full h-auto relative">
-        <div className="absolute top-4 right-4 z-10">
-          {/* <DarkMode /> */}
-        </div>
-
-        <div className="mb-5 pl-15 self-start">
-          <h1 className="font-[Playfair_Display] text-3xl font-bold text-teal-800 dark:text-emerald-900 mb-1 leading-tight">
-            {plant.name}
-          </h1>
-          <p className="font-[Inter] text-base text-slate-500 dark:text-slate-300 m-0">
-            {plant.subtitle}
-          </p>
-        </div>
-
-        <img
-          src={plant.imageUrl}
-          alt="Plant"
-          className="w-[642px] h-[385px] object-cover mb-6 rounded-sm shadow-lg dark:shadow-slate-700"
-        />
-
-        <div className="mb-2">
-          <div className="flex gap-6 w-full pr-68">
-            <div className="mb-4">
-              <p className="font-[Inter] text-md font-medium text-slate-800 dark:text-slate-200 mb-2">
-                Price
-              </p>
-              <p className="font-[Inter] text-md text-slate-500 dark:text-slate-400">
-                ${plant.price}
-              </p>
-            </div>
-            <div>
-              <p className="font-[Inter] text-md font-medium text-slate-800 dark:text-slate-200 mb-2">
-                Discount Porcentage
-              </p>
-              <p className="font-[Inter] text-md text-slate-500 dark:text-slate-400">
-                {plant.discountPorcentage}%
-              </p>
-            </div>
-            <div>
-              <p className="font-[Inter] text-md font-medium text-slate-800 dark:text-slate-200 mb-2">
-                Highlight Product
-              </p>
-              <p className="font-[Inter] text-md text-slate-500 dark:text-slate-400">
-                {plant.highlightItem ? "Yes" : "No"}
-              </p>
-            </div>
+        
+        <div className="absolute top-4 right-4 z-10">{/* <DarkMode /> */}</div>
+        
+        {/* div que engloba todo conteudo da direita */}
+        <div className="flex flex-col items-center justify-center w-full">
+          <div className="mb-5 pl-15 self-start">
+            <h1 className="font-[Playfair_Display] text-3xl font-bold text-teal-800 dark:text-emerald-900 mb-1 leading-tight">
+              {plant.name}
+            </h1>
+            <p className="font-[Inter] text-base text-slate-500 dark:text-slate-300 m-0">
+              {plant.subtitle}
+            </p>
+          </div>
+          <div className="flex justify-center w-full mb-6">
+            <img
+              src={plant.imageUrl}
+              alt="Plant"
+              className="w-100 h-80 sm:w-155 sm:h-90 md:w-180 md:h-100 lg:w-150 lg:h-100 xl:w-160.5 xl:h-96 object-cover rounded-sm shadow-lg dark:shadow-slate-700"
+            />
           </div>
 
-          <div className="flex flex-col gap-4">
-            <div>
-              <p className="font-[Inter] text-md font-medium text-slate-800 dark:text-slate-200 mb-2">
-                Description
-              </p>
-              <p className="font-[Inter] text-md text-slate-500 dark:text-gray-400">
-                {plant.description}
-              </p>
+          <div className="w-full px-15">
+            <div className="flex gap-6 w-full justify-start">
+              <div className="mb-4">
+                <p className="font-[Inter] text-md font-medium text-slate-800 dark:text-slate-200 mb-2">
+                  Price
+                </p>
+                <p className="font-[Inter] text-md text-slate-500 dark:text-slate-400">
+                  ${plant.price}
+                </p>
+              </div>
+              <div>
+                <p className="font-[Inter] text-md font-medium text-slate-800 dark:text-slate-200 mb-2">
+                  Discount Porcentage
+                </p>
+                <p className="font-[Inter] text-md text-slate-500 dark:text-slate-400">
+                  {plant.discountPorcentage}%
+                </p>
+              </div>
+              <div>
+                <p className="font-[Inter] text-md font-medium text-slate-800 dark:text-slate-200 mb-2">
+                  Highlight Product
+                </p>
+                <p className="font-[Inter] text-md text-slate-500 dark:text-slate-400">
+                  {plant.highlightItem ? "Yes" : "No"}
+                </p>
+              </div>
             </div>
-            <div>
-              <p className="font-[Inter] text-md font-medium text-slate-800 dark:text-gray-200 mb-2">
-                Category
-              </p>
-              <p className="font-[Inter] px-2 py-2 w-fit text-md text-emerald-900  bg-emerald-100 border-2 border-emerald-50 rounded-full">
-                {plant.category}
-              </p>
+
+            <div className="flex flex-col gap-4">
+              <div>
+                <p className="font-[Inter] text-md font-medium text-slate-800 dark:text-slate-200 mb-2">
+                  Description
+                </p>
+                <p className="font-[Inter] text-md text-slate-500 dark:text-gray-400">
+                  {plant.description}
+                </p>
+              </div>
+              <div>
+                <p className="font-[Inter] text-md font-medium text-slate-800 dark:text-gray-200 mb-2">
+                  Category
+                </p>
+                <p className="font-[Inter] px-2 py-2 w-fit text-md text-emerald-900  bg-emerald-100 border-2 border-emerald-50 rounded-full">
+                  {plant.category}
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -127,7 +130,7 @@ const PlantDetail: React.FC<PlantDetailProps> = () => {
 
       {/* Seção de imagem de fundo */}
       <div
-        className="flex-1 dark:bg-gray-800"
+        className="w-1/2 dark:bg-gray-800"
         style={{
           backgroundImage: `url(${planta})`,
           minHeight: "400px",
