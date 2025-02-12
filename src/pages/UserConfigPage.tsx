@@ -17,7 +17,7 @@ const UserConfigPage = () => {
   const { user } = useUser();
   const [userData, setUserData] = useState<UserData | null>(null);
   const [successMessage, setSuccessMessage] = useState<string | null>(null);
-  const [errorMessage, setErrorMessage] = useState<string | null>(null); 
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
   useEffect(() => {
     if (!user) {
@@ -57,10 +57,7 @@ const UserConfigPage = () => {
     fetchUserData();
   }, [user, getToken, navigate]);
 
-  const handleSubmit = async (updatedData: {
-    name: string;
-    email: string;
-  }) => {
+  const handleSubmit = async (updatedData: { name: string; email: string }) => {
     if (!user || !userData) return;
 
     try {
@@ -70,7 +67,7 @@ const UserConfigPage = () => {
       });
       console.log("Name updated in Clerk to:", updatedData.name);
 
-      if (updatedData.email !== userData.email) {
+      if (updatedData.email !== user?.primaryEmailAddress?.emailAddress) {
         await user.createEmailAddress({ email: updatedData.email });
         console.log("Email updated in Clerk to:", updatedData.email);
       }
@@ -113,10 +110,13 @@ const UserConfigPage = () => {
       <Helmet>
         <title>User Configuration - plantPeace</title>
       </Helmet>
-      {userData ? (
+      {user ? (
         <UserConfigForm
           onSubmit={handleSubmit}
-          user={{ name: userData.name, email: userData.email }}
+          user={{
+            name: user?.firstName || "",
+            email: user?.primaryEmailAddress?.emailAddress || "",
+          }}
           errorMessage={errorMessage}
           successMessage={successMessage}
         />
