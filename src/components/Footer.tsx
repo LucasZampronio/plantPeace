@@ -8,9 +8,7 @@ export const Footer = () => {
       p-6 lg:p-20 flex flex-col gap-8 lg:gap-12 
       min-h-auto lg:h-[422px]"
     >
-      {/* Seção superior */}
       <div className="flex flex-col lg:flex-row justify-between gap-8">
-        {/* Informações de Contato */}
         <div className="flex flex-col gap-4">
           <h1 className="font-[Playfair_Display] font-bold text-3xl lg:text-[40px]">
             Stay Fresh
@@ -18,7 +16,6 @@ export const Footer = () => {
           <p>compassinhos@gmail.com</p>
           <p>+55 41 99999-9999</p>
         </div>
-        {/* Menus de Navegação */}
         <div className="flex flex-col sm:flex-row gap-8 lg:gap-24">
           <nav>
             <ul className="flex flex-col gap-4">
@@ -62,7 +59,6 @@ export const Footer = () => {
           </nav>
         </div>
       </div>
-      {/* Seção inferior */}
       <div className="flex flex-col lg:flex-row justify-between items-center pt-4 lg:pt-7 border-t border-emerald-950">
         <a href="/">
           <img

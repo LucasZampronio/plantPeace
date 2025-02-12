@@ -47,12 +47,10 @@ const PlantDetail: React.FC<PlantDetailProps> = () => {
 
   return (
     <div className="flex flex-col lg:flex-row min-h-screen bg-gray-50 dark:bg-neutral-900 transition-colors duration-300">
-      {/* Seção de detalhes da planta */}
       <div className="flex-1 flex flex-col py-5 justify-center items-center mt-25 w-full h-auto relative">
         
-        <div className="absolute top-4 right-4 z-10">{/* <DarkMode /> */}</div>
+        <div className="absolute top-4 right-4 z-10"></div>
         
-        {/* div que engloba todo conteudo da direita */}
         <div className="flex flex-col items-center justify-center w-full">
           <div className="mb-6 pl-15 self-start">
             <h1 className="font-[Playfair_Display] text-3xl font-bold text-teal-800 dark:text-emerald-900 mb-1 leading-tight">
@@ -128,7 +126,6 @@ const PlantDetail: React.FC<PlantDetailProps> = () => {
         </div>
       </div>
 
-      {/* Seção de imagem de fundo */}
       <div
         className="w-1/2 dark:bg-gray-800"
         style={{

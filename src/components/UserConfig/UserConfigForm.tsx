@@ -1,13 +1,13 @@
 import { useState, useEffect } from "react";
 import plant from "../../images/defautplant.png";
-import { Link } from "react-router-dom"; // Adicione esta importação
+import { Link } from "react-router-dom";
 
 interface UserConfigFormProps {
   user?: {
     name: string;
     email: string;
   };
-  onSubmit: (usuario: { name: string; email: string }) => void; // Remova campos de senha
+  onSubmit: (usuario: { name: string; email: string }) => void;
   errorMessage?: string | null;
   successMessage?: string | null;
 }
@@ -30,12 +30,11 @@ const UserConfigForm: React.FC<UserConfigFormProps> = ({
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    onSubmit({ name, email }); // Envia apenas nome e email
+    onSubmit({ name, email });
   };
 
   return (
     <section className="bg-white dark:bg-neutral-900 flex flex-col sm:flex-row h-screen transition-colors duration-300">
-      {/* Formulário */}
       <div className="flex flex-1 flex-col pt-[var(--header-height)] sm:py-40 items-left justify-start w-full px-4 sm:pl-15 sm:pr-10 sm:pb-10">
         <div className="border-green-500 w-full sm:w-[70%] pl-5">
           <h1 className="font-[Playfair_Display] text-2xl sm:text-4xl font-bold mb-3 text-emerald-700 dark:text-emerald-700">
@@ -77,19 +76,6 @@ const UserConfigForm: React.FC<UserConfigFormProps> = ({
             className="mt-1 py-2 px-4 sm:px-6 bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-gray-200 border-gray-200 dark:border-gray-600 border-2 placeholder-gray-400 dark:placeholder-gray-400 rounded-lg text-sm sm:text-base transition-colors duration-200"
           />
 
-          {/* Campo de senha bloqueado */}
-          {/* <label
-            htmlFor="password"
-            className="text-sm sm:text-base dark:text-gray-300"
-          >
-            Password
-          </label>
-          <input
-            type="password"
-            value="••••••••"
-            disabled
-            className="mt-1 py-2 px-4 sm:px-6 bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-gray-200 border-gray-200 dark:border-gray-600 border-2 rounded-lg text-sm sm:text-base transition-colors duration-200 opacity-50 cursor-not-allowed"
-          /> */}
           <p className="text-sm text-emerald-700 dark:text-emerald-500 mt-1">
             <Link to="/reset-password" className="hover:underline">
               Change password?
@@ -115,7 +101,6 @@ const UserConfigForm: React.FC<UserConfigFormProps> = ({
         </form>
       </div>
 
-      {/* Imagem (oculta em mobile) */}
       <div className="flex-1 hidden sm:block">
         <img
           src={plant}

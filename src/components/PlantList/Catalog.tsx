@@ -24,7 +24,6 @@ const Catalog: React.FC<CatalogProps> = ({ plants, searchResult }) => {
 
   return (
     <div className="flex bg-white dark:bg-neutral-900 w-full">
-      {/* Condicionalmente exibe o loading enquanto as imagens carregam */}
       {loadingImages && (
         <div className="absolute inset-0 flex justify-center items-center bg-emerald-800 z-50">
           <div className="w-16 h-16 border-4 border-t-4 border-white border-solid rounded-full animate-spin"></div>
@@ -52,7 +51,7 @@ const Catalog: React.FC<CatalogProps> = ({ plants, searchResult }) => {
                 }
                 alt={plant.name}
                 className="h-70 w-70 xl:h-[318px] xl:w-[318px] md:h-70 md:w-70 sm:h-60 sm:w-60 object-cover border-2 border-gray-50"
-                onLoad={handleImageLoad} // Chama a função quando a imagem carregar
+                onLoad={handleImageLoad}
               />
               <div className="absolute top-3 right-2 max-w-[90%] bg-emerald-100 text-emerald-900 rounded-full p-2 border-2 border-emerald-50 text-sm sm:text-base text-center">
                 {plant.category}

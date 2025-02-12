@@ -13,7 +13,7 @@ interface InputFieldProps
   error?: string;
   errorId?: string;
   showRequiredIndicator?: boolean;
-  options?: string[]; // Nova prop para opções do select
+  options?: string[]; 
 }
 
 export const InputField = ({
@@ -27,7 +27,6 @@ export const InputField = ({
   type,
   ...props
 }: InputFieldProps): JSX.Element => {
-  // Determina as cores da borda com base no erro
   const borderColorClass = error
     ? "border-red-500 focus:border-red-700 focus:ring-red-200"
     : "border-gray-300 focus:border-blue-500 focus:ring-blue-200";
@@ -44,14 +43,12 @@ export const InputField = ({
       )}
 
       <div className="relative w-full">
-        {/* Ícone fixo dentro do input/select */}
         {icon && (
           <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
             {icon}
           </div>
         )}
 
-        {/* Renderização condicional do input ou select */}
         {type === "select" ? (
           <select
             {...props}
@@ -85,7 +82,6 @@ export const InputField = ({
         )}
       </div>
 
-      {/* Exibição do erro abaixo do campo */}
       {error && (
         <div
           id={errorId}

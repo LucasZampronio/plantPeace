@@ -1,4 +1,3 @@
-// src/components/Loading.tsx
 const Loading = () => {
   return (
     <div className="fixed inset-0 bg-emerald-700 bg-opacity-50 flex justify-center items-center z-50">

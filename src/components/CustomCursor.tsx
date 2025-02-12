@@ -30,7 +30,7 @@ const CustomCursor = () => {
     };
   }, []);
 
-  return null; // Este componente não precisa renderizar nada visível
+  return null;
 };
 
 export default CustomCursor;

@@ -41,7 +41,6 @@ const PlantForm = ({
         : "Fill out the form below to register your plant in our database.",
   };
 
-  //criando um objeto com os campos do formulário pra facilitar a manipulação
   const inputFields = [
     {
       label: "Plant Name",
@@ -170,7 +169,6 @@ const PlantForm = ({
           onSubmit={handleSubmit}
           className="flex flex-col justify-center items-center gap-2 rounded-2xl bg-white dark:bg-neutral-900"
         >
-          {/* Cabeçalho */}
           <div className="flex flex-col items-start gap-1 sm:pr-0 pl-10 w-full max-w-lg bg-white dark:bg-neutral-900">
             <h2 className="text-2xl font-extrabold bg-gradient-to-r from-emerald-800 to-emerald-700 bg-clip-text text-transparent bg-white dark:bg-neutral-900">
               {formConfig.title}
@@ -180,7 +178,6 @@ const PlantForm = ({
             </p>
           </div>
 
-          {/* Campos do formulário */}
           <div className="flex flex-col sm:pl-10 sm:pr-10 w-full max-w-lg h-full bg-white dark:bg-neutral-900">
             {inputFields.slice(0, 3).map((field) => (
               <div className="relative w-full mt-2 text-black dark:text-gray-200" key={field.id}>
@@ -210,7 +207,6 @@ const PlantForm = ({
             </div>
           </div>
 
-          {/* Erros gerais */}
           {errors.general && (
             <div className="mt-2 p-3 bg-red-100 text-red-700 rounded-lg flex items-center gap-2">
               <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
@@ -224,7 +220,6 @@ const PlantForm = ({
             </div>
           )}
 
-          {/* Botão de submit */}
           <Button
             type="submit"
             disabled={isSubmitting}
@@ -259,7 +254,6 @@ const PlantForm = ({
             )}
           </Button>
           {renderBackButton()}
-          {/* Mensagem de sucesso */}
           {successMessage && (
             <div className="mt-2 p-3 bg-green-100 text-green-700 rounded-lg flex items-center gap-2">
               <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
@@ -275,7 +269,6 @@ const PlantForm = ({
         </form>
       </div>
 
-      {/* Imagem da direita */}
       <img
         src={loginBackground}
         alt=""
