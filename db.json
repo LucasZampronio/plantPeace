@@ -21,7 +21,7 @@
       "description": "Our website offers a wide array of stunning plants, ranging from vibrant flowers to lush indoor foliage, allowing you to create your very own green oasis. In addition to our extensive plant selection.",
       "imageUrl": "https://s3-alpha-sig.figma.com/img/1d40/0a9b/630d483af7d2c6909ce4df8c97a590b4?Expires=1740355200&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=BmsJgYKe2IfcmIBN5s4a6CAqx80~SvFu1~wyGwEd0-IiwECeXWDOmAIxmuAJGD11BzG4AJ66YXYOg~9cr1OVYJls0UHVyl4VVFRMWWxc7~LW9lTggiZJnQgAsAWAlFvlcUSLwrd27ztpXl52A50XwESg922rZtbDZZ5ENQX5vk07GlOUF9vNTg4zav92bXXfJfCW8qY6gZGop214kuCTqSddebiteCdMGaSX9KOHysjQ-~2YKi2hGdX~mOfMB0FHyJXWvM4vtARlvxax1tt2PjW0RHkIWCq8H~4OnjgooXp3wEqg5JumfI0S~68VY--V0OWbyx83hm04RArE6qCMHQ__",
       "highlightItem": true,
-      "ownerId": "user_2srjTUum0mAKdBMVpcfyjNkjEaj",
+      "ownerId": "user_2sx9NYl6vqt0Ax5AgEjkRMBgrxE",
       "id": 8
     },
     {
@@ -508,6 +508,11 @@
       "email": "manuella.rodrigue.pb@compasso.com.br",
       "clerkUserId": "sess_2sx9a1zjMLZBSnvALNsdbeiBnvB",
       "id": 87
+    },
+    {
+      "email": "babi@gmail.com",
+      "clerkUserId": "sess_2sxEBhqIf0zMIT9hj63pV1Op1ti",
+      "id": 88
     }
   ]
 }

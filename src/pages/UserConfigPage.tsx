@@ -18,6 +18,10 @@ const UserConfigPage = () => {
   const [userData, setUserData] = useState<UserData | null>(null);
   const [successMessage, setSuccessMessage] = useState<string | null>(null);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
+  const [pendingEmail, setPendingEmail] = useState<{
+    id: string;
+    email: string;
+  } | null>(null);
 
   useEffect(() => {
     if (!user) {
@@ -28,52 +32,88 @@ const UserConfigPage = () => {
     const fetchUserData = async () => {
       try {
         const token = await getToken();
-        console.log("Token obtido:", token);
-
         const response = await fetch(
           `http://localhost:3001/users?clerkUserId=${user.id}`,
-          {
-            headers: { Authorization: `Bearer ${token}` },
-          }
+          { headers: { Authorization: `Bearer ${token}` } }
         );
 
         if (response.ok) {
           const data = await response.json();
-
-          if (data.length > 0) {
-            setUserData(data[0]);
-          } else {
-            setErrorMessage("Usuário não encontrado");
-          }
-        } else {
-          setErrorMessage("Erro ao carregar usuário");
+          setUserData(data.length > 0 ? data[0] : null);
         }
       } catch (error) {
-        console.error("Erro na requisição:", error);
-        setErrorMessage("Erro ao buscar usuário");
+        console.error("Erro ao buscar usuário:", error);
       }
     };
 
     fetchUserData();
   }, [user, getToken, navigate]);
 
+  useEffect(() => {
+    const interval = setInterval(async () => {
+      if (!pendingEmail || !user) return;
+
+      try {
+        const emailAddress = user.emailAddresses.find(
+          (e) => e.id === pendingEmail.id
+        );
+
+        if (emailAddress?.verification.status === "verified") {
+          await user.update({ primaryEmailAddressId: emailAddress.id });
+
+          const token = await getToken();
+          await fetch(`http://localhost:3001/users/${userData?.id}`, {
+            method: "PUT",
+            headers: {
+              "Content-Type": "application/json",
+              Authorization: `Bearer ${token}`,
+            },
+            body: JSON.stringify({
+              ...userData,
+              email: pendingEmail.email,
+            }),
+          });
+
+          setSuccessMessage("Email principal atualizado com sucesso!");
+          setPendingEmail(null);
+          clearInterval(interval);
+        }
+      } catch (error) {
+        console.error("Erro ao verificar email:", error);
+      }
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, [pendingEmail, user, userData, getToken]);
+
   const handleSubmit = async (updatedData: { name: string; email: string }) => {
     if (!user || !userData) return;
 
     try {
-      console.log("Data sent for update:", updatedData);
-      await user.update({
-        firstName: updatedData.name,
-      });
-      console.log("Name updated in Clerk to:", updatedData.name);
+      await user.update({ firstName: updatedData.name });
 
-      if (updatedData.email !== user?.primaryEmailAddress?.emailAddress) {
-        await user.createEmailAddress({ email: updatedData.email });
-        console.log("Email updated in Clerk to:", updatedData.email);
+      if (updatedData.email !== user.primaryEmailAddress?.emailAddress) {
+        const newEmail = await user.createEmailAddress({
+          email: updatedData.email,
+        });
+
+        await newEmail.prepareVerification({
+          strategy: "email_code", 
+        });
+
+        setPendingEmail({
+          id: newEmail.id,
+          email: updatedData.email,
+        });
+
+        setSuccessMessage(
+          "Enviamos um código de verificação. Por favor, verifique seu novo email antes de continuar."
+        );
+        return;
       }
 
+      // Atualiza o JSON Server
       const token = await getToken();
-      console.log("Token para PUT:", token);
       const response = await fetch(
         `http://localhost:3001/users/${userData.id}`,
         {
@@ -91,17 +131,13 @@ const UserConfigPage = () => {
       );
 
       if (response.ok) {
-        const data = await response.json();
-        setSuccessMessage("Profile updated successfully!");
-        setErrorMessage(null);
-        setUserData(data);
-      } else {
-        console.error("Error updating JSON Server:", response.statusText);
-        setErrorMessage("Error updating profile");
+        setSuccessMessage("Perfil atualizado com sucesso!");
       }
     } catch (error) {
-      console.error("Error updating profile:", error);
-      setErrorMessage("Error updating profile");
+      console.error("Erro ao atualizar perfil:", error);
+      setErrorMessage(
+        error instanceof Error ? error.message : "Erro desconhecido"
+      );
     }
   };
 
@@ -110,18 +146,20 @@ const UserConfigPage = () => {
       <Helmet>
         <title>User Configuration - plantPeace</title>
       </Helmet>
+
       {user ? (
         <UserConfigForm
           onSubmit={handleSubmit}
           user={{
-            name: user?.firstName || "",
-            email: user?.primaryEmailAddress?.emailAddress || "",
+            name: user.firstName || "",
+            email: user.primaryEmailAddress?.emailAddress || "",
           }}
           errorMessage={errorMessage}
           successMessage={successMessage}
+          pendingEmail={pendingEmail?.email}
         />
       ) : (
-        <p className="text-gray-800 dark:text-gray-200">Loading data...</p>
+        <p className="text-gray-800 dark:text-gray-200">Carregando...</p>
       )}
     </div>
   );

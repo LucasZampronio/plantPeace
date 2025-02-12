@@ -10,6 +10,7 @@ interface UserConfigFormProps {
   onSubmit: (usuario: { name: string; email: string }) => void;
   errorMessage?: string | null;
   successMessage?: string | null;
+  pendingEmail?: string | null; // Nova prop adicionada
 }
 
 const UserConfigForm: React.FC<UserConfigFormProps> = ({
@@ -17,6 +18,7 @@ const UserConfigForm: React.FC<UserConfigFormProps> = ({
   onSubmit,
   errorMessage,
   successMessage,
+  pendingEmail, // Nova prop recebida
 }) => {
   const [name, setName] = useState<string>(user?.name || "");
   const [email, setEmail] = useState<string>(user?.email || "");
@@ -44,7 +46,7 @@ const UserConfigForm: React.FC<UserConfigFormProps> = ({
             Update your account information
           </p>
         </div>
-        <form 
+        <form
           onSubmit={handleSubmit}
           className="flex flex-col gap-2 rounded-2xl bg-white dark:bg-neutral-900 p-6 transition-colors duration-300"
         >
@@ -88,6 +90,14 @@ const UserConfigForm: React.FC<UserConfigFormProps> = ({
           >
             Edit Account
           </button>
+
+          {/* Notificação de email pendente */}
+          {pendingEmail && (
+            <div className="mt-3 p-3 bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-50 rounded-md text-sm">
+              ⚠️ Verification pending for: <strong>{pendingEmail}</strong>
+            </div>
+          )}
+
           {errorMessage && (
             <div className="mt-3 p-3 bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-50 rounded-md text-sm">
               {errorMessage}
