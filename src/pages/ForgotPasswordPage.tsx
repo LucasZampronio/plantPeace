@@ -88,7 +88,7 @@ const ForgotPassword = () => {
 
             <button
               onClick={handleResetPassword}
-              className="w-full bg-green-600 hover:bg-green-700 text-white py-3 px-4 rounded-lg font-medium transition-all duration-300 transform hover:scale-[1.01]"
+              className="w-full bg-green-600 hover:bg-green-700 text-white py-3 px-4 rounded-lg font-medium transition-all duration-300 transform hover:scale-[1.01] cursor-pointer"
             >
               Send Instructions
             </button>

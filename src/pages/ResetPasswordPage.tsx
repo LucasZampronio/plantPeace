@@ -21,7 +21,7 @@ const ResetPasswordPage = () => {
 
     try {
       if (!signIn) {
-        setError("Erro ao redefinir senha. Tente novamente.");
+        setError("Error resetting password. Please try again.");
         return;
       }
 
@@ -36,10 +36,10 @@ const ResetPasswordPage = () => {
         navigate("/sign-in?reset=success");
         window.location.reload();
       } else {
-        setError("Erro ao redefinir senha.");
+        setError("Error resetting password.");
       }
     } catch (error: unknown) {
-      setError("Código inválido ou expirado.");
+      setError("Invalid or expired code.");
       console.error("Erro ao redefinir senha:", error);
     }
   };

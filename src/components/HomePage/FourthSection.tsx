@@ -95,7 +95,7 @@ const Fourth = () => {
               className={`flex-shrink-0 px-0 ${itemsPerView === 1 ? "w-full" : "w-1/3"}`} // Ajusta dinamicamente
             >
               <a
-                href={`/plants/${item.id}`}
+                href={`/plants/details/${item.id}`}
                 onClick={(e) => {
                   e.preventDefault();
                   navigate(`/plants/detail/${item.id}`);
