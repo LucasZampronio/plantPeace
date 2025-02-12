@@ -4,10 +4,10 @@ import cactoMan from "../images/cactoManHappy.png";
 import { Link } from "react-router-dom";
 
 const ResetPasswordSuccess = () => {
-  const navigate = useNavigate(); // Declare useNavigate dentro do componente
+  const navigate = useNavigate();
 
   const handleButtonClick = () => {
-    navigate("/sign-in?reset=success"); // Use navigate aqui
+    navigate("/sign-in?reset=success");
   };
 
   return (
@@ -19,7 +19,6 @@ const ResetPasswordSuccess = () => {
     >
       <div className="max-w-md w-full px-4 pt-8">
         <div className="pt-0 bg-gray-100 rounded-2xl shadow-lg p-8 transition-all duration-300 hover:shadow-xl">
-          {/* Cabeçalho */}
           <div className="text-center pt-0">
             <img
               src={cactoMan}
@@ -40,7 +39,6 @@ const ResetPasswordSuccess = () => {
             Back to Homepage
           </button>
 
-          {/* Links */}
           <div className="mt-12 text-center">
             <span className="font-medium text-sm">Can't get the email?</span>
             <span style={{ marginLeft: "5px" }}> </span>

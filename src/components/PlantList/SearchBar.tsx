@@ -25,9 +25,7 @@ const SearchBar: React.FC<{ onSearch: (query: string) => boolean }> = ({
 
   return (
     <div className="pr-10 py-10 xl:py-10 xl:pl-10 flex flex-col bg-white dark:bg-neutral-900 w-full">
-      {/* Container principal responsivo */}
       <div className="flex flex-col md:flex-row gap-2 md:gap-3 pl-10 w-full">
-        {/* Input container com crescimento flexível */}
         <div className="flex-grow">
           <input
             type="text"
@@ -41,7 +39,6 @@ const SearchBar: React.FC<{ onSearch: (query: string) => boolean }> = ({
           />
         </div>
 
-        {/* Botão responsivo */}
         <button
           onClick={handleAddClick}
           className="px-5 md:px-10 py-2 bg-[#064E3B] text-[#FCFCFC] rounded-lg 
@@ -58,7 +55,6 @@ const SearchBar: React.FC<{ onSearch: (query: string) => boolean }> = ({
         </button>
       </div>
 
-      {/* Mensagem de erro responsiva */}
       {hasSearched && !borderColor.includes("green") && (
         <div
           className="mt-4 w-full p-2 xl:w-242 xl:ml-10 bg-red-100 dark:bg-neutral-800 rounded-lg 

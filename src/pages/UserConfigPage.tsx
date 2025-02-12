@@ -17,7 +17,7 @@ const UserConfigPage = () => {
   const { user } = useUser();
   const [userData, setUserData] = useState<UserData | null>(null);
   const [successMessage, setSuccessMessage] = useState<string | null>(null);
-  const [errorMessage, setErrorMessage] = useState<string | null>(null); // Novo estado para erros
+  const [errorMessage, setErrorMessage] = useState<string | null>(null); 
 
   useEffect(() => {
     if (!user) {
@@ -70,13 +70,11 @@ const UserConfigPage = () => {
       });
       console.log("Name updated in Clerk to:", updatedData.name);
 
-      // Atualizar email se mudou
       if (updatedData.email !== userData.email) {
         await user.createEmailAddress({ email: updatedData.email });
         console.log("Email updated in Clerk to:", updatedData.email);
       }
 
-      // Atualizar JSON Server
       const token = await getToken();
       console.log("Token para PUT:", token);
       const response = await fetch(

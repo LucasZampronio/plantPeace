@@ -53,7 +53,6 @@ const ResetPasswordPage = () => {
     >
       <div className="max-w-md w-full px-4 pt-8">
         <div className=" pt-0 bg-gray-100 rounded-2xl shadow-lg p-8 transition-all duration-300 hover:shadow-xl">
-          {/* Cabeçalho */}
           <div className="text-center pt-0">
             
             <img
@@ -68,7 +67,6 @@ const ResetPasswordPage = () => {
             <p className="text-gray-500 mb-4">Enter the code and your new password</p>
           </div>
 
-          {/* Formulário */}
           <form onSubmit={handleResetPassword} className="space-y-6 ">
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">
@@ -112,7 +110,6 @@ const ResetPasswordPage = () => {
             </button>
           </form>
 
-          {/* Mensagens */}
           {message && (
             <div className="mt-6 p-3 bg-green-50 text-green-900 rounded-lg flex items-center gap-2">
               <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
@@ -139,7 +136,6 @@ const ResetPasswordPage = () => {
             </div>
           )}
 
-          {/* Links */}
           <div className="mt-6 text-center">
             <Link
               to="/forgot-password"
@@ -150,7 +146,6 @@ const ResetPasswordPage = () => {
           </div>
         </div>
 
-        {/* Link de voltar para login */}
         <div className="text-center mt-6">
           <Link
             to="/sign-in"

@@ -1,78 +1,6 @@
 {
   "plants": [
     {
-      "name": "Planta 1",
-      "subtitle": "A majestic plant",
-      "category": "outdoor",
-      "price": "1",
-      "discountPorcentage": "1",
-      "description": "Our website offers a wide array of stunning plants, ranging from vibrant flowers to lush indoor foliage, allowing you to create your very own green oasis. In addition to our extensive plant selection.",
-      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/7/74/Lily_flower_on_white_background.jpg",
-      "highlightItem": true,
-      "ownerId": "user_2sj7dnfNtQlub42bluUCjFT2ZQo",
-      "id": 1
-    },
-    {
-      "name": "Planta 2",
-      "subtitle": "A majestic plant",
-      "category": "indoor",
-      "price": "2",
-      "discountPorcentage": "10",
-      "description": "Our website offers a wide array of stunning plants, ranging from vibrant flowers to lush indoor foliage, allowing you to create your very own green oasis. In addition to our extensive plant selection.",
-      "imageUrl": "https://plus.unsplash.com/premium_photo-1663962158765-982d6ad0d006?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8cGxhbnRhJTIwdHJvcGljYWx8ZW58MHx8MHx8fDA%3D",
-      "highlightItem": true,
-      "ownerId": "user_2sj7dnfNtQlub42bluUCjFT2ZQo",
-      "id": 2
-    },
-    {
-      "name": "Planta 3",
-      "subtitle": "marcus",
-      "category": "office desk",
-      "price": "3",
-      "discountPorcentage": "10",
-      "description": "Our website offers a wide array of stunning plants, ranging from vibrant flowers to lush indoor foliage, allowing you to create your very own green oasis. In addition to our extensive plant selection.",
-      "imageUrl": "https://images.ecycle.com.br/wp-content/uploads/2022/09/27153826/hassan-pasha-jxf1k1TS07s-unsplash-1.jpg.webp",
-      "highlightItem": true,
-      "ownerId": "user_2sj7dnfNtQlub42bluUCjFT2ZQo",
-      "id": 3
-    },
-    {
-      "name": "Planta 4",
-      "subtitle": "A majestic plant",
-      "category": "outdoor",
-      "price": "4",
-      "discountPorcentage": "10",
-      "description": "Our website offers a wide array of stunning plants, ranging from vibrant flowers to lush indoor foliage, allowing you to create your very own green oasis. In addition to our extensive plant selection.",
-      "imageUrl": "https://img.freepik.com/fotos-gratis/planta-em-um-vaso-de-terracota-planta-ninho-de-passaros-samambaia_53876-146303.jpg?semt=ais_hybrid",
-      "highlightItem": true,
-      "ownerId": "user_2sj7dnfNtQlub42bluUCjFT2ZQo",
-      "id": 4
-    },
-    {
-      "name": "Planta 5",
-      "subtitle": "A majestic plant",
-      "category": "terracy e balcony",
-      "price": "5",
-      "discountPorcentage": "10",
-      "description": "Our website offers a wide array of stunning plants, ranging from vibrant flowers to lush indoor foliage, allowing you to create your very own green oasis. In addition to our extensive plant selection.",
-      "imageUrl": "https://plus.unsplash.com/premium_photo-1675864663002-c330710c6ba0?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cGxhbnRhfGVufDB8fDB8fHww",
-      "highlightItem": false,
-      "ownerId": "user_2sj7dnfNtQlub42bluUCjFT2ZQo",
-      "id": 5
-    },
-    {
-      "name": "Planta 6",
-      "subtitle": "A majestic plant",
-      "category": "indoor",
-      "price": "6",
-      "discountPorcentage": "10",
-      "description": "Our website offers a wide array of stunning plants, ranging from vibrant flowers to lush indoor foliage, allowing you to create your very own green oasis. In addition to our extensive plant selection.",
-      "imageUrl": "https://media.istockphoto.com/id/1380361370/pt/foto/decorative-banana-plant-in-concrete-vase-isolated-on-white-background.jpg?s=612x612&w=0&k=20&c=v-yfeQc5NaSLKKABNfLXKHETuPSoBz8ImvUAN-zCjXY=",
-      "highlightItem": false,
-      "ownerId": "user_2sj7dnfNtQlub42bluUCjFT2ZQo",
-      "id": 6
-    },
-    {
       "name": "Echinocereus Cactus",
       "subtitle": "A majestic addition to your plant collection",
       "category": "indoor",
@@ -107,6 +35,18 @@
       "highlightItem": true,
       "ownerId": "user_2srjTUum0mAKdBMVpcfyjNkjEaj",
       "id": 9
+    },
+    {
+      "name": "Echinocereus Cactus",
+      "subtitle": "A majestic addition to your plant collection",
+      "category": "indoor",
+      "price": "35.00",
+      "discountPorcentage": "10",
+      "description": "Our website offers a wide array of stunning plants, ranging from vibrant flowers to lush indoor foliage, allowing you to create your very own green oasis. In addition to our extensive plant selection.",
+      "imageUrl": "https://s3-alpha-sig.figma.com/img/6924/8b14/fd92e8ac3ff5c6c0b7c2f823ff2c8e8e?Expires=1740355200&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=VDqVnjXR0koZwVaPoILXdc7yhwz4VrXfLT8rZXjO28mEA7ZftAuPhmQxguQRVVEkHW6rUxHnR4ITTFShfgo-~9a017JS5XvGsHemGYmqdmrgQvEYwpFLc-JcSa9~9SXq7mtBGpquwbUifKQIp8zF9kdWjjYM5DH8Rjyu499ce4qA6qkZgcsIrKHF6NYoVYeD3QTXdBbszrF4Yn8x~wClxIsS6vNpQgIoxIdCXcrhCziLZgBfp14t9hd6semgClU6PBl1J1n~hfMu1wjtYSJysdA9FUyhGTlrfoCC6KS7w10MT~RIr4PjteHxN6CqmMs1MCKvmja5LdDKQeLLz3iqXQ__",
+      "highlightItem": true,
+      "ownerId": "user_2srjTUum0mAKdBMVpcfyjNkjEaj",
+      "id": 10
     }
   ],
   "users": [
@@ -510,9 +450,14 @@
       "id": 76
     },
     {
-      "email": "fernando.glaeser@gmail.com",
-      "clerkUserId": "sess_2sx0o0xbKb0xNpDROx0fSlnMZ5O",
+      "email": "babi@gmail.com",
+      "clerkUserId": "sess_2swwVtPbnnKPSkjSt8qzJzvzBuI",
       "id": 77
+    },
+    {
+      "email": "lucas.zampronio.silva@gmail.com",
+      "clerkUserId": "sess_2sx38KZfQexFOMULkPeSI0pG8vt",
+      "id": 78
     }
   ]
 }

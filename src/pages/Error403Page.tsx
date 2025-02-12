@@ -17,16 +17,15 @@ export const Error403Page = () => {
   });
 
   useEffect(() => {
-      document.body.style.cursor = "none"; // Remove o cursor padrão
+      document.body.style.cursor = "none";
   
       return () => {
-        document.body.style.cursor = "auto"; // Restaura o cursor ao sair da página
+        document.body.style.cursor = "auto";
       };
     }, []);
 
   return (
     <div className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-emerald-900 via-emerald-800 to-emerald-900 text-white overflow-hidden">
-      {/* Partículas de poeira/flor voando */}
       <Helmet>
         <title>403 - plantPeace</title>
       </Helmet>
@@ -48,9 +47,7 @@ export const Error403Page = () => {
         />
       ))}
 
-      {/* Container principal com efeito vidro */}
       <div className="relative bg-emerald-900/40 border border-emerald-500/30 rounded-xl shadow-xl backdrop-blur-sm p-6 md:p-8 text-center max-w-2xl overflow-hidden">
-        {/* Planta com brilho de erro */}
         <div className="relative w-60 h-24 md:w-120 md:h-40 mx-auto mb-0">
           <img
             src={logo}
@@ -59,12 +56,10 @@ export const Error403Page = () => {
           />
           <div className="absolute w-10 h-10 top-6 left-14 md:top-12 md:left-28"></div>
 
-          {/* Brilho de energia ao redor da planta */}
           <div className="absolute inset-0 bg-green-100/30 rounded-full blur-xl animate-pulse"></div>
         </div>
 
         <div className="space-y-4 bg-">
-          {/* efeito glitch no título */}
           <h1 className="relative text-4xl font-extrabold text-emerald-100 tracking-wide">
             <span className="relative z-10 text-green-100 animate-glitch font-extrabold bg-gradient-to-r from-emerald-300/10 via-transparent to-emerald-300/10 px-4 py-2 rounded-md shadow-md shadow-emerald-800/20">
               403 - Forbidden
@@ -76,7 +71,6 @@ export const Error403Page = () => {
           </p>
         </div>
 
-        {/* Botão estilizado */}
         <button
           onClick={() => navigate("/")}
           className="mt-6 px-10 py-3 bg-emerald-900 hover:bg-emerald-700 text-white rounded-lg transition-all duration-300 font-semibold text-lg relative overflow-hidden shadow-lg shadow-yellow-400/20 border border-emerald-700 cursor-none"

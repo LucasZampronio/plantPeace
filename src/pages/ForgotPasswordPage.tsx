@@ -59,7 +59,6 @@ const ForgotPassword = () => {
             </p>
           </div>
 
-          {/* Formulário */}
           <div className="space-y-6">
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">
@@ -85,7 +84,6 @@ const ForgotPassword = () => {
             </button>
           </div>
 
-          {/* Mensagens e Links */}
           {message && (
             <div className="mt-6 p-3 bg-green-50 text-green-700 rounded-lg flex items-center gap-2">
               <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
@@ -114,7 +112,6 @@ const ForgotPassword = () => {
           </div>
         </div>
 
-        {/* Link de voltar para login */}
         <div className="text-center mt-6">
           <Link 
             to="/login" 

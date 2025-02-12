@@ -66,10 +66,8 @@ export default function PlantsEditPage() {
       const data = await response.json();
       console.log("Planta editada com sucesso:", data);
 
-      // Exibe a mensagem de sucesso
       setSuccessMessage("Planta editada com sucesso!");
 
-      // Esconde a mensagem após 1 segundo e recarrega a página
       setTimeout(() => {
         setSuccessMessage(null);
         navigate(0);
@@ -112,7 +110,6 @@ export default function PlantsEditPage() {
           </div>
         </div>
       </div>
-      {/* Versão Desktop: Sem alterações */}
       <div className="hidden lg:block">
         {content}
       </div>

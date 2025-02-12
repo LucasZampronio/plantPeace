@@ -38,7 +38,6 @@ export const RegisterForm: React.FC<RegisterFormProps> = ({
 
   return (
     <div className="min-h-screen bg-[#f8fafc] flex flex-col md:flex-row">
-      {/* div da esquerda */}
       <div className="flex-1 flex flex-col items-center justify-center relative p-6 md:p-0">
         <div className="absolute top-0 left-0 p-4 md:p-10">
           <a href="/">
@@ -49,7 +48,6 @@ export const RegisterForm: React.FC<RegisterFormProps> = ({
             />
           </a>
         </div>
-        {/* form */}
         <div className="w-full max-w-md flex flex-col gap-6 md:gap-8 p-4 md:p-3">
           <div className="flex flex-col text-center md:text-left gap-[5px]">
             <h1 className="text-3xl md:text-4xl font-bold text-[#064e3b] font-['Playfair_Display']">
@@ -162,7 +160,6 @@ export const RegisterForm: React.FC<RegisterFormProps> = ({
         </div>
       </div>
 
-      {/* div da direita */}
       <div className="hidden md:flex flex-1">
         <img
           src={PlantImage}
