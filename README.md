@@ -61,6 +61,22 @@ _Aqui vai as instruções de como fazer a instalação e rodar nosso projeto!_
 ### 🚨 Caso o projeto não funcione, tente iniciar o servidor e a aplicação em terminais separados.
 
 ### 🌿 Imagens do site.
+###  Home
+![Image](https://github.com/user-attachments/assets/2bcbb4fa-2761-4b44-aa10-6c05e2260bd0)
+
+###  Home Dark Mode
+![Image](https://github.com/user-attachments/assets/e83ea490-0b59-489c-b432-b2a4fe0c3aee)
+
+### Products
+![Image](https://github.com/user-attachments/assets/f4ef6c48-7951-407d-824d-ce5e48c64ed3)
+
+### Plant Register
+![Image](https://github.com/user-attachments/assets/3f64bbf9-0d73-40d9-aba2-861d00ba341d)
+
+### About us
+![Image](https://github.com/user-attachments/assets/35286e10-69ae-4d82-a427-120318839790)
+
+
 
 
 
