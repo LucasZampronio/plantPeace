@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import { useEffect } from "react";
 
-import logo from "../images/404logo.png";
+import logo from "../images/404logoNew.png";
 import bgImage from "../images/forest-bg.png";
 
 import CustomCursor from "../components/CustomCursor";
@@ -24,7 +24,7 @@ export const ErrorPage = () => {
   });
 
   return (
-    <div className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-emerald-900 via-emerald-800 to-emerald-900 text-white overflow-hidden">
+    <div className="relative min-h-screen flex items-center pt-30 justify-center bg-gradient-to-br from-emerald-900 via-emerald-800 to-emerald-900 text-white overflow-hidden px-4 sm:px-6 md:px-10">
       <Helmet>
         <title>404 - plantPeace</title>
       </Helmet>
@@ -33,9 +33,10 @@ export const ErrorPage = () => {
 
       <img
         src={bgImage}
-        alt=""
-        className="absolute bottom-0 left-0 w-full pointer-events-none"
+        alt="Background"
+        className="absolute bottom-0 left-0 w-full object-cover h-full pointer-events-none"
       />
+      
       {[...Array(15)].map((_, i) => (
         <div
           key={i}
@@ -47,35 +48,31 @@ export const ErrorPage = () => {
         />
       ))}
 
-      <div className="relative bg-emerald-900/40 border border-emerald-500/30 rounded-xl shadow-xl backdrop-blur-sm p-6 md:p-8 text-center max-w-2xl overflow-hidden">
-        <div className="relative w-60 h-24 md:w-120 md:h-40 mx-auto mb-0">
+      <div className="relative bg-emerald-900/40 border border-emerald-500/30 rounded-xl shadow-xl backdrop-blur-sm p-6 md:p-8 text-center max-w-2xl w-full sm:w-3/4 lg:w-1/2 overflow-hidden">
+        <div className="flex justify-center mb-4">
           <img
             src={logo}
-            className="absolute top-[-70px] md:top-[-140px] z-50 animate-wiggle"
-            style={{ transformOrigin: "50% 100%" }}
+            alt="PlantPeace Logo"
+            className="w-40 sm:w-48 md:w-56 lg:w-64 h-auto"
           />
-          <div className="absolute inset-0 bg-green-100/30 rounded-full blur-xl animate-pulse"></div>
         </div>
 
-        <div className="space-y-4">
-          <h1 className="relative text-4xl font-extrabold text-emerald-100 tracking-wide">
-            <span className="relative z-10 text-green-100 animate-glitch font-extrabold bg-gradient-to-r from-emerald-300/10 via-transparent to-emerald-300/10 px-4 py-2 rounded-md shadow-md shadow-emerald-800/20">
-              404 - Page not found
-            </span>
-          </h1>
+        <h1 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-emerald-100 tracking-wide">
+          <span className="relative z-10 text-green-100 animate-glitch font-extrabold bg-gradient-to-r from-emerald-300/10 via-transparent to-emerald-300/10 px-4 py-2 rounded-md shadow-md shadow-emerald-800/20">
+            404 - Page not found
+          </span>
+        </h1>
 
-          <p className="text-xl mt-2 text-green-50">
-            It looks like this page has withered... but we have plenty of plants
-            waiting for you! 🌿
-          </p>
-        </div>
+        <p className="text-lg sm:text-xl mt-2 text-green-50">
+          It looks like this page has withered... but we have plenty of plants waiting for you! 🌿
+        </p>
 
         <button
           onClick={() => navigate("/")}
-          className="mt-6 px-10 py-3 bg-emerald-900 hover:bg-emerald-700 text-white rounded-lg transition-all duration-300 font-semibold text-lg relative overflow-hidden shadow-lg shadow-yellow-400/20 border border-emerald-700 cursor-none"
+          className="mt-6 px-6 sm:px-8 py-3 bg-emerald-900 hover:bg-emerald-700 text-white rounded-lg transition-all duration-300 font-semibold text-lg relative overflow-hidden shadow-lg shadow-yellow-400/20 border border-emerald-700 cursor-pointer"
         >
           <span className="relative z-10">Back to the garden</span>
-          <div className="absolute bg-gradient-to-r from-yellow-400/10 to-transparent animate-shine"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-yellow-400/10 to-transparent animate-shine"></div>
         </button>
       </div>
     </div>
