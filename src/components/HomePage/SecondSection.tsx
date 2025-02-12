@@ -25,7 +25,7 @@ const SecondSection = () => {
           Watering
         </h3>
         <p className="text-slate-500 pb-8 md:pb-14 text-sm md:text-base">
-          water your plants when the top inch of soil feels dry to the touch.
+          Water your plants when the top inch of soil feels dry to the touch.
           Avoid overwatering, as it can lead to root dehydration.
         </p>
       </div>
