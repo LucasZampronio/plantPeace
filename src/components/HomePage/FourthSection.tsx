@@ -50,7 +50,6 @@ const Fourth = () => {
 
   return (
     <section className="flex flex-col justify-center px-4 md:px-20 py-16">
-      {/* Cabeçalho */}
       <div className="flex flex-col self-start mb-12 max-w-full md:max-w-3xl lg:max-w-4xl px-4">
   <h1 className="font-[Playfair_Display] text-xl sm:text-2xl md:text-4xl lg:text-5xl font-bold text-emerald-900 mb-4">
     This week's Most Popular and Best Selling
@@ -80,7 +79,6 @@ const Fourth = () => {
         )}
       </div>
 
-      {/* Carrossel */}
       <div className="relative w-full overflow-hidden">
         <div
           className="flex transition-transform duration-500 ease-in-out gap-2"
@@ -101,8 +99,8 @@ const Fourth = () => {
                 }}
                 className="block cursor-pointer group"
               >
-                <div className="h-auto overflow-hidden relative">
-                <div className="relative w-[388px] h-[388px]">
+                <div className="h-auto overflow-hidden relative pl-6 sm:pl-0">
+                <div className="relative w-100 h-100 sm:w-[388px] sm:h-[388px]">
                   <img
                     src={item.imageUrl}
                     alt={item.name}
@@ -113,7 +111,7 @@ const Fourth = () => {
                   </span>
                 </div>
               </div>
-              <div className="mt-4">
+              <div className="mt-4 pl-6 sm:pl-0">
                 <h3 className="text-xl text-slate-700 font-[Inter] dark:text-emerald-50">{item.name}</h3>
                 <div className="text-base text-slate-600 dark:text-white text-left">
                 
