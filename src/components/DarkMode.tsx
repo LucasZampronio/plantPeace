@@ -24,7 +24,7 @@ const DarkMode = () => {
     <div className="flex py-4 transition-colors duration-300">
       <button
         onClick={toggleDarkMode}
-        className={`relative w-20 h-10 rounded-full focus:outline-none transition-all duration-300 ${
+        className={`relative w-20 h-10 rounded-full focus:outline-none transition-all duration-300 hover:cursor-pointer ${
           isDarkMode ? "bg-gray-800" : "bg-yellow-50"
         }`}
         aria-label={

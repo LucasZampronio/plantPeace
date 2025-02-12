@@ -53,16 +53,16 @@ const Fourth = () => {
     <section className="flex flex-col justify-center px-4 md:px-20 py-16">
       {/* Cabeçalho */}
       <div className="flex flex-col self-start mb-12 max-w-4xl">
-        <h1 className="font-[Playfair_Display] text-l md:text-4xl lg:text-5xl font-bold text-emerald-900 mb-4">
+        <h1 className="font-[Playfair_Display] text-l md:text-4xl w-140 lg:text-5xl font-bold text-emerald-900 mb-4">
           This week's Most Popular and Best Selling
         </h1>
-        <p className="text-gray-500 font-[Inter] text-xs md:text-lg lg:text-base">
+        <p className="text-slate-500 text-sm  md:text-lg lg:text-base w-130">
           Take a look at our popular products. Take advantage of promotions and find similar products.
         </p>
       </div>
 
       {/* Controles do Carrossel */}
-      <div className="flex justify-end items-center mb-4">
+      <div className="flex justify-end items-center mb-4 mr-9.5">
         {items.length > itemsPerView && (
           <>
             <button
@@ -110,13 +110,13 @@ const Fourth = () => {
                     className="w-full h-full border-1 border-gray-100 object-cover transition-transform duration-300 group-hover:scale-105 dark:border-black"
                   />
                   {/* balao de categoria */}
-                  <span className="absolute top-4 right-4 bg-emerald-100 text-emerald-900 text-md font-semibold px-3 py-1 rounded-full">
+                  <span className="absolute top-4 right-4 bg-emerald-100 border-emerald-50 border-2 text-emerald-900 text-md font-semibold px-3 py-1 rounded-full">
                     {item.category}
                   </span>
                 </div>
               </div>
               <div className="mt-4">
-                <h3 className="text-xl text-black font-semibold dark:text-emerald-50">{item.name}</h3>
+                <h3 className="text-xl text-slate-700 font-[Inter] dark:text-emerald-50">{item.name}</h3>
                 <div className="text-base text-slate-600 dark:text-white text-left">
                 
                 {!isNaN(Number(item.price))
@@ -125,7 +125,7 @@ const Fourth = () => {
                         <>
                         ${(Number(item.price) * (1 - Number(item.discountPorcentage) / 100)).toFixed(2)}
                         <span style={{ marginLeft: '10px' }}> </span>
-                          <span className="line-through mr-2 text-slate-400">
+                          <span className="line-through mr-2 text-base text-slate-400">
                             ${Number(item.price).toFixed(2)}
                           </span>
                         </>

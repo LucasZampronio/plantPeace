@@ -4,8 +4,7 @@ import { Link } from "react-router-dom";
 export const Footer = () => {
   return (
     <section
-      className="bg-emerald-900 text-white font-[Inter] font-normal text-sm 
-      bg-[url(src/images/backgroundfooter.svg)] bg-cover bg-center 
+      className="bg-emerald-900 text-white font-[Inter] font-normal text-sm bg-cover bg-center 
       p-6 lg:p-20 flex flex-col gap-8 lg:gap-12 
       min-h-auto lg:h-[422px]"
     >
