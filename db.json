@@ -71,6 +71,42 @@
       "highlightItem": false,
       "ownerId": "user_2sj7dnfNtQlub42bluUCjFT2ZQo",
       "id": 6
+    },
+    {
+      "name": "Echinocereus Cactus",
+      "subtitle": "A majestic addition to your plant collection",
+      "category": "indoor",
+      "price": "15.00",
+      "discountPorcentage": "",
+      "description": "Our website offers a wide array of stunning plants, ranging from vibrant flowers to lush indoor foliage, allowing you to create your very own green oasis. In addition to our extensive plant selection.",
+      "imageUrl": "https://s3-alpha-sig.figma.com/img/6924/8b14/fd92e8ac3ff5c6c0b7c2f823ff2c8e8e?Expires=1740355200&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=VDqVnjXR0koZwVaPoILXdc7yhwz4VrXfLT8rZXjO28mEA7ZftAuPhmQxguQRVVEkHW6rUxHnR4ITTFShfgo-~9a017JS5XvGsHemGYmqdmrgQvEYwpFLc-JcSa9~9SXq7mtBGpquwbUifKQIp8zF9kdWjjYM5DH8Rjyu499ce4qA6qkZgcsIrKHF6NYoVYeD3QTXdBbszrF4Yn8x~wClxIsS6vNpQgIoxIdCXcrhCziLZgBfp14t9hd6semgClU6PBl1J1n~hfMu1wjtYSJysdA9FUyhGTlrfoCC6KS7w10MT~RIr4PjteHxN6CqmMs1MCKvmja5LdDKQeLLz3iqXQ__",
+      "highlightItem": true,
+      "ownerId": "user_2srjTUum0mAKdBMVpcfyjNkjEaj",
+      "id": 7
+    },
+    {
+      "name": "Echinocereus Cactus",
+      "subtitle": "A majestic addition to your plant collection",
+      "category": "indoor",
+      "price": "15.00",
+      "discountPorcentage": "57",
+      "description": "Our website offers a wide array of stunning plants, ranging from vibrant flowers to lush indoor foliage, allowing you to create your very own green oasis. In addition to our extensive plant selection.",
+      "imageUrl": "https://s3-alpha-sig.figma.com/img/1d40/0a9b/630d483af7d2c6909ce4df8c97a590b4?Expires=1740355200&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=BmsJgYKe2IfcmIBN5s4a6CAqx80~SvFu1~wyGwEd0-IiwECeXWDOmAIxmuAJGD11BzG4AJ66YXYOg~9cr1OVYJls0UHVyl4VVFRMWWxc7~LW9lTggiZJnQgAsAWAlFvlcUSLwrd27ztpXl52A50XwESg922rZtbDZZ5ENQX5vk07GlOUF9vNTg4zav92bXXfJfCW8qY6gZGop214kuCTqSddebiteCdMGaSX9KOHysjQ-~2YKi2hGdX~mOfMB0FHyJXWvM4vtARlvxax1tt2PjW0RHkIWCq8H~4OnjgooXp3wEqg5JumfI0S~68VY--V0OWbyx83hm04RArE6qCMHQ__",
+      "highlightItem": true,
+      "ownerId": "user_2srjTUum0mAKdBMVpcfyjNkjEaj",
+      "id": 8
+    },
+    {
+      "name": "Echinocereus Cactus",
+      "subtitle": "A majestic addition to your plant collection",
+      "category": "indoor",
+      "price": "15.00",
+      "discountPorcentage": "",
+      "description": "Our website offers a wide array of stunning plants, ranging from vibrant flowers to lush indoor foliage, allowing you to create your very own green oasis. In addition to our extensive plant selection.",
+      "imageUrl": "https://s3-alpha-sig.figma.com/img/5e6b/199e/296f4ab981e5c114cdf91132720a1c5e?Expires=1740355200&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=H8V0rvMbGkWlM9bjGv1oF5F3RIZnwnMN~oaXOUWpXZ272mEND4DntpmL-yRWcSVmo34rfQV-tCJ2L7pXqgCmwCoE29d3SvShHQ1F5JVK~3GlMmDSeHDg8kchRtriS5eILQfhiCPQcPt8AF8EdNiw45sS4l8CtAWJYLAJERY17ZT9y~AQAlrOU3qA3ueF5Eq-4FJ5sJUlug-wWzK0wc4~PD-IYXjxFMycMsh9wCoy8kGyYWaBaTUHluyzZMubhJubhE1u7sOj16OpwAKk2IVTZdwMlL~9E4L2AyQQO2gMzNoKGO5zlz~fvClb0wotoj-nrbUNiw3~rnnk2WS4ptFAzg__",
+      "highlightItem": true,
+      "ownerId": "user_2srjTUum0mAKdBMVpcfyjNkjEaj",
+      "id": 9
     }
   ],
   "users": [
