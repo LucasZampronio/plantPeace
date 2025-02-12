@@ -481,6 +481,33 @@
       "email": "testefinal@gmail.com",
       "clerkUserId": "sess_2sx7xlb3p7aOPenHFPZ0k4BCPCz",
       "id": 82
+    },
+    {
+      "email": "testefinal@gmail.com",
+      "clerkUserId": "user_2sx9CKdvbYzOCKAPopSbAQ8UdT9",
+      "firstName": "teste final",
+      "id": 83
+    },
+    {
+      "email": "testefinal@gmail.com",
+      "clerkUserId": "sess_2sx9CxAAurU25yWbsqKWtoJ7aWP",
+      "id": 84
+    },
+    {
+      "email": "manuella.rodrigue.pb@compasso.com.br",
+      "clerkUserId": "user_2sx9NYl6vqt0Ax5AgEjkRMBgrxE",
+      "firstName": "manuella pb",
+      "id": 85
+    },
+    {
+      "email": "manuella.rodrigue.pb@compasso.com.br",
+      "clerkUserId": "sess_2sx9OH00V2Dyd5Ohj1pbRblyizP",
+      "id": 86
+    },
+    {
+      "email": "manuella.rodrigue.pb@compasso.com.br",
+      "clerkUserId": "sess_2sx9a1zjMLZBSnvALNsdbeiBnvB",
+      "id": 87
     }
   ]
 }

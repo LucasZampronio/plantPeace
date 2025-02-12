@@ -114,8 +114,8 @@ const UserConfigPage = () => {
         <UserConfigForm
           onSubmit={handleSubmit}
           user={{
-            name: user?.firstName || "", // Nome do Clerk
-            email: user?.primaryEmailAddress?.emailAddress || "", // Email do Clerk
+            name: user?.firstName || "",
+            email: user?.primaryEmailAddress?.emailAddress || "",
           }}
           errorMessage={errorMessage}
           successMessage={successMessage}
