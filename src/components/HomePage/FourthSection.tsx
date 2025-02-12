@@ -32,7 +32,13 @@ const Fourth = () => {
 
   useEffect(() => {
     const updateItemsPerView = () => {
-      setItemsPerView(window.innerWidth < 640 ? 1 : 3);
+      if (window.innerWidth >= 768) {
+        setItemsPerView(3); // 3 itens para telas md e maiores
+      } else if (window.innerWidth >= 640) {
+        setItemsPerView(2); // 2 itens para telas entre 640px e 767px
+      } else {
+        setItemsPerView(1); // 1 item para telas menores que 640px
+      }
     };
 
     updateItemsPerView();
@@ -41,24 +47,28 @@ const Fourth = () => {
   }, []);
 
   const handlePrev = () => {
-    setCurrentIndex((prev) => (prev === 0 ? items.length - itemsPerView : prev - 1));
+    setCurrentIndex((prev) =>
+      prev === 0 ? items.length - itemsPerView : prev - 1
+    );
   };
 
   const handleNext = () => {
-    setCurrentIndex((prev) => (prev >= items.length - itemsPerView ? 0 : prev + 1));
+    setCurrentIndex((prev) =>
+      prev >= items.length - itemsPerView ? 0 : prev + 1
+    );
   };
 
   return (
     <section className="flex flex-col justify-center px-4 md:px-20 py-16">
       <div className="flex flex-col self-start mb-12 max-w-full md:max-w-3xl lg:max-w-4xl px-4">
-  <h1 className="font-[Playfair_Display] text-xl sm:text-2xl md:text-4xl lg:text-5xl font-bold text-emerald-900 mb-4">
-    This week's Most Popular and Best Selling
-  </h1>
-  <p className="text-slate-500 text-xs sm:text-sm md:text-lg lg:text-base">
-    Take a look at our popular products. Take advantage of promotions and find similar products.
-  </p>
-</div>
-
+        <h1 className="font-[Playfair_Display] text-xl sm:text-2xl md:text-4xl lg:text-5xl font-bold text-emerald-900 mb-4">
+          This week's Most Popular and Best Selling
+        </h1>
+        <p className="text-slate-500 text-xs sm:text-sm md:text-lg lg:text-base">
+          Take a look at our popular products. Take advantage of promotions and
+          find similar products.
+        </p>
+      </div>
 
       <div className="flex justify-end items-center mb-4 mr-9.5">
         {items.length > itemsPerView && (
@@ -89,7 +99,13 @@ const Fourth = () => {
           {items.map((item) => (
             <div
               key={item.id}
-              className={`flex-shrink-0 px-0 ${itemsPerView === 1 ? "w-full" : "w-1/3"}`}
+              className={`flex-shrink-0 px-0 ${
+                itemsPerView === 1
+                  ? "w-full"
+                  : itemsPerView === 2
+                  ? "w-1/2"
+                  : "w-1/3"
+              }`}
             >
               <a
                 href={`/plants/details/${item.id}`}
@@ -99,45 +115,47 @@ const Fourth = () => {
                 }}
                 className="block cursor-pointer group"
               >
-                <div className="h-auto overflow-hidden relative pl-6 sm:pl-0">
-                <div className="relative w-100 h-100 sm:w-[388px] sm:h-[388px]">
-                  <img
-                    src={item.imageUrl}
-                    alt={item.name}
-                    className="w-full h-full border-1 border-gray-100 object-cover transition-transform duration-300 group-hover:scale-105 dark:border-black"
-                  />
-                  <span className="absolute top-4 right-4 bg-emerald-100 border-emerald-50 border-2 text-emerald-900 text-md font-semibold px-3 py-1 rounded-full">
-                    {item.category}
-                  </span>
+                <div className="h-auto overflow-hidden relative pl-15 sm:pl-0">
+                  <div className="relative w-80 h-80 sm:w-70 sm:h-70 md:w-50 md:h-50 lg:w-70 lg:h-70 xl:w-[388px] xl:h-[388px]">
+                    <img
+                      src={item.imageUrl}
+                      alt={item.name}
+                      className="w-full h-full border-1 border-gray-100 object-cover transition-transform duration-300 group-hover:scale-105 dark:border-black"
+                    />
+                    <span className="absolute top-4 right-4 bg-emerald-100 border-emerald-50 border-2 text-emerald-900 text-md font-semibold px-3 py-1 rounded-full">
+                      {item.category}
+                    </span>
+                  </div>
                 </div>
-              </div>
-              <div className="mt-4 pl-6 sm:pl-0">
-                <h3 className="text-xl text-slate-700 font-[Inter] dark:text-emerald-50">{item.name}</h3>
-                <div className="text-base text-slate-600 dark:text-white text-left">
-                
-                {!isNaN(Number(item.price))
-                  ? (
-                    item.discountPorcentage ? (
+                <div className="mt-4 pl-15 sm:pl-0">
+                  <h3 className="text-xl text-slate-700 font-[Inter] dark:text-emerald-50">
+                    {item.name}
+                  </h3>
+                  <div className="text-base text-slate-600 dark:text-white text-left">
+                    {!isNaN(Number(item.price)) ? (
+                      item.discountPorcentage ? (
                         <>
-                        ${(Number(item.price) * (1 - Number(item.discountPorcentage) / 100)).toFixed(2)}
-                        <span style={{ marginLeft: '10px' }}> </span>
+                          $
+                          {(
+                            Number(item.price) *
+                            (1 - Number(item.discountPorcentage) / 100)
+                          ).toFixed(2)}
+                          <span style={{ marginLeft: "10px" }}> </span>
                           <span className="line-through mr-2 text-base text-slate-400">
                             ${Number(item.price).toFixed(2)}
                           </span>
                         </>
                       ) : (
-                        <> $  {Number(item.price).toFixed(2)} </>
+                        <> $ {Number(item.price).toFixed(2)} </>
                       )
-                    )
-                  : "Invalid price"}
-              </div>
-              </div>
-              
-
+                    ) : (
+                      "Invalid price"
+                    )}
+                  </div>
+                </div>
               </a>
             </div>
           ))}
-          
         </div>
       </div>
     </section>
