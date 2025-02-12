@@ -109,7 +109,8 @@ const Fourth = () => {
                     alt={item.name}
                     className="w-full h-full border-1 border-gray-100 object-cover transition-transform duration-300 group-hover:scale-105 dark:border-black"
                   />
-                  <span className="absolute top-4 right-4 bg-emerald-100 text-emerald-900 text-xs font-semibold px-3 py-1 rounded-full">
+                  {/* balao de categoria */}
+                  <span className="absolute top-4 right-4 bg-emerald-100 text-emerald-900 text-md font-semibold px-3 py-1 rounded-full">
                     {item.category}
                   </span>
                 </div>
