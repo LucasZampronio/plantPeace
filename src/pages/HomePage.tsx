@@ -1,4 +1,3 @@
-import React from "react";
 import { Helmet } from 'react-helmet';
 import FirstSection from "../components/HomePage/FirstSection";
 import SecondSection from "../components/HomePage/SecondSection";
