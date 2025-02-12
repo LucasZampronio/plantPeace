@@ -30,13 +30,12 @@ const Fourth = () => {
       .catch((error) => console.error("Erro ao buscar plantas:", error));
   }, []);
 
-  // Ajustar o número de itens por vez conforme o tamanho da tela
   useEffect(() => {
     const updateItemsPerView = () => {
-      setItemsPerView(window.innerWidth < 640 ? 1 : 3); // 1 item se for sm, 3 se for maior
+      setItemsPerView(window.innerWidth < 640 ? 1 : 3);
     };
 
-    updateItemsPerView(); // Chamar na montagem inicial
+    updateItemsPerView();
     window.addEventListener("resize", updateItemsPerView);
     return () => window.removeEventListener("resize", updateItemsPerView);
   }, []);
@@ -51,7 +50,6 @@ const Fourth = () => {
 
   return (
     <section className="flex flex-col justify-center px-4 md:px-20 py-16">
-      {/* Cabeçalho */}
       <div className="flex flex-col self-start mb-12 max-w-full md:max-w-3xl lg:max-w-4xl px-4">
   <h1 className="font-[Playfair_Display] text-xl sm:text-2xl md:text-4xl lg:text-5xl font-bold text-emerald-900 mb-4">
     This week's Most Popular and Best Selling
@@ -62,7 +60,6 @@ const Fourth = () => {
 </div>
 
 
-      {/* Controles do Carrossel */}
       <div className="flex justify-end items-center mb-4 mr-9.5">
         {items.length > itemsPerView && (
           <>
@@ -82,7 +79,6 @@ const Fourth = () => {
         )}
       </div>
 
-      {/* Carrossel */}
       <div className="relative w-full overflow-hidden">
         <div
           className="flex transition-transform duration-500 ease-in-out gap-2"
@@ -93,7 +89,7 @@ const Fourth = () => {
           {items.map((item) => (
             <div
               key={item.id}
-              className={`flex-shrink-0 px-0 ${itemsPerView === 1 ? "w-full" : "w-1/3"}`} // Ajusta dinamicamente
+              className={`flex-shrink-0 px-0 ${itemsPerView === 1 ? "w-full" : "w-1/3"}`}
             >
               <a
                 href={`/plants/details/${item.id}`}
@@ -103,20 +99,19 @@ const Fourth = () => {
                 }}
                 className="block cursor-pointer group"
               >
-                <div className="h-auto overflow-hidden relative">
-                <div className="relative w-[388px] h-[388px]">
+                <div className="h-auto overflow-hidden relative pl-6 sm:pl-0">
+                <div className="relative w-100 h-100 sm:w-[388px] sm:h-[388px]">
                   <img
                     src={item.imageUrl}
                     alt={item.name}
                     className="w-full h-full border-1 border-gray-100 object-cover transition-transform duration-300 group-hover:scale-105 dark:border-black"
                   />
-                  {/* balao de categoria */}
                   <span className="absolute top-4 right-4 bg-emerald-100 border-emerald-50 border-2 text-emerald-900 text-md font-semibold px-3 py-1 rounded-full">
                     {item.category}
                   </span>
                 </div>
               </div>
-              <div className="mt-4">
+              <div className="mt-4 pl-6 sm:pl-0">
                 <h3 className="text-xl text-slate-700 font-[Inter] dark:text-emerald-50">{item.name}</h3>
                 <div className="text-base text-slate-600 dark:text-white text-left">
                 

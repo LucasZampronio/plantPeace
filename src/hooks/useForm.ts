@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 interface Errors {
-  [key: string]: string; // Permite erros para qualquer campo
+  [key: string]: string;
 }
 
 interface UseFormProps<T extends Record<string, string | boolean>> {

@@ -32,7 +32,6 @@ const ProtectedRoute = ({ children }: { children: React.ReactNode }) => {
   );
 };
 
-// configurando roteador (aqui define as rotas da aplicacao)
 const router = createBrowserRouter([
   {
     path: "/",

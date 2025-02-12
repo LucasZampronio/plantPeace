@@ -1,4 +1,3 @@
-// components/Sidebar.tsx
 interface SidebarProps {
   selectedCategories: string[];
   onCategoryChange: (category: string, isChecked: boolean) => void;
@@ -10,7 +9,6 @@ const SideBar: React.FC<SidebarProps> = ({
 }) => {
   return (
     <div className="flex flex-col gap-3 md:min-w-[250px] md:max-w-[100px] md:border-r md:gap-4 md:border-gray-300 bg-white dark:bg-neutral-900">
-      {/* Div do Filtro */}
       <div className="border-b border-gray-300 pb-3 pt-5 font-normal text-lg text-[#475569] px-6">
         Filter
       </div>

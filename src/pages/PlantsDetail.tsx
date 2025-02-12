@@ -46,13 +46,11 @@ const PlantDetail: React.FC<PlantDetailProps> = () => {
   }
 
   return (
-    <div className="flex flex-col lg:flex-row min-h-screen bg-gray-50 dark:bg-neutral-900 transition-colors duration-300">
-      {/* Seção de detalhes da planta */}
+    <div className="flex flex-row lg:flex-row min-h-screen bg-gray-50 dark:bg-neutral-900 transition-colors duration-300">
       <div className="flex-1 flex flex-col py-5 justify-center items-center mt-25 w-full h-auto relative">
         
-        <div className="absolute top-4 right-4 z-10">{/* <DarkMode /> */}</div>
+        <div className="absolute top-4 right-4 z-10"></div>
         
-        {/* div que engloba todo conteudo da direita */}
         <div className="flex flex-col items-center justify-center w-full">
           <div className="mb-6 pl-15 self-start">
             <h1 className="font-[Playfair_Display] text-3xl font-bold text-teal-800 dark:text-emerald-900 mb-1 leading-tight">
@@ -121,16 +119,15 @@ const PlantDetail: React.FC<PlantDetailProps> = () => {
         <div className="flex justify-center w-full pb-16 pt-3">
           <button
             onClick={() => navigate(`/plants/${plant.id}`)}
-            className="w-160 py-1 pt-2 bg-emerald-900 dark:bg-emerald-900 rounded-md text-white font-inter text-lg font-semibold cursor-pointer transition-colors duration-200 hover:bg-emerald-700 dark:hover:bg-emerald-700"
+            className="sm:w-160 w-125 py-1 pt-2 sm:py-1 sm:pt-2 bg-emerald-900 dark:bg-emerald-900 rounded-md text-white font-inter text-lg font-semibold cursor-pointer transition-colors duration-200 hover:bg-emerald-700 dark:hover:bg-emerald-700"
           >
             Edit Plant
           </button>
         </div>
       </div>
 
-      {/* Seção de imagem de fundo */}
       <div
-        className="w-1/2 dark:bg-gray-800"
+        className="flex-1 dark:bg-gray-800 md:hidden lg:block xl:block hidden"
         style={{
           backgroundImage: `url(${planta})`,
           minHeight: "400px",

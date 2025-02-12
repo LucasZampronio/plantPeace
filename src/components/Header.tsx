@@ -13,7 +13,6 @@ export const Header = () => {
   const location = useLocation();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  // Função para verificar a rota ativa
   const isActive = (path: string, exact = false) => {
     return exact
       ? location.pathname === path
@@ -43,10 +42,8 @@ export const Header = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
-  // Classe base para os links
   const linkBaseClass = "transition duration-300 font-normal";
 
-  // Classes condicionais para desktop
   const desktopLinkClass = (path: string, exact = false) => `
     ${linkBaseClass}
     ${isActive(path, exact)
@@ -55,7 +52,6 @@ export const Header = () => {
     }
   `;
 
-  // Classes condicionais para mobile
   const mobileLinkClass = (path: string, exact = false) => `
     ${linkBaseClass}
     ${isActive(path, exact)
@@ -70,7 +66,6 @@ export const Header = () => {
       className="bg-white dark:bg-neutral-900 flex justify-between items-center px-10 py-4 font-[Inter] fixed w-full border-b border-slate-200 dark:border-gray-500 z-50"
       data-theme="dark"
     >
-      {/* Logo */}
       <div className="flex">
         <Link to="/" className="flex">
           <img
@@ -82,7 +77,6 @@ export const Header = () => {
         <DarkMode />
       </div>
 
-      {/* Desktop navigation menu */}
       <nav className="hidden lg:flex">
         <ul className="flex gap-4 p-4">
           <li>
@@ -116,7 +110,6 @@ export const Header = () => {
         </ul>
       </nav>
 
-      {/* Seção de autenticação para desktop */}
       <div className="hidden lg:flex gap-10 font-semibold items-center">
         {!isSignedIn && (
           <Link
@@ -141,11 +134,9 @@ export const Header = () => {
         </button>
       </div>
 
-      {/* Menu mobile */}
       <div className="lg:hidden">
         <button onClick={toggleMobileMenu} aria-label="Toggle mobile menu">
           {isMobileMenuOpen ? (
-            // Ícone X para fechar
             <svg
               className="w-8 h-8 text-slate-700"
               fill="none"
@@ -160,7 +151,6 @@ export const Header = () => {
               />
             </svg>
           ) : (
-            // Ícone hambúrguer
             <svg
               className="w-8 h-8 text-slate-700"
               fill="none"

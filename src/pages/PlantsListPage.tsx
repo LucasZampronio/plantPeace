@@ -9,7 +9,7 @@ interface Plant {
   id: number;
   name: string;
   category: string;
-  price: string; // 'price' continua sendo string, conforme seu DB
+  price: string;
   imageUrl: string;
   discountPorcentage?: string;
 }
@@ -19,7 +19,6 @@ const PlantListPage: React.FC = () => {
   const [searchResult, setSearchResult] = useState<string | null>(null);
   const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
 
-  // Busca as plantas do json-server
   useEffect(() => {
     const fetchPlants = async () => {
       try {
@@ -50,7 +49,6 @@ const PlantListPage: React.FC = () => {
     return matchesSearch && matchesCategory;
   });
 
-  // Função de busca
   const handleSearch = (query: string): boolean => {
     const found = plants.some((plant) =>
       plant.name.toLowerCase().includes(query.toLowerCase())
@@ -60,8 +58,6 @@ const PlantListPage: React.FC = () => {
   };
 
   return (
-    // No mobile (até md) os itens serão empilhados (flex-col);
-    // a partir de md o layout permanece em linha (flex-row), conforme o design original.
     <div className="flex flex-col md:flex-row py-22">
       <Helmet>
         <title>Plants List - plantPeace</title>
