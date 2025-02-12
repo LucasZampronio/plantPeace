@@ -4,6 +4,10 @@ import { Helmet } from 'react-helmet';
 import logo from "../images/403logo.png";
 import bgImage from "../images/forest-bg.png";
 
+import CustomCursor from "../components/CustomCursor";
+import { useEffect } from "react";
+
+
 export const Error403Page = () => {
   const navigate = useNavigate();
 
@@ -12,12 +16,22 @@ export const Error403Page = () => {
     top: `${Math.random() * 80}%`,
   });
 
+  useEffect(() => {
+      document.body.style.cursor = "none"; // Remove o cursor padrão
+  
+      return () => {
+        document.body.style.cursor = "auto"; // Restaura o cursor ao sair da página
+      };
+    }, []);
+
   return (
     <div className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-emerald-900 via-emerald-800 to-emerald-900 text-white overflow-hidden">
       {/* Partículas de poeira/flor voando */}
       <Helmet>
         <title>403 - plantPeace</title>
       </Helmet>
+
+      <CustomCursor />
       <img
         src={bgImage}
         alt=""
@@ -65,7 +79,7 @@ export const Error403Page = () => {
         {/* Botão estilizado */}
         <button
           onClick={() => navigate("/")}
-          className="mt-6 px-10 py-3 bg-emerald-900 hover:bg-emerald-700 text-white rounded-lg transition-all duration-300 font-semibold text-lg relative overflow-hidden shadow-lg shadow-yellow-400/20 border border-emerald-700"
+          className="mt-6 px-10 py-3 bg-emerald-900 hover:bg-emerald-700 text-white rounded-lg transition-all duration-300 font-semibold text-lg relative overflow-hidden shadow-lg shadow-yellow-400/20 border border-emerald-700 cursor-none"
         >
           <span className="relative z-10">Back to the garden</span>
           <div className="absolute bg-gradient-to-r from-yellow-400/10 to-transparent animate-shine"></div>

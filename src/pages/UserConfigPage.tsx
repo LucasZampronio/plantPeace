@@ -21,12 +21,9 @@ const UserConfigPage = () => {
 
   useEffect(() => {
     if (!user) {
-      console.log("Usuário não autenticado, redirecionando para /sign-in");
       navigate("/sign-in");
       return;
     }
-
-    console.log("Usuário autenticado:", user);
 
     const fetchUserData = async () => {
       try {
@@ -39,20 +36,16 @@ const UserConfigPage = () => {
             headers: { Authorization: `Bearer ${token}` },
           }
         );
-        console.log("Response da requisição:", response);
 
         if (response.ok) {
           const data = await response.json();
-          console.log("Dados retornados da API:", data);
 
           if (data.length > 0) {
             setUserData(data[0]);
           } else {
             setErrorMessage("Usuário não encontrado");
-            console.log("Nenhum usuário encontrado com clerkUserId:", user.id);
           }
         } else {
-          console.error("Response não OK:", response.statusText);
           setErrorMessage("Erro ao carregar usuário");
         }
       } catch (error) {
@@ -71,16 +64,16 @@ const UserConfigPage = () => {
     if (!user || !userData) return;
 
     try {
-      console.log("Dados enviados para atualização:", updatedData);
+      console.log("Data sent for update:", updatedData);
       await user.update({
         firstName: updatedData.name,
       });
-      console.log("Nome atualizado no Clerk para:", updatedData.name);
+      console.log("Name updated in Clerk to:", updatedData.name);
 
       // Atualizar email se mudou
       if (updatedData.email !== userData.email) {
         await user.createEmailAddress({ email: updatedData.email });
-        console.log("Email atualizado no Clerk para:", updatedData.email);
+        console.log("Email updated in Clerk to:", updatedData.email);
       }
 
       // Atualizar JSON Server
@@ -104,17 +97,16 @@ const UserConfigPage = () => {
 
       if (response.ok) {
         const data = await response.json();
-        console.log("Dados retornados após PUT:", data);
-        setSuccessMessage("Perfil atualizado com sucesso!");
-        setErrorMessage(null); // Limpa mensagens de erro ao atualizar com sucesso
+        setSuccessMessage("Profile updated successfully!");
+        setErrorMessage(null);
         setUserData(data);
       } else {
-        console.error("Erro ao atualizar JSON Server:", response.statusText);
-        setErrorMessage("Erro ao atualizar perfil");
+        console.error("Error updating JSON Server:", response.statusText);
+        setErrorMessage("Error updating profile");
       }
     } catch (error) {
-      console.error("Erro na atualização:", error);
-      setErrorMessage("Erro ao atualizar perfil");
+      console.error("Error updating profile:", error);
+      setErrorMessage("Error updating profile");
     }
   };
 
@@ -131,7 +123,7 @@ const UserConfigPage = () => {
           successMessage={successMessage}
         />
       ) : (
-        <p className="text-gray-800 dark:text-gray-200">Carregando dados...</p>
+        <p className="text-gray-800 dark:text-gray-200">Loading data...</p>
       )}
     </div>
   );
